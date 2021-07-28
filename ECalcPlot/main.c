@@ -97,6 +97,7 @@ int main(int argc, char** argv) {
     /* write the data to be plotted to a file*/
     for (int i = 0; i < N_max; i++) {
         fprintf(gnudata, "%g %g %g\n", N[i], diff[i], diff_theory[i]);
+        
     }
     
     /* cleanup */
