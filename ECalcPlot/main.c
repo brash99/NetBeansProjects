@@ -44,14 +44,6 @@ int main(int argc, char** argv) {
     
     printf ("N_final = %9.1f, e_approx = %9.8f, e_exact = %9.8f, difference = %9.8f \n",N[N_max-1],e[N_max-1],e_accurate,diff[N_max-1]);
     
-    FILE *gnuplot = popen("gnuplot", "w");
-    fprintf(gnuplot,"set terminal x11\n");
-    fprintf(gnuplot, "plot '-'\n");
-    for (int i = 0; i < N_max; i++)
-        fprintf(gnuplot, "%g %g\n", N[i], diff[i]);
-    fprintf(gnuplot, "e\n");
-    fflush(gnuplot);
-    
     return (EXIT_SUCCESS);
     
 }
