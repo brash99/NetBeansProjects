@@ -31,7 +31,7 @@ double elim(int N) {
 int main(int argc, char** argv) {
 
     /* define the maximum number of iteration values as a constant integer */
-    const int N_max = 1200;
+    const int N_max = 200;
     
     /* define the value of e to 9 decimal places */
     double e_accurate = 2.718281828;
@@ -81,12 +81,18 @@ int main(int argc, char** argv) {
     
     /* Set logscale, title, and axis labels */
     fprintf(gnuplot, "set logscale xy\n");
-    fprintf(gnuplot, "set title 'Calculation of e'\n");
-    fprintf(gnuplot, "set xlabel 'Number of iterations'\n");
-    fprintf(gnuplot, "set ylabel 'Difference from exact value'\n");
+    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set tics font 'Arial,12'\n");
+    fprintf(gnuplot, "set grid\n");
+    fprintf(gnuplot, "set title 'Calculation of e' font 'Arial,20'\n");
+    fprintf(gnuplot, "set xlabel 'Number of iterations' font 'Arial,16'\n");
+    fprintf(gnuplot, "set ylabel 'Difference from exact value' font 'Arial,16'\n");
     
     /* plot command - plot the data as points, and the prediction as a solid line (green)*/
-    fprintf(gnuplot, "plot 'gnuplotData' using 1:2, 'gnuplotData' using 1:3 with lines linestyle 2\n");
+    
+    fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
+    fprintf(gnuplot, "set style line 2 linecolor rgb '#8b0000' linewidth 2\n");
+    fprintf(gnuplot, "plot 'gnuplotData' using 1:2 title 'Approximation' with points linestyle 1, 'gnuplotData' using 1:3 title 'Prediction' with lines linestyle 2\n");
     
     /* write the data to be plotted to a file*/
     for (int i = 0; i < N_max; i++) {
