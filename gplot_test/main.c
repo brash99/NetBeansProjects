@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
     /* gplot_theory(x,y,ytheory,N_max,"GNUPlot Data + Theory Test","X","Y","My Data","My Theory","Unix"); */
     /* gplot_theoryline(x,y,ytheory,N_max,"GNUPlot Data + Theory with Line","X","Y","My Data","My Theory","Unix"); */
     
-    gplot_errorstheory(x,y,e,ytheory,N_max,"GNUPlot Data + Errors + Theory","X","Y","My Data","My Theory","Unix");
+    gplot_errorstheory(x,y,e,ytheory,N_max,"GNUPlot Data + Errors + Theory","X","Y","My Data","My Theory","Windows");
     /* gplot_errorstheoryline(x,y,e,ytheory,N_max,"GNUPlot Data + Errors + Theory with Line","X","Y","My Data","My Theory","Unix"); */
     
     return (EXIT_SUCCESS);
