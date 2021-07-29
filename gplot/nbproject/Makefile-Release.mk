@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/gplot_basic.o
+	${OBJECTDIR}/gplot_basic.o \
+	${OBJECTDIR}/gplot_errors.o
 
 
 # C Compiler Flags
@@ -68,6 +69,11 @@ ${OBJECTDIR}/gplot_basic.o: gplot_basic.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_basic.o gplot_basic.c
+
+${OBJECTDIR}/gplot_errors.o: gplot_errors.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_errors.o gplot_errors.c
 
 # Subprojects
 .build-subprojects:

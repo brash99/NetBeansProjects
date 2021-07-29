@@ -1,9 +1,0 @@
-set terminal x11
-set key font 'Arial,16'
-set tics font 'Arial,12'
-set grid
-set title 'GNUPlot Test' font 'Arial,20'
-set xlabel 'X' font 'Arial,16'
-set ylabel 'Y' font 'Arial,16'
-set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5
-plot 'gnuplotData' using 1:2 title 'My Data' with points linestyle 1

@@ -19,6 +19,7 @@ extern "C" {
 #endif
 
 void gplot_basic(double [], double [], int , char [], char [], char [], char [], char []);
+void gplot_errors(double [], double [], double [], int , char [], char [], char [], char [], char []);
         
 #ifdef __cplusplus
 }
