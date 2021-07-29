@@ -19,7 +19,16 @@ extern "C" {
 #endif
 
 void gplot_basic(double [], double [], int , char [], char [], char [], char [], char []);
+void gplot_basicline(double [], double [], int , char [], char [], char [], char [], char []);
+
 void gplot_errors(double [], double [], double [], int , char [], char [], char [], char [], char []);
+void gplot_errorsline(double [], double [], double [], int , char [], char [], char [], char [], char []);
+
+void gplot_theory(double [], double [], double [], int , char [], char [], char [], char [], char [], char []);
+void gplot_theoryline(double [], double [], double [], int , char [], char [], char [], char [], char [], char []);
+
+void gplot_errorstheory(double [], double [], double [], double [], int , char [], char [], char [], char [], char [], char []);
+void gplot_errorstheoryline(double [], double [], double [], double [], int , char [], char [], char [], char [], char [], char []);
         
 #ifdef __cplusplus
 }

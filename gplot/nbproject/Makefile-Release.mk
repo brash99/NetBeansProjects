@@ -36,7 +36,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/gplot_basic.o \
-	${OBJECTDIR}/gplot_errors.o
+	${OBJECTDIR}/gplot_errors.o \
+	${OBJECTDIR}/gplot_errorstheory.o \
+	${OBJECTDIR}/gplot_theory.o
 
 
 # C Compiler Flags
@@ -74,6 +76,16 @@ ${OBJECTDIR}/gplot_errors.o: gplot_errors.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_errors.o gplot_errors.c
+
+${OBJECTDIR}/gplot_errorstheory.o: gplot_errorstheory.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_errorstheory.o gplot_errorstheory.c
+
+${OBJECTDIR}/gplot_theory.o: gplot_theory.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_theory.o gplot_theory.c
 
 # Subprojects
 .build-subprojects:

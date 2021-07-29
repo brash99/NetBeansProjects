@@ -20,29 +20,34 @@
 int main(int argc, char** argv) {
     
     /* define the maximum number of iteration values as a constant integer */
-    const int N_max = 200;
+    const int N_max = 20;
     
     /* create arrays to hold the number of iterations, the value of e for this
      iteration, the differences between the exact value and our calculation, and
      our prediction for the difference based on diff = A/N_iterations */
-    double x[N_max], y[N_max], e[N_max];
-    
-    printf ("here 1\n");
+    double x[N_max], y[N_max], e[N_max], ytheory[N_max];
     
     /* Loop over the iterations, from 0 to the maximum number*/
     for (int i=0; i<N_max; i++) {
         
-        x[i] = i;
+        x[i] = 10*i;
         y[i] = x[i]*x[i];
-        e[i] = sqrt(y[i]);
+        ytheory[i] = 0.9*x[i]*x[i];
+        e[i] = 10*sqrt(y[i]);
      
     }
     
-    printf ("here 2\n");
-   
-    gplot_errors(x,y,e,N_max,"GNUPlot Errors Test","X","Y","My Data","Unix");
+    /* gplot_basic(x,y,N_max,"GNUPlot Basic Test","X","Y","My Data","Unix"); */
+    /* gplot_basicline(x,y,N_max,"GNUPlot Basic Test","X","Y","My Data","Unix"); */
     
-    printf ("here 3\n");
+    /* gplot_errors(x,y,e,N_max,"GNUPlot Errors Test","X","Y","My Data","Unix"); */
+    /* gplot_errorsline(x,y,e,N_max,"GNUPlot Errors Test","X","Y","My Data","Unix"); */
+    
+    /* gplot_theory(x,y,ytheory,N_max,"GNUPlot Basic Test","X","Y","My Data","My Theory","Unix"); */
+    /* gplot_theoryline(x,y,ytheory,N_max,"GNUPlot Basic Test","X","Y","My Data","My Theory","Unix"); */
+    
+    /* gplot_errorstheory(x,y,e,ytheory,N_max,"GNUPlot Basic Test","X","Y","My Data","My Theory","Unix"); */
+    gplot_errorstheoryline(x,y,e,ytheory,N_max,"GNUPlot Basic Test","X","Y","My Data","My Theory","Unix");
     
     return (EXIT_SUCCESS);
     

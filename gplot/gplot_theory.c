@@ -2,18 +2,18 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ *
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void gplot_errors(double x[], double y[], double e[], int Npoints, 
-        char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_theory(double x[], double y[], double ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
-    printf ("In gplot_errors ...\n");
+    printf ("In gplot_theory ...\n");
     
     FILE *gnuplot = fopen("gnuplotScript", "w");
     FILE *gnudata = fopen("gnuplotData", "w");
@@ -43,10 +43,12 @@ void gplot_errors(double x[], double y[], double e[], int Npoints,
     strcat(this_ylabel,ylabel);
     strcat(this_ylabel,"' font 'Arial,16'\n");
     
-    char this_legendlabel[100];
-    strcpy(this_legendlabel,"plot 'gnuplotData' using 1:2:3 title '");
+    char this_legendlabel[150];
+    strcpy(this_legendlabel,"plot 'gnuplotData' using 1:2 title '");
     strcat(this_legendlabel,legendlabel);
-    strcat(this_legendlabel,"' with errorbars linestyle 1\n");
+    strcat(this_legendlabel,"' with points linestyle 1, 'gnuplotData' using 1:3 title '");
+    strcat(this_legendlabel,theorylabel);
+    strcat(this_legendlabel,"' with lines linestyle 2\n");
     
     /* Set title, and axis labels */
     fprintf(gnuplot, "set key font 'Arial,16'\n");
@@ -59,11 +61,12 @@ void gplot_errors(double x[], double y[], double e[], int Npoints,
     /* plot command - plot the data as points, and the prediction as a solid line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
+    fprintf(gnuplot, "set style line 2 linecolor rgb '#8b0000' linewidth 2\n");
     fprintf(gnuplot, this_legendlabel);
     
     /* write the data to be plotted to a file*/
     for (int i = 0; i < Npoints; i++) {
-        fprintf(gnudata, "%g %g %g\n", x[i], y[i], e[i]);
+        fprintf(gnudata, "%g %g %g\n", x[i], y[i], ytheory[i]);
     }
     
     /* cleanup */
@@ -72,12 +75,11 @@ void gplot_errors(double x[], double y[], double e[], int Npoints,
     
 }
 
-void gplot_errorsline(double x[], double y[], double e[], int Npoints, 
-        char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_theoryline(double x[], double y[], double ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
-    printf ("In gplot_errorsline ...\n");
+    printf ("In gplot_theoryline ...\n");
     
     FILE *gnuplot = fopen("gnuplotScript", "w");
     FILE *gnudata = fopen("gnuplotData", "w");
@@ -107,10 +109,12 @@ void gplot_errorsline(double x[], double y[], double e[], int Npoints,
     strcat(this_ylabel,ylabel);
     strcat(this_ylabel,"' font 'Arial,16'\n");
     
-    char this_legendlabel[100];
-    strcpy(this_legendlabel,"plot 'gnuplotData' using 1:2:3 title '");
+    char this_legendlabel[150];
+    strcpy(this_legendlabel,"plot 'gnuplotData' using 1:2 title '");
     strcat(this_legendlabel,legendlabel);
-    strcat(this_legendlabel,"' with errorlines linestyle 1\n");
+    strcat(this_legendlabel,"' with linespoints linestyle 1, 'gnuplotData' using 1:3 title '");
+    strcat(this_legendlabel,theorylabel);
+    strcat(this_legendlabel,"' with lines linestyle 2\n");
     
     /* Set title, and axis labels */
     fprintf(gnuplot, "set key font 'Arial,16'\n");
@@ -123,11 +127,12 @@ void gplot_errorsline(double x[], double y[], double e[], int Npoints,
     /* plot command - plot the data as points, and the prediction as a solid line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
+    fprintf(gnuplot, "set style line 2 linecolor rgb '#8b0000' linewidth 2\n");
     fprintf(gnuplot, this_legendlabel);
     
     /* write the data to be plotted to a file*/
     for (int i = 0; i < Npoints; i++) {
-        fprintf(gnudata, "%g %g %g\n", x[i], y[i], e[i]);
+        fprintf(gnudata, "%g %g %g\n", x[i], y[i], ytheory[i]);
     }
     
     /* cleanup */
@@ -135,3 +140,4 @@ void gplot_errorsline(double x[], double y[], double e[], int Npoints,
     fflush(gnudata);
     
 }
+
