@@ -1,6 +1,8 @@
 /*
  * Program to calculate e, and then plot the results as a function of the
- * number of iterations
+ * number of iterations.
+ * 
+ * This serves as a good example of how to create a gnuplot plotting script and data file
  */
 
 /* 
