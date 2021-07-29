@@ -48,7 +48,8 @@ void gplot_basic(double x[], double y[], int Npoints, char title[], char xlabel[
     strcat(this_legendlabel,"' with points linestyle 1\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);
@@ -111,7 +112,8 @@ void gplot_basicline(double x[], double y[], int Npoints, char title[], char xla
     strcat(this_legendlabel,"' with linespoints linestyle 1\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);

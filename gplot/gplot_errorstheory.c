@@ -52,7 +52,8 @@ void gplot_errorstheory(double x[], double y[], double e[], double ytheory[],
     strcat(this_legendlabel,"' with lines linestyle 2\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);
@@ -118,7 +119,8 @@ void gplot_errorstheoryline(double x[], double y[], double e[], double ytheory[]
     strcat(this_legendlabel,"' with lines linestyle 2\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);

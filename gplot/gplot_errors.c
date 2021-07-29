@@ -49,7 +49,8 @@ void gplot_errors(double x[], double y[], double e[], int Npoints,
     strcat(this_legendlabel,"' with errorbars linestyle 1\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);
@@ -113,7 +114,8 @@ void gplot_errorsline(double x[], double y[], double e[], int Npoints,
     strcat(this_legendlabel,"' with errorlines linestyle 1\n");
     
     /* Set title, and axis labels */
-    fprintf(gnuplot, "set key font 'Arial,16'\n");
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
     fprintf(gnuplot, "set tics font 'Arial,12'\n");
     fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, this_title);
