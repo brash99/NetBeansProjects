@@ -14,9 +14,6 @@
 #include <gplot.h>
 #include <math.h>
 
-/*
- * 
- */
 int main(int argc, char** argv) {
     
     /* define the maximum number of iteration values as a constant integer */

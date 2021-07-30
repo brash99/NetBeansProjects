@@ -5,11 +5,13 @@
  *
  */
 
+#define REALTYPE double
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void gplot_theory(double x[], double y[], double ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
+void gplot_theory(REALTYPE x[], REALTYPE y[], REALTYPE ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
@@ -76,7 +78,7 @@ void gplot_theory(double x[], double y[], double ytheory[], int Npoints, char ti
     
 }
 
-void gplot_theoryline(double x[], double y[], double ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
+void gplot_theoryline(REALTYPE x[], REALTYPE y[], REALTYPE ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     

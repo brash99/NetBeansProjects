@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 
+#define REALTYPE double
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void gplot_errorstheory(double x[], double y[], double e[], double ytheory[], 
+void gplot_errorstheory(REALTYPE x[], REALTYPE y[], REALTYPE e[], REALTYPE ytheory[], 
         int Npoints, char title[], char xlabel[], char ylabel[], 
         char legendlabel[], char theorylabel[], char system_type[]) {
     
@@ -77,7 +79,7 @@ void gplot_errorstheory(double x[], double y[], double e[], double ytheory[],
     
 }
 
-void gplot_errorstheoryline(double x[], double y[], double e[], double ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
+void gplot_errorstheoryline(REALTYPE x[], REALTYPE y[], REALTYPE e[], REALTYPE ytheory[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char theorylabel[], char system_type[]) {
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
