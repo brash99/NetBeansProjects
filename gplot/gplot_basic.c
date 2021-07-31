@@ -141,7 +141,7 @@ void gplot_basic_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], c
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
-    printf ("In gplot_basic ...\n");
+    printf ("In gplot_basic_loglog ...\n");
     
     FILE *gnuplot = fopen("gnuplotScript", "w");
     FILE *gnudata = fopen("gnuplotData", "w");
@@ -206,7 +206,7 @@ void gplot_basicline_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[
     
     /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
     
-    printf ("In gplot_basicline ...\n");
+    printf ("In gplot_basicline_loglog ...\n");
     
     FILE *gnuplot = fopen("gnuplotScript", "w");
     FILE *gnudata = fopen("gnuplotData", "w");
