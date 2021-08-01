@@ -9,9 +9,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-void gplot_basic(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_basic(REALTYPE x[], REALTYPE y[], int Npoints, char title[], 
+        char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
     
-    /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
+    /* now that we have the data, create/open a GNUPlot script and data file 
+     * for later plotting */
     
     printf ("In gplot_basic ...\n");
     
@@ -57,7 +59,8 @@ void gplot_basic(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xla
     fprintf(gnuplot, this_xlabel);
     fprintf(gnuplot, this_ylabel);
     
-    /* plot command - plot the data as points, and the prediction as a solid line (green)*/
+    /* plot command - plot the data as points, and the prediction as a 
+     * solid line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
     fprintf(gnuplot, this_legendlabel);
@@ -73,9 +76,11 @@ void gplot_basic(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xla
     
 }
 
-void gplot_basicline(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_basicline(REALTYPE x[], REALTYPE y[], int Npoints, char title[], 
+        char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
     
-    /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
+    /* now that we have the data, create/open a GNUPlot script and data file 
+     * for later plotting */
     
     printf ("In gplot_basicline ...\n");
     
@@ -121,7 +126,8 @@ void gplot_basicline(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char
     fprintf(gnuplot, this_xlabel);
     fprintf(gnuplot, this_ylabel);
     
-    /* plot command - plot the data as points, and the prediction as a solid line (green)*/
+    /* plot command - plot the data as points, and the prediction as a 
+     * solid line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
     fprintf(gnuplot, this_legendlabel);
@@ -137,9 +143,11 @@ void gplot_basicline(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char
     
 }
 
-void gplot_basic_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_basic_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], 
+        char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
     
-    /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
+    /* now that we have the data, create/open a GNUPlot script and data file 
+     * for later plotting */
     
     printf ("In gplot_basic_loglog ...\n");
     
@@ -186,7 +194,8 @@ void gplot_basic_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], c
     fprintf(gnuplot, this_xlabel);
     fprintf(gnuplot, this_ylabel);
     
-    /* plot command - plot the data as points, and the prediction as a solid line (green)*/
+    /* plot command - plot the data as points, and the prediction as a solid 
+     * line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
     fprintf(gnuplot, this_legendlabel);
@@ -202,9 +211,12 @@ void gplot_basic_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], c
     
 }
 
-void gplot_basicline_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[], char xlabel[], char ylabel[], char legendlabel[], char system_type[]) {
+void gplot_basicline_loglog(REALTYPE x[], REALTYPE y[], int Npoints, 
+        char title[], char xlabel[], char ylabel[], char legendlabel[], 
+        char system_type[]) {
     
-    /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
+    /* now that we have the data, create/open a GNUPlot script and data file 
+     * for later plotting */
     
     printf ("In gplot_basicline_loglog ...\n");
     
@@ -251,7 +263,8 @@ void gplot_basicline_loglog(REALTYPE x[], REALTYPE y[], int Npoints, char title[
     fprintf(gnuplot, this_xlabel);
     fprintf(gnuplot, this_ylabel);
     
-    /* plot command - plot the data as points, and the prediction as a solid line (green)*/
+    /* plot command - plot the data as points, and the prediction as a solid 
+     * line (green)*/
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
     fprintf(gnuplot, this_legendlabel);
