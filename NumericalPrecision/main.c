@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
      * and its derivative */
     REALTYPE xval = 1.0;
     
-    printf("At x = %g, Value of the function f(x) = %g \ "
+    printf("At x = %g, Value of the function f(x) = %g "
             "... exact value of the derivative f'(x) = %g\n",xval,
             function(xval),deriv(xval));
     
