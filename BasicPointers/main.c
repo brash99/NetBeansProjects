@@ -53,15 +53,35 @@ char getChar(char* someString, int n) {
     
     /* A function to return the n-th character of a string
      * Notice that we pass the string from the main program, but
-     * the argument is a pointer to that string, which is of course
+     * the argument of the function is a pointer to that string, which is of course
      * a pointer to the first character in the character array.
      */
     
-    int size = sizeof(char);
     char* pa = &someString[n-1];
     char thisChar = *pa;
     
     return thisChar;
+    
+}
+
+char getChar2(char someString[], int n) {
+    
+    /* A function to return the n-th character of a string
+     * Notice that we pass the string from the main program, and the
+     * argument here is a char array, which makes sense.  So, in the local
+     * function an entire copy of the char array is created locally.
+     */
+    
+    char thisChar = someString[n-1];
+    
+    return thisChar;
+    
+}
+
+void changeChar(char* someString, int n, char someChar) {
+    
+    char* pa = &someString[n-1];
+    *pa = someChar;
     
 }
 
@@ -146,13 +166,27 @@ int main(int argc, char** argv) {
     /* Next example: Let's pass a string to a function! */
     
     int n = 8;
+    
+    /* Method 1: a function using pointers */
     char myChar = getChar(a,n); /* this function should return the n-th character of the string
                                  * Note that when we pass the STRING itself, we are passing an
                                  * array ... in reality, we are passing a pointer to the first
                                  * element in that array!!! */
     
+    /* Method 2: a function which makes a local copy */
+    char myChar2 = getChar2(a,n); /* this function should return the n-th character of the string
+                                 * Note that when we pass the STRING itself, we are passing an
+                                 * array ... in reality, we are passing a pointer to the first
+                                 * element in that array!!! */
+    
     printf("The %d-th character of '%s' is %c.\n",n,a,myChar);
-   
+    printf("The %d-th character of '%s' is %c.\n",n,a,myChar2);
+    
+    /* Next example:  Let's CHANGE the string in some way! */
+    printf("The original string is '%s'.\n",a);
+    changeChar(a,n,'X'); /* This function should change the n-th character of the string to the specified character */
+    printf("The new string is      '%s'.\n",a);
+            
     return (EXIT_SUCCESS);
 
 }
