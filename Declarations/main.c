@@ -95,7 +95,20 @@ int main(int argc, char** argv) {
     printf ("\n");
     printf ("This department is called %s.\n",mystring);
     
-    double mydouble = 134.056;
+    double mydouble = 124.456;
+    printf ("The number is %g\n",mydouble);
+    printf ("The number is %7.3f\n",mydouble);
+    printf ("The number is %7.3e\n",mydouble);
+    printf ("The number is %7.5e\n",mydouble);
+    printf ("The number is %7.1f\n",mydouble);
+    printf ("The number is %-7.1f\n",mydouble);
+    printf ("The number is %7.6f\n",mydouble);
+    printf ("The number is %9.6f\n",mydouble);
+    printf ("The number is %15.6f\n",mydouble);
+    printf ("The number is %-15.6f\n",mydouble);
+    
+    mydouble = 1.23456E-02;
+    printf ("------------\n");
     printf ("The number is %g\n",mydouble);
     printf ("The number is %7.3f\n",mydouble);
     printf ("The number is %7.3e\n",mydouble);
