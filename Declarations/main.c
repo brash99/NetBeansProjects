@@ -23,16 +23,16 @@
  We will define it here, before any of our functions, so that
  they all will know what it means*/    
 struct cartesianVector {
-    double xc;
-    double yc;
-    double zc;
+    double x;
+    double y;
+    double z;
 };
 
 /* Define a function to calculate the length of a vector in 3D 
  Notice that it uses the previously define struct, as well as
  some functions from the math library.  */
 double length(struct cartesianVector r) {
-    double len = sqrt(pow(r.xc,2) + pow(r.yc,2) + pow(r.zc,2));
+    double len = sqrt(pow(r.x,2) + pow(r.y,2) + pow(r.z,2));
     return len;
 }
 
@@ -54,8 +54,8 @@ int main(int argc, char** argv) {
     
     /* Define a Cartesian vector "object", and initialize its components. */   
     struct cartesianVector v;
-    v.xc = 1.0; v.yc = 2.0; v.zc = 3.0;
-    printf ("X = %g, Y = %g, Z = %g \n",v.xc,v.yc,v.zc);
+    v.x = 1.0; v.y = 2.0; v.z = 3.0;
+    printf ("X = %g, Y = %g, Z = %g \n",v.x,v.y,v.z);
     
     /* Calculate the length of our vector, using the length() function defined
      above! */
