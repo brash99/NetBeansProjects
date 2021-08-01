@@ -46,10 +46,10 @@ int main(int argc, char** argv) {
     /* Define the x-value where we will evaluate the function 
      * and its derivative */
     REALTYPE xval = 1.0;
+    REALTYPE fval = function(xval);
+    REALTYPE fprimeval = deriv(xval);
     
-    printf("At x = %g, Value of the function f(x) = %g "
-            "... exact value of the derivative f'(x) = %g\n",xval,
-            function(xval),deriv(xval));
+    printf("At x = %g, Value of the function f(x) = %g ... exact value of the derivative f'(x) = %g\n",xval,fval,fprimeval);
     
     for (int i=0; i<N_max; i++) {
         int power = -20+i;
