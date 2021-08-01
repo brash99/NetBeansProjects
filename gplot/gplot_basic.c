@@ -34,7 +34,7 @@ void gplot_basic(REALTYPE x[], REALTYPE y[], int Npoints, char title[],
     strcpy(this_title,"set title '");
     strcat(this_title,title);
     strcat(this_title,"' font 'Arial,20'\n");
-    
+ 
     char this_xlabel[80];
     strcpy(this_xlabel,"set xlabel '");
     strcat(this_xlabel,xlabel);
