@@ -85,10 +85,19 @@ void changeChar(char* someString, int n, char someChar) {
     
 }
 
+void swapNumber(double* x, int n1, int n2) {
+    
+    double temp = x[n1-1];
+    x[n1-1] = x[n2-1];
+    x[n2-1] = temp;
+    
+}
+
 
 int main(int argc, char** argv) {
     
-    /* 
+    /* Example 1:  Basic pointer concepts
+     * 
      * The ability to access and manipulate the actual memory locations in C
      * is what makes it (a) fast, and (b) powerful.  The way that we do that is
      * by using pointers - a variable which "points" to the actual location in 
@@ -132,7 +141,7 @@ int main(int argc, char** argv) {
     
     printf("x = %d, y = %d\n",x,y);
     
-    /* Another simple example to reinforce the concepts */
+    /* Example 2: Another simple example to reinforce the concepts */
     
     int i = 7; /* define an integer variable at set it equal to 7 */
     int* p = &i; /* define an integer pointer variable, and set it equal to
@@ -145,11 +154,14 @@ int main(int argc, char** argv) {
     
     
     /* 
+     * Example 2:  Character Arrays a.k.a. strings in C
+     * 
      * And now, some examples with arrays!!!! 
      * 
      * The usage of pointers with arrays is where C really shines :)
      * 
      * Remember - "strings" in C are just arrays of characters ...
+     * 
      */
     
     char a[] = "The quick brown fox";
@@ -163,7 +175,7 @@ int main(int argc, char** argv) {
     printf ("%p %p\n",pa,pb); /* Pointers to the first character ... %p makes sense */
     printf ("%c %c\n",*pa,*pb); /* The value stored at the first character location ... %c makes sense  */
     
-    /* Next example: Let's pass a string to a function! */
+    /* Example 4: Let's pass a string to a function! */
     
     int n = 8;
     
@@ -182,10 +194,47 @@ int main(int argc, char** argv) {
     printf("The %d-th character of '%s' is %c.\n",n,a,myChar);
     printf("The %d-th character of '%s' is %c.\n",n,a,myChar2);
     
-    /* Next example:  Let's CHANGE the string in some way! */
+    /* Example 5:  Let's CHANGE the string in some way within a function
+     * 
+     * This REQUIRES that we use pointers, because we actually want to change
+     * the value of a location in memory, and not just a copy that is passed
+     * to the function!
+     * 
+     */
     printf("The original string is '%s'.\n",a);
     changeChar(a,n,'X'); /* This function should change the n-th character of the string to the specified character */
     printf("The new string is      '%s'.\n",a);
+    
+    /* Example 6:  Now let's work with an array of doubles */
+    
+    double xd[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
+    
+    int length = sizeof(xd)/sizeof(double); /* get the number of elements */
+    
+    printf("%d\n",length);
+    
+    /* print out the original array */
+    for (int i = 0; i<length;i++) {
+        printf("%g ",xd[i]);
+    }
+    printf("\n");
+    
+    /* 
+     * call the function to swap elements 3 and 4 ... note that 
+     * we pass the array as the first argument ... but the first
+     * argument of the function is a POINTER to this array, so within
+     * the function we can change the actual array in memory 
+     */
+    
+    swapNumber(xd,3,4);
+    
+    
+    /* print out the new array */
+    for (int i = 0; i<length;i++) {
+        printf("%g ",xd[i]);
+    }
+    printf("\n");
+    
             
     return (EXIT_SUCCESS);
 
