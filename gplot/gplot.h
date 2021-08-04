@@ -22,6 +22,7 @@ extern "C" {
 
 void gplot_basic(REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char []);
 void gplot_basicline(REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char []);
+
 void gplot_basic_loglog(REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char []);
 void gplot_basicline_loglog(REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char []);
 
@@ -30,6 +31,12 @@ void gplot_errorsline(REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char
 
 void gplot_theory(REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
 void gplot_theoryline(REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
+
+void gplot_twosets(REALTYPE [], REALTYPE [], int, REALTYPE[], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
+void gplot_twosetsline(REALTYPE [], REALTYPE [], int, REALTYPE[], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
+
+void gplot_twosets_loglog(REALTYPE [], REALTYPE [], int, REALTYPE[], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
+void gplot_twosetsline_loglog(REALTYPE [], REALTYPE [], int, REALTYPE[], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
 
 void gplot_errorstheory(REALTYPE [], REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
 void gplot_errorstheoryline(REALTYPE [], REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
