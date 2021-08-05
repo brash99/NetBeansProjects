@@ -90,13 +90,16 @@ int main(int argc, char** argv) {
     double expected = 2.0;
 
     double sum = big;
-    for (long i = 0; i < billion; ++i)
+    for (long i = 0; i < billion; ++i) {
         sum += small;
+    }
+    
     printf ("%g + %ld * %g = %17.16g difference = (%17.16g) \n",big,billion,small,sum,fabs(expected-sum));
  
     sum = 0;
-    for (long i = 0; i < billion; ++i)
+    for (long i = 0; i < billion; ++i) {
         sum += small;
+    }
     sum += big;
     
     printf ("%g * %ld  + %1g = %17.16g difference = (%17.16g) \n",big,billion,small,sum,fabs(expected-sum));
@@ -109,13 +112,16 @@ int main(int argc, char** argv) {
     float expectedf = 2.0;
 
     float sumf = bigf;
-    for (long i = 0; i < billion; ++i)
+    for (long i = 0; i < billion; ++i) {
         sumf += smallf;
+    }
+    
     printf ("%g + %ld * %g = %17.16g difference = (%17.16g) \n",bigf,billionf,smallf,sumf,fabs(expectedf-sumf));
  
     sumf = 0;
-    for (long i = 0; i < billion; ++i)
+    for (long i = 0; i < billion; ++i) {
         sumf += smallf;
+    }
     sumf += bigf;
     
     printf ("%g * %ld  + %1g = %17.16g difference = (%17.16g) \n",bigf,billionf,smallf,sumf,fabs(expectedf-sumf));
