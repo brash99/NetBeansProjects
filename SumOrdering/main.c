@@ -16,6 +16,9 @@
 #include <math.h>
 #include <gplot.h>
 
+#ifndef M_PI
+#define M_PI (3.14159265358979323846)
+#endif
 /*
  * 
  */
@@ -40,7 +43,10 @@ int main(int argc, char** argv) {
     
     for (int i = 0; i<N_max; i++) {
         printf("sum up i = %d\n",i);
-        for (int j = 1; j <= n[i]; j++) {
+        for (unsigned long long j = 1; j <= n[i]; j++) {
+            if (j%10000000 == 0) {
+                printf("%d %llu\n",i,j);
+            }
             sum_up[i]+= 1.0/pow(j,2);
             /* if (i == 0) {
                 printf("%-9d %17.16g %17.16g\n",n[i],sum_up[i],sum_exact-sum_up[i]);
@@ -50,8 +56,11 @@ int main(int argc, char** argv) {
     
     for (int i = 0; i<N_max; i++) {
         printf("sum down i = %d\n",i);
-        for (int j = n[i]; j >= 1; j--) {
+        for (unsigned long long j = n[i]; j >= 1; j--) {
             sum_down[i]+= 1.0/pow(j,2);
+            if (j%10000000 == 0) {
+                printf("%d %llu\n",i,j);
+            }
             /* if (i == 0) {
                 printf("%-9d %17.16g %17.16g\n",n[i],sum_down[i],sum_exact-sum_down[i]);
             } */
