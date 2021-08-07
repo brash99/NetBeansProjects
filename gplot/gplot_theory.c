@@ -435,3 +435,68 @@ void gplot_twosetsline_loglog(REALTYPE x1[], REALTYPE y1[], int Npoints1, REALTY
     
 }
 
+void gplot_hist_basic(REALTYPE x[], int Npoints, int binwidth, int binstart, char title[], char xlabel[], char legendlabel[], char system_type[]) {
+    
+    /* now that we have the data, create/open a GNUPlot script and data file for later plotting */
+    
+    printf ("In gplot_hist_basic ...\n");
+    
+    FILE *gnuplot = fopen("gnuplotHistScript", "w");
+    FILE *gnudata = fopen("gnuplotHistData", "w");
+    
+    /* terminal type */
+    if (strcmp(system_type,"Unix") == 0) {
+        fprintf(gnuplot, "set terminal x11\n");
+    } else {
+        if (strcmp(system_type,"Windows") == 0) {
+            fprintf(gnuplot, "set terminal qt\n");
+        }
+    }
+    
+    /* format title, xlabel, ylabel */
+    char this_title[80];
+    strcpy(this_title,"set title '");
+    strcat(this_title,title);
+    strcat(this_title,"' font 'Arial,20'\n");
+    
+    char this_xlabel[80];
+    strcpy(this_xlabel,"set xlabel '");
+    strcat(this_xlabel,xlabel);
+    strcat(this_xlabel,"' font 'Arial,16'\n");
+    
+    char this_legendlabel[150];
+    
+    strcpy(this_legendlabel,"plot 'gnuplotHistData' i 0 @hist ls 1 title '");
+    strcat(this_legendlabel,legendlabel);
+    strcat(this_legendlabel,"'\n");
+    
+    /* Set title, and axis labels */
+    fprintf(gnuplot, "binwidth = %d\n",binwidth);
+    fprintf(gnuplot, "binstart = %d\n",binstart);
+    fprintf(gnuplot, "set key outside\n");
+    fprintf(gnuplot, "set key font 'Arial,10'\n");
+    fprintf(gnuplot, "set tics font 'Arial,12'\n");
+    fprintf(gnuplot, "set grid\n");
+    fprintf(gnuplot, "set boxwidth 0.90*binwidth\n");
+    fprintf(gnuplot, "set style fill solid 0.5\n");
+    fprintf(gnuplot, "hist = 'u (binwidth*(floor(($1-binstart)/binwidth)+0.5)+binstart):(1.0) smooth freq w boxes'\n");
+    fprintf(gnuplot, this_title);
+    fprintf(gnuplot, this_xlabel);
+    
+    /* plot command - plot the data as points, and the prediction as a solid line (green)*/
+    
+    fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
+    fprintf(gnuplot, "set style line 2 linecolor rgb '#8b0000' linewidth 2\n");
+    fprintf(gnuplot, this_legendlabel);
+    
+    /* write the data to be plotted to a file*/
+    for (int i = 0; i < Npoints; i++) {
+        fprintf(gnudata, "%g\n", x[i]);
+    }
+    
+    /* cleanup */
+    fflush(gnuplot);
+    fflush(gnudata);
+    
+}
+

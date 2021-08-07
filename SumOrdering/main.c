@@ -48,9 +48,6 @@ int main(int argc, char** argv) {
                 printf("%d %llu\n",i,j);
             }
             sum_up[i]+= 1.0/pow(j,2);
-            /* if (i == 0) {
-                printf("%-9d %17.16g %17.16g\n",n[i],sum_up[i],sum_exact-sum_up[i]);
-            } */
         }
     }
     
@@ -61,9 +58,6 @@ int main(int argc, char** argv) {
             if (j%10000000 == 0) {
                 printf("%d %llu\n",i,j);
             }
-            /* if (i == 0) {
-                printf("%-9d %17.16g %17.16g\n",n[i],sum_down[i],sum_exact-sum_down[i]);
-            } */
         }
     }
     

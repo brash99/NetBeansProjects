@@ -40,7 +40,9 @@ void gplot_twosetsline_loglog(REALTYPE [], REALTYPE [], int, REALTYPE[], REALTYP
 
 void gplot_errorstheory(REALTYPE [], REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
 void gplot_errorstheoryline(REALTYPE [], REALTYPE [], REALTYPE [], REALTYPE [], int , char [], char [], char [], char [], char [], char []);
-        
+
+void gplot_hist_basic(REALTYPE [], int, int, int , char [], char [], char [], char []);
+
 #ifdef __cplusplus
 }
 #endif
