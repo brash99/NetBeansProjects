@@ -50,11 +50,27 @@ int main(int argc, char** argv) {
     /* Start by setting the "seed" of the random number generator, using
      the current time ... that way we will get a different sequence of 
      random numbers every time we run the program! */
-    srand(time(0));
+    srand(1);
+    /* srand(time(0)); */
+    
+    long int a = 1103515245;
+    long int c = 12345;
+    long int m = pow(2,31);
+    
+    long int mask = 0x7fff0000;
+    
+    
+    printf("a = %ld c = %ld m = %ld\n\n",a,c,m);
+    
+    long int next = (a + c) % m;
+    printf("next = %ld\n\n",next);
+    
+    long int actual_next = next && mask;
+    printf("actual next = %ld\n\n",actual_next);
     
     /* generate some random numbers */
     
-    for (int i=0; i<20;i++) {
+    for (int i=0; i<10;i++) {
         int rnum = rand();
         double rnum_double = 1.0*rnum/RAND_MAX;
         printf("%d %g\n",rnum,rnum_double);
