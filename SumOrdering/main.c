@@ -24,8 +24,8 @@
  */
 int main(int argc, char** argv) {
     
-    const int N_max = 9;
-    int nexp[] = {2,3,4,5,6,7,8,9,10};
+    const int N_max = 8;
+    int nexp[] = {2,3,4,5,6,7,8,9};
     long n[N_max];
     double nd[N_max];
     double sum_up[N_max];
