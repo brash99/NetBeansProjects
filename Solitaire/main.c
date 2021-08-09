@@ -16,6 +16,7 @@
 #include <math.h>
 #include <time.h>
 #include <gplot.h>
+#include <sodium.h>
 
 /*
  * Simulate online solitaire
@@ -84,6 +85,30 @@ int main(int argc, char** argv) {
    
     printf("\nRange of random integers is between 0 and %d\n\n",RAND_MAX);
     
+    /* As mentioned above rand() is not appropriate for any application where
+     one wants either crypto level security, or honestly in any application
+     where one is going to be generating 2^32 random numbers or more ... 
+     the Lin. Cong. algorithm starts to repeat after that many random numbers
+     on basically every archtecture.  So, my idea is just never use it! 
+     
+     A generally accepted, fast, and PORTABLE solution is to use libsodium 
+     for crypto-level secure random number generation.  
+     
+     The only downside to libsodium is that you have to install it yourself
+     on your system.  If you have not done that, go do that! */
+    
+    char myString[32];
+    uint32_t rnum_Sodium;
+    
+    randombytes_buf(myString, 32);
+    /* myString will be an array of 32 random bytes, not null-terminated */
+    
+    for (int i=0; i<10; i++) {
+        rnum_Sodium = randombytes_uniform(RAND_MAX);
+        double rnum_double_Sodium = 1.0*rnum_Sodium/RAND_MAX;
+        printf("%u         %g\n",rnum_Sodium,rnum_double_Sodium);
+    }
+    
     /* So, we can generate a UNIFORM distribution of random numbers between
      0 and 1 using 1.0*rand()/RAND_MAX */
     
@@ -97,7 +122,7 @@ int main(int argc, char** argv) {
     
     int counter=0;
     while (p_current<0.60) {
-        double rnum_double = 1.0*rand()/RAND_MAX;
+        double rnum_double = 1.0*randombytes_uniform(RAND_MAX)/RAND_MAX;
         if (rnum_double < p_f) {
             N_won_current++;
         }
@@ -127,7 +152,7 @@ int main(int argc, char** argv) {
         p_current = 1.0*N_won_current/N_current;
     
         while (p_current<0.60) {
-            double rnum_double = 1.0*rand()/RAND_MAX;
+            double rnum_double = 1.0*randombytes_uniform(RAND_MAX)/RAND_MAX;
             if (rnum_double < p_f) {
                 N_won_current++;
             }
