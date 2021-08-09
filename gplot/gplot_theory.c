@@ -487,6 +487,7 @@ void gplot_hist_basic(REALTYPE x[], int Npoints, int binwidth, int binstart, cha
     
     fprintf(gnuplot, "set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5\n");
     fprintf(gnuplot, "set style line 2 linecolor rgb '#8b0000' linewidth 2\n");
+    fprintf(gnuplot, "set macro\n");
     fprintf(gnuplot, this_legendlabel);
     
     /* write the data to be plotted to a file*/
