@@ -47,36 +47,42 @@ int main(int argc, char** argv) {
     
     /* So now, we have the base numbers for the simulation */
     
-    /* Start by setting the "seed" of the random number generator, using
-     the current time ... that way we will get a different sequence of 
-     random numbers every time we run the program! */
-    srand(1);
+    /* The first random number generator we will look at is rand(), which
+     * is part of almost all C/C++ implementations.  It is not a great PRNG!
+     * 
+     * It uses the Linear Congruential Algorithm
+     * 
+     * We start by setting the "seed" of the random number generator, using
+     * the current time ... that way we will get a different sequence of 
+     * random numbers every time we run the program! */
+    
+    srand(1); /* for testing purposes */
     /* srand(time(0)); */
     
-    long int a = 1103515245;
-    long int c = 12345;
+    long int seed = 1;
+    long int a = 16807;
+    long int c = 0;
+    /* long int a = 1103515245; */
+    /* long int c = 12345; */
     long int m = pow(2,31);
     
-    long int mask = 0x7fff0000;
+    long int mask = 0x7fffffff;
     
     
     printf("a = %ld c = %ld m = %ld\n\n",a,c,m);
     
-    long int next = (a + c) % m;
-    printf("next = %ld\n\n",next);
-    
-    long int actual_next = next && mask;
-    printf("actual next = %ld\n\n",actual_next);
-    
     /* generate some random numbers */
     
-    for (int i=0; i<10;i++) {
+    for (int i =0; i<10; i++) {
+        seed = (a*seed + c) % m;
+        /* seed = seed & mask; */
+  
         int rnum = rand();
         double rnum_double = 1.0*rnum/RAND_MAX;
-        printf("%d %g\n",rnum,rnum_double);
+        printf("%ld %d         %g\n",seed,rnum,rnum_double);
     }
    
-    printf("Range of random integers is between 0 and %d\n",RAND_MAX);
+    printf("\nRange of random integers is between 0 and %d\n\n",RAND_MAX);
     
     /* So, we can generate a UNIFORM distribution of random numbers between
      0 and 1 using 1.0*rand()/RAND_MAX */
