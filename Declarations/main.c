@@ -17,11 +17,13 @@
 /* Let's also include math.h, which is a header file which defines:
  a) mathematical constants, using #define statements
  b) function prototypes, such as sqrt, sin, cos, etc. */
+
 #include <math.h>
 
 /* C also allows composite data types ... extremely useful! 
  We will define it here, before any of our functions, so that
- they all will know what it means*/    
+ they all will know what it means*/  
+
 struct cartesianVector {
     double x;
     double y;
@@ -31,6 +33,7 @@ struct cartesianVector {
 /* Define a function to calculate the length of a vector in 3D 
  Notice that it uses the previously define struct, as well as
  some functions from the math library.  */
+
 double length(struct cartesianVector r) {
     double len = sqrt(pow(r.x,2) + pow(r.y,2) + pow(r.z,2));
     return len;
@@ -40,6 +43,7 @@ double length(struct cartesianVector r) {
  * Main function ... the use of (int argc, char** argv) allows us
  * to pass arguments from the commmand line. More on this later!
  */
+
 int main(int argc, char** argv) {
     
     /* C is strongly typed - all variables must be declared, by type */
