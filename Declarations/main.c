@@ -49,12 +49,65 @@ int main(int argc, char** argv) {
     /* C is strongly typed - all variables must be declared, by type */
     double x;
     double y;
+    int i,j;
    
     /* In C, variables are NOT initialized ... need to be careful!!! */
     double z = 1.0;
     double t = 2.0, w = 3.0;
     double a, b;
     a=b=0.0;
+    
+    /* A MAJOR bug source in C can occur when performing calculations with
+     variables of mixed type ... be careful!!!!!!!! */
+    
+    i = 5;
+    j = 10;
+    double ratio = i/j;
+    
+    printf("Ratio of %d to %d is %g\n",i,j,ratio);
+    printf("Yikes!\n\n");
+    
+    /* The solution here is to temporarily "type-cast" (haha!) a variable 
+     * from one type to another within an expression ... we usually just say
+     * that we "cast" the variable
+     * 
+     * Note that only one of the integers needs to be cast to a double to make
+     * the entire right hand side be of type double */
+    
+    ratio = i/(double)j;
+    
+    printf("Ratio of %d to %d is %g\n",i,j,ratio);
+    printf("Phew!\n\n");
+    
+    
+    int n1, n2;
+    n1 = 73;
+    n2 = 56;
+     
+    printf("\nNumbers Before Exchange");
+    printf("\n----------------------------\n");
+    printf("n1 = %d and n2 = %d\n", n1, n2);
+
+    /* Swap Variables Using Bitwise Operator */
+
+    n1 = n1 ^ n2;
+    n2 = n1 ^ n2;
+    n1 = n1 ^ n2;
+    
+    /* Why does this work?
+     * 73 = 101001 in binary
+     * 56 = 111000 in binary
+     * n1 = n1 ^ n2 = (101001)xor(111000) = 010001
+     * n2 = n1 ^ n2 = (010001)xor(111000) = 101001 = 73 in base 10
+     * n1 = n1 ^ n2 = (010001)xor(101001) = 111000 = 56 in base 10
+     * 
+     * BUT!!!!!  Only works for integer representations
+     * 
+     */
+     
+    printf("\nNumbers After Exchange");
+    printf("\n----------------------------\n");
+    printf("n1 = %d and n2 = %d\n\n", n1, n2);
     
     /* Define a Cartesian vector "object", and initialize its components. */   
     struct cartesianVector v;
