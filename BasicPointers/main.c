@@ -24,8 +24,6 @@ char getChar2(char[], int);
 void changeChar(char*, int, char);
 void swapNumber(double*, int, int);
 
-
-
 int main(int argc, char** argv) {
     
     /* Example 1:  Basic pointer concepts
