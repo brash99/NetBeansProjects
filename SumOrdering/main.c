@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <gplot.h>
+#include <time.h>
 
 #ifndef M_PI
 #define M_PI (3.14159265358979323846)
@@ -23,6 +24,9 @@
  * 
  */
 int main(int argc, char** argv) {
+    
+    clock_t t;
+    t = clock();
     
     const int N_max = 8;
     int nexp[] = {2,3,4,5,6,7,8,9};
@@ -71,6 +75,11 @@ int main(int argc, char** argv) {
         diff_down[i] = sum_exact-sum_down[i];
         printf("%-11ld %17.16g %17.16g\n",n[i],sum_down[i],sum_exact-sum_down[i]);
     }
+    
+    t = clock() - t;
+    double time_taken = ((double)t)/CLOCKS_PER_SEC;
+    printf("The program took %f seconds to execute\n", time_taken);
+    
     
     gplot_twosetsline_loglog(nd,diff_up,N_max,nd,diff_down,N_max,
             "Summation Ordering Example","N","Difference From Exact Value",
