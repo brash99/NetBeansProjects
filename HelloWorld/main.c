@@ -10,8 +10,9 @@
 #include <stdlib.h>
 
 /*
- * 
+ * The simplest program, which prints out "Hello World!!!" 
  */
+
 int main(int argc, char** argv) {
     
     printf("Hello World!!!\n");
