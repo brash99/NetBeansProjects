@@ -6,7 +6,7 @@ set tics font 'Arial,12'
 set grid
 set title 'Summation Ordering Example' font 'Arial,20'
 set xlabel 'N' font 'Arial,16'
-set ylabel 'Difference From Exact Value' font 'Arial,16'
+set ylabel 'Difference From Exact Value / CPU Time Taken (s)' font 'Arial,16'
 set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5
 set style line 2 linecolor rgb '#8b0000' linetype 1 linewidth 2 pointtype 8 pointsize 1.5
-plot 'gnuplotData1' using 1:2 title 'Sum Up' with linespoints linestyle 1, 'gnuplotData2' using 1:2 title 'Sum Down' with linespoints linestyle 2
+plot 'gnuplotData1' using 1:2 title 'Sum Up' with linespoints linestyle 1, 'gnuplotData2' using 1:2 title 'CPU Time' with linespoints linestyle 2

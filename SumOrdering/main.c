@@ -37,6 +37,9 @@ int main(int argc, char** argv) {
     double diff_up[N_max];
     double diff_down[N_max];
     
+    clock_t start,end;
+    double cpu_time_used[N_max];
+    
     double sum_exact = pow(M_PI,2)/6.0;
     
     for (int i = 0; i<N_max; i++) {
@@ -46,6 +49,7 @@ int main(int argc, char** argv) {
     }
     
     for (int i = 0; i<N_max; i++) {
+        start = clock();
         printf("sum up i = %d\n",i);
         for (unsigned long long j = 1; j <= n[i]; j++) {
             if (j%10000000 == 0) {
@@ -53,6 +57,9 @@ int main(int argc, char** argv) {
             }
             sum_up[i]+= 1.0/pow(j,2);
         }
+        end = clock();
+        cpu_time_used[i]=((double) (end-start))/CLOCKS_PER_SEC;
+        printf("CPU Time Taken = %g\n",cpu_time_used[i]);
     }
     
     for (int i = 0; i<N_max; i++) {
@@ -83,7 +90,10 @@ int main(int argc, char** argv) {
     
     gplot_twosetsline_loglog(nd,diff_up,N_max,nd,diff_down,N_max,
             "Summation Ordering Example","N","Difference From Exact Value",
-            "Sum Up","Sum Down","Unix");
+            "Sum Up","Sum Down","Unix"); */
+    gplot_twosetsline_loglog(nd,diff_up,N_max,nd,cpu_time_used,N_max,
+            "Summation Ordering Example","N","Difference From Exact Value / CPU Time Taken (s)",
+            "Sum Up","CPU Time","Unix");
     
     printf("Using double: \n");
     
