@@ -27,6 +27,7 @@ int main(int argc, char** argv) {
     
     clock_t t;
     t = clock();
+    printf("%ju",(uintmax_t)t/CLOCKS_PER_SEC);
     
     const int N_max = 8;
     int nexp[] = {2,3,4,5,6,7,8,9};
@@ -88,7 +89,7 @@ int main(int argc, char** argv) {
     printf("The program took %f seconds to execute\n", time_taken);
     
     
-    gplot_twosetsline_loglog(nd,diff_up,N_max,nd,diff_down,N_max,
+    /* gplot_twosetsline_loglog(nd,diff_up,N_max,nd,diff_down,N_max,
             "Summation Ordering Example","N","Difference From Exact Value",
             "Sum Up","Sum Down","Unix"); */
     gplot_twosetsline_loglog(nd,diff_up,N_max,nd,cpu_time_used,N_max,
