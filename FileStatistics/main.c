@@ -61,14 +61,14 @@ double mean(double a[], int n) {
 double stdev(double a[], int n) {
     
     double localmean = mean(a,n);
-    double sum2 = 0.0;
+    double sum = 0.0;
     
     for (int i=0;i<n;i++) {
-        sum2 = sum2 + pow((a[i]-localmean),2);
+        sum = sum + pow((a[i]-localmean),2);
     }
     
-    sum2 = sum2 / (n-1);
-    double stdev = sqrt(sum2);
+    sum = sum / (n-1);
+    double stdev = sqrt(sum);
     
     return stdev;
 }
