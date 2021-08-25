@@ -27,25 +27,34 @@ double stdev(double[], int); // protoype for standard deviation function
 
 int main(int argc, char** argv) {
     
-    const int N_Max = 10000;
+    const int N_Max = 1000;
     double inputData[N_Max];
-    FILE *inputFilePointer;
+    FILE *inputFilePointer;  // inputFilePointer is a POINTER to a file object on the hard drive
     
-    inputFilePointer = fopen("inputData.dat","r");
+    inputFilePointer = fopen("inputData.dat","r"); // fopen returns a POINTER to a file object on the hard drive
     
     int i = 0;
-    if (inputFilePointer != NULL) 
+    // if the file is opened successfully, then inputFilePointer will be a non-NULL pointer
+    if (inputFilePointer != NULL) { 
+        
         do
         {
             fscanf(inputFilePointer,"%lf",&inputData[i]);
             i++;
         } while (!feof(inputFilePointer));
+        
+        printf("Number of elements read from file = %d\n",(i-1));
+        const int N_Elem = i-1;
     
-    printf("Number of elements read from file = %d\n",(i-1));
-    const int N_Elem = i-1;
-    
-    printf("Mean value of elements = %g\n",mean(inputData,N_Elem));
-    printf("Std. Dev. of elements = %g\n",stdev(inputData,N_Elem));
+        printf("Mean value of elements = %g\n",mean(inputData,N_Elem));
+        printf("Std. Dev. of elements = %g\n",stdev(inputData,N_Elem));
+        
+    } else {
+        
+        printf("Problem opening file on disk!!!\n");
+        return (EXIT_FAILURE);
+        
+    }
     
     return (EXIT_SUCCESS);
 }
