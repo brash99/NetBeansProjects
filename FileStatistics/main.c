@@ -17,11 +17,13 @@
 #include <gplot.h>
 
 /*
+ * Program to calculate the mean and standard deviation of a set of
+ * values read from a file.
  * 
  */
 
-double mean(double [], int);
-double stdev(double[], int);
+double mean(double [], int); // prototype for mean function
+double stdev(double[], int); // protoype for standard deviation function
 
 int main(int argc, char** argv) {
     
