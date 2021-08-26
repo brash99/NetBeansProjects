@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     // then we are done.  If not, put them back, and pull two more.
     
     int timesum = 0;
-    int N_trials = 1000000;
+    int N_trials = 10000000;
     
     for (int i=0; i<N_trials;i++) {
         int timesteps = 0;
@@ -56,30 +56,40 @@ int main(int argc, char** argv) {
     // Algorithm 2:  Choose socks, keeping them out until a match is found. Then, return unused socks.
     
     timesum = 0;
+    int t1=0,t2=0,t3=0;
+    
     for (int i=0; i<N_trials;i++) {
         int timesteps = 0;
-        int s[4];
-    
-        s[0] = randombytes_uniform(3);
-        s[1] = randombytes_uniform(3);
-        timesteps = timesteps + 2;
-        if (s[0] == s[1]) {
-            //printf("Done ... Algorithm 2: timesteps = %g\n",1.0*timesteps); 
+        int s1,s2,s3;
+
+        s1 = randombytes_uniform(3);
+        s2 = randombytes_uniform(3);
+        timesteps = timesteps + 2; // Add two time units for pulling the two socks
+        if (s1 == s2) {
+            t1 = t1 + 1;
+            //printf("choice 1: %d %d %d\n",s1,s2,timesteps);
+            //continue; // that's it ... we are done.
         } else {
-            s[2] = randombytes_uniform(3);
-            timesteps = timesteps + 1;
-            if (s[2] == s[1] || s[2] == s[0]) {
-                timesteps = timesteps + 1;
-                //printf("Done ... Algorithm 2: timesteps = %g\n",1.0*timesteps);
+            s3 = randombytes_uniform(3);
+            timesteps = timesteps + 1; // Add a time unit for pulling the third sock
+            if (s3 == s1 || s3 == s2) {
+                t2 = t2 + 1;
+                timesteps = timesteps + 1; // Add a time unit for putting back the extra sock
+                //printf("choice 2: %d %d %d %d\n",s1,s2,s3,timesteps);
             } else {
-                timesteps = timesteps + 3;
-                //printf("Done ... Algorithm 2: timesteps = %g\n",1.0*timesteps);
+                t3 = t3 + 1;
+                timesteps = timesteps + 3; // Add a time unit for pulling the fourth sock, and two time units for putting back two socks.
+                //printf("choice 3: %d %d %d %d\n",s1,s2,s3,timesteps);
             }
         }
+        
+        //printf("choices = %d %d %d ... timesteps = %d\n",t1,t2,t3,timesteps);
         
         timesum = timesum + timesteps;
         
     }
+    
+    printf("Probabilities = %g %g %g\n",1.0*t1/N_trials,1.0*t2/N_trials,1.0*t3/N_trials);
     
     printf("Done ... Algorithm 2: Average timesteps = %g\n",1.0*timesum/N_trials);
 
