@@ -20,6 +20,24 @@
 
 #include <math.h>
 
+/* The way that C works is that when one uses the #include pre-processor
+ * directive, the specified header file actually gets 'included' in the C
+ * code prior to compilation.  
+ * 
+ * These header files just contain the *definitions* of the methods/functions:
+ * what kind of variable(s) the function returns, and the format of the
+ * arguments to the functions.  One can think of these header files as a
+ * sort of API for the functions in the library.
+ * 
+ * The actual *code* for the functions is contained
+ * in a separate (binary) library file that is linked with the object file(s)
+ * for user code at linking time.
+ * 
+ * It works the same way for user-defined packages/libraries.  One can include
+ * the header file for the user library, and then link to the (binary) user 
+ * library at linking time.
+ */
+
 /* C also allows composite data types ... extremely useful! 
  We will define it here, before any of our functions, so that
  they all will know what it means*/  

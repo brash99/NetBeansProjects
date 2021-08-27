@@ -59,12 +59,14 @@ int main(int argc, char** argv) {
     int t1=0,t2=0,t3=0;
     
     for (int i=0; i<N_trials;i++) {
+        
         int timesteps = 0;
         int s1,s2,s3;
 
         s1 = randombytes_uniform(3);
         s2 = randombytes_uniform(3);
         timesteps = timesteps + 2; // Add two time units for pulling the two socks
+        
         if (s1 == s2) {
             t1 = t1 + 1;
             //printf("choice 1: %d %d %d\n",s1,s2,timesteps);
