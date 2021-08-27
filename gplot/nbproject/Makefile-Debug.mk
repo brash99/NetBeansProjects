@@ -38,7 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/gplot_basic.o \
 	${OBJECTDIR}/gplot_errors.o \
 	${OBJECTDIR}/gplot_errorstheory.o \
-	${OBJECTDIR}/gplot_theory.o
+	${OBJECTDIR}/gplot_theory.o \
+	${OBJECTDIR}/mtwister.o
 
 
 # C Compiler Flags
@@ -86,6 +87,11 @@ ${OBJECTDIR}/gplot_theory.o: gplot_theory.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/gplot_theory.o gplot_theory.c
+
+${OBJECTDIR}/mtwister.o: mtwister.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mtwister.o mtwister.c
 
 # Subprojects
 .build-subprojects:

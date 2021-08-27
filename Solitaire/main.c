@@ -16,7 +16,7 @@
 #include <math.h>
 #include <time.h>
 #include <gplot.h>
-#include <sodium.h>
+#include <mtwister.h>
 
 /*
  * Simulate online solitaire
@@ -85,32 +85,32 @@ int main(int argc, char** argv) {
    
     printf("\nRange of random integers is between 0 and %d\n\n",RAND_MAX);
     
-    /* As mentioned above rand() is not appropriate for any application where
-     one wants either crypto level security, or honestly in any application
-     where one is going to be generating 2^32 random numbers or more ... 
-     the Lin. Cong. algorithm starts to repeat after that many random numbers
-     on basically every archtecture.  So, my idea is just never use it! 
+    /* 
+     * 
+     * As mentioned above rand() is not appropriate for any application where
+     * one wants either crypto level security, or honestly in any application
+     * where one is going to be generating 2^32 random numbers or more ... 
+     * the Lin. Cong. algorithm starts to repeat after that many random numbers
+     * on basically every archtecture.  So, my idea is just never use it! 
+     * 
+     * Instead, we will use an algorithm called Mersenne Twister ... it's really
+     * good and really fast, and does not repeat over a VERY long scale.  it is
+     * pretty safe for crypto applications.  There are better ones, but it is
+     * more than adequate for our purposes.
+     * 
+     * I have included a version of it in the gplot project, and so linking to
+     * that library will get you this random number generator as well!
      
-     A generally accepted, fast, and PORTABLE solution is to use libsodium 
-     for crypto-level secure random number generation.  
-     
-     The only downside to libsodium is that you have to install it yourself
-     on your system.  If you have not done that, go do that! */
+    */
     
-    char myString[32];
-    uint32_t rnum_Sodium;
-    
-    randombytes_buf(myString, 32);
-    /* myString will be an array of 32 random bytes, not null-terminated */
+    MTRand r = seedRand(1337);
     
     for (int i=0; i<10; i++) {
-        rnum_Sodium = randombytes_uniform(RAND_MAX);
-        double rnum_double_Sodium = 1.0*rnum_Sodium/RAND_MAX;
-        printf("%u         %g\n",rnum_Sodium,rnum_double_Sodium);
+        double rnum = genRand(&r);
+        printf("%g\n",rnum);
     }
     
-    /* So, we can generate a UNIFORM distribution of random numbers between
-     0 and 1 using 1.0*rand()/RAND_MAX */
+    /* So, we can generate a UNIFORM distribution of random numbers between 0 and 1*/
     
     /* OK, let's simulate some solitaire games */
     
@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
     
     int counter=0;
     while (p_current<0.60) {
-        double rnum_double = 1.0*randombytes_uniform(RAND_MAX)/RAND_MAX;
+        double rnum_double = genRand(&r);
         if (rnum_double < p_f) {
             N_won_current++;
         }
@@ -152,7 +152,7 @@ int main(int argc, char** argv) {
         p_current = 1.0*N_won_current/N_current;
     
         while (p_current<0.60) {
-            double rnum_double = 1.0*randombytes_uniform(RAND_MAX)/RAND_MAX;
+            double rnum_double = genRand(&r);
             if (rnum_double < p_f) {
                 N_won_current++;
             }
