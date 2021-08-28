@@ -43,7 +43,7 @@
         </cTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
+            <pElem>../gplot/dist/Debug/MinGW-Windows</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>

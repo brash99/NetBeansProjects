@@ -50,5 +50,6 @@ int main(int argc, char** argv) {
     printf("Average =          %g\n",avg);
     
     return (EXIT_SUCCESS);
+    
 }
 

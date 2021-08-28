@@ -39,17 +39,14 @@
           <standard>3</standard>
           <incDir>
             <pElem>../gplot</pElem>
-            <pElem>/usr/local/lib</pElem>
           </incDir>
         </cTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/usr/local/lib</pElem>
-            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
+            <pElem>../gplot/dist/Debug/MinGW-Windows</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
-            <linkerLibLibItem>sodium</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

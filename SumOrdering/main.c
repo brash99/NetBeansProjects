@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     
     clock_t t;
     t = clock();
-    printf("%ju",(uintmax_t)t/CLOCKS_PER_SEC);
+    printf("%ju",t/CLOCKS_PER_SEC);
     
     const int N_max = 8;
     int nexp[] = {2,3,4,5,6,7,8,9};
