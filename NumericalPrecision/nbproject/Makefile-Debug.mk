@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-MacOSX
-CND_DLIB_EXT=dylib
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../gplot/dist/Debug/GNU-MacOSX -lgplot
+LDLIBSOPTIONS=-L../gplot/dist/Debug/GNU-MacOSX -L../gplot/dist/Debug/GNU-Linux -lgplot -lm
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

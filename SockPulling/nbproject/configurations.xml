@@ -44,12 +44,11 @@
         </cTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/usr/local/lib</pElem>
             <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
+            <pElem>../gplot/dist/Debug/GNU-Linux</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
-            <linkerLibLibItem>sodium</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
