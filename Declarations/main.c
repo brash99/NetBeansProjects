@@ -39,8 +39,18 @@
  */
 
 /* C also allows composite data types ... extremely useful! 
+ 
  We will define it here, before any of our functions, so that
- they all will know what it means*/  
+ they all will know what it means
+ 
+ BTW, it is this struct composite data type that is at the heart of all
+ object oriented programming!!! We will see this again in C++ 
+ 
+ Very simply, in our example, cartesianVector is a class with three (public)
+ member fields (x,y, and z).  Later in the code, we will instantiate objects
+ of this class.
+ 
+ */  
 
 struct cartesianVector {
     double x;
@@ -49,7 +59,7 @@ struct cartesianVector {
 };
 
 /* Define a function to calculate the length of a vector in 3D 
- Notice that it uses the previously define struct, as well as
+ Notice that it uses the previously defined struct, as well as
  some functions from the math library.  */
 
 double length(struct cartesianVector r) {
