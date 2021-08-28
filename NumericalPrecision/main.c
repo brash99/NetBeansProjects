@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
     }
     
     gplot_basicline_loglog(h,diff,N_max,"Numerical Calculation of Derivative",
-            "h","Difference","My Data","Unix");
+            "h","Difference","My Data","Windows");
     
     return (EXIT_SUCCESS);
 }

@@ -141,7 +141,7 @@ int main(int argc, char** argv) {
     printf ("%d %d %d %g\n",counter,N_won_current,N_current,p_current);
     printf ("Yea buddy!\n\n");
     
-    /* gplot_basic(game_number,p_running,counter,"Running Win Percentage","Game Number","Win Percentage","Simulated Data","Unix"); */
+    /* gplot_basic(game_number,p_running,counter,"Running Win Percentage","Game Number","Win Percentage","Simulated Data","Windows"); */
     
     /* OK, so now let's simulate the process many times, to see the 
      DISTRIBUTION of results */

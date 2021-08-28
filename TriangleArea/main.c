@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     }
     
     gplot_basicline(x,a,N_max,"Numerical Calculation of Triangle Area",
-            "x","Area","My Data","Unix");
+            "x","Area","My Data","Windows");
 
     return (EXIT_SUCCESS);
 }

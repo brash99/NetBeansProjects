@@ -91,10 +91,10 @@ int main(int argc, char** argv) {
     
     /* gplot_twosetsline_loglog(nd,diff_up,N_max,nd,diff_down,N_max,
             "Summation Ordering Example","N","Difference From Exact Value",
-            "Sum Up","Sum Down","Unix"); */
+            "Sum Up","Sum Down","Windows"); */
     gplot_twosetsline_loglog(nd,diff_up,N_max,nd,cpu_time_used,N_max,
             "Summation Ordering Example","N","Difference From Exact Value / CPU Time Taken (s)",
-            "Sum Up","CPU Time","Unix");
+            "Sum Up","CPU Time","Windows");
     
     printf("Using double: \n");
     
