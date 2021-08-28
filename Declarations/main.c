@@ -14,6 +14,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Another useful pre-processor directive is the #define directive
+#define THE_ANSWER 42
+
 /* Let's also include math.h, which is a header file which defines:
  a) mathematical constants, using #define statements
  b) function prototypes, such as sqrt, sin, cos, etc. */
