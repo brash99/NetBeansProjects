@@ -15,7 +15,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <gplot.h>
-#include <sodium.h>
+#include <mtwister.h>
+#include <time.h>
 
 /*
  * Program to simulate sock pulling from a drawer
@@ -31,6 +32,7 @@ int main(int argc, char** argv) {
     
     int timesum = 0;
     int N_trials = 10000000;
+    MTRand r = seedRand((unsigned)time(0));
     
     for (int i=0; i<N_trials;i++) {
         int timesteps = 0;
@@ -38,8 +40,8 @@ int main(int argc, char** argv) {
         int sock2 = 2;
     
         while (sock1 != sock2) {
-            sock1 = randombytes_uniform(3);
-            sock2 = randombytes_uniform(3);
+            sock1 = 2*genRand(&r);
+            sock2 = 3*genRand(&r);
             //printf("%d %d\n",sock1,sock2);
             timesteps = timesteps + 2;
             if (sock1 != sock2) {
@@ -63,8 +65,8 @@ int main(int argc, char** argv) {
         int timesteps = 0;
         int s1,s2,s3;
 
-        s1 = randombytes_uniform(3);
-        s2 = randombytes_uniform(3);
+        s1 = 3*genRand(&r);
+        s2 = 3*genRand(&r);
         timesteps = timesteps + 2; // Add two time units for pulling the two socks
         
         if (s1 == s2) {
@@ -72,7 +74,7 @@ int main(int argc, char** argv) {
             //printf("choice 1: %d %d %d\n",s1,s2,timesteps);
             //continue; // that's it ... we are done.
         } else {
-            s3 = randombytes_uniform(3);
+            s3 = 3*genRand(&r);
             timesteps = timesteps + 1; // Add a time unit for pulling the third sock
             if (s3 == s1 || s3 == s2) {
                 t2 = t2 + 1;
