@@ -103,10 +103,14 @@ int main(int argc, char** argv) {
      
     */
     
-    MTRand r = seedRand(1337);
+    MTRand r = seedRand((unsigned)time(0)); // seed the random number generator with system time
+                                            // so that sequence is different each time we run the program
+                                            // seedRand() returns an object of type MTRand
+                                            // MTRand is a C struct - see the header file for details 
     
+    // Generate ten random numbers between 0 and 1
     for (int i=0; i<10; i++) {
-        double rnum = genRand(&r);
+        double rnum = genRand(&r); // genRand returns a double
         printf("%g\n",rnum);
     }
     
@@ -142,7 +146,7 @@ int main(int argc, char** argv) {
     /* OK, so now let's simulate the process many times, to see the 
      DISTRIBUTION of results */
     
-    const int N_simulations = 10000;
+    const int N_simulations = 20000;
     double N_final[N_simulations];
     double sim_number[N_simulations]; 
     
