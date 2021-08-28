@@ -30,7 +30,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -43,13 +43,11 @@
         </cTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
-            <pElem>/usr/local/lib</pElem>
+            <pElem>../gplot/dist/Debug/MinGW-Windows</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
             <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
-            <linkerLibLibItem>sodium</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

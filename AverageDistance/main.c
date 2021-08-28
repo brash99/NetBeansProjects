@@ -26,7 +26,8 @@ int main(int argc, char** argv) {
        
     double sum = 0.0;
     const int N_max = 50000;
-    MTRand r = seedRand((unsigned)time(0));
+
+    MTRand r = seedRand((unsigned int)time(0));
     
     double distance[N_max];
     

@@ -171,8 +171,8 @@ int main(int argc, char** argv) {
     int binwidth = 10;
     int binstart = 1600;
     
-    gplot_basic(sim_number,N_final,N_simulations,"Solitaire Simulation","Simulation Number","Number of Games to 60 PerCent","Simulated Data","Unix"); 
-    gplot_hist_basic(N_final,N_simulations,binwidth,binstart,"Solitaire Simulation","Number of Games to 60 PerCent","Simulated Data","Unix"); 
+    gplot_basic(sim_number,N_final,N_simulations,"Solitaire Simulation","Simulation Number","Number of Games to 60 PerCent","Simulated Data","Windows"); 
+    gplot_hist_basic(N_final,N_simulations,binwidth,binstart,"Solitaire Simulation","Number of Games to 60 PerCent","Simulated Data","Windows"); 
     
     return (EXIT_SUCCESS);
 }

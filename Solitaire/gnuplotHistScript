@@ -1,4 +1,4 @@
-set terminal x11
+set terminal qt
 binwidth = 10
 binstart = 1600
 set key outside
