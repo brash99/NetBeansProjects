@@ -45,9 +45,11 @@
           <linkerAddLib>
             <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
             <pElem>../gplot/dist/Debug/MinGW-Windows</pElem>
+            <pElem>../gplot/dist/Debug/GNU-Linux</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
