@@ -30,7 +30,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>MinGW|MinGW</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -44,6 +44,7 @@
         <linkerTool>
           <linkerAddLib>
             <pElem>../gplot/dist/Debug/MinGW-Windows</pElem>
+            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
