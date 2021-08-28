@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../gplot/dist/Debug/GNU-MacOSX -L/usr/local/lib -lgplot -lm -lsodium
+LDLIBSOPTIONS=-L../gplot/dist/Debug/GNU-MacOSX -lgplot -lm
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

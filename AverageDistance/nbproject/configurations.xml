@@ -48,13 +48,11 @@
         <linkerTool>
           <linkerAddLib>
             <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
-            <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
           <commandlineTool>gcc</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>
             <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
-            <linkerLibLibItem>sodium</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
