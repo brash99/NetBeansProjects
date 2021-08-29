@@ -27,12 +27,16 @@ int found_root_yet(double, double [], int);
 int main(int argc, char** argv) {
     
     double a[4] = {1.0,-3.0,-1.0,3.0};
+    //double a[4] = {0.0,1.0,0.0,-4.0};
     
     // Set the upper lower limits for the search, and the number of divisions
     // of the interval
     double xmin = -4.0;
     double xmax = 4.0;
-    int Npoints = 5000;
+    
+    // Choice of Npoints is important!!!
+    //int Npoints = 10000;
+    int Npoints = pow(2,13)-1;
     
     double dx = (xmax-xmin)/Npoints;
    
@@ -53,15 +57,13 @@ int main(int argc, char** argv) {
         double previous_root;
         
         while (diff > epsilon) {
-
+            
             xroot = x0 - f(x0,a)/fp(x0,a);
             diff = xroot - x0;
             x0 = xroot;
             diff = fabs(diff);
  
         }
-        
-        //printf ("%d: Root = %g\n",i,xroot);
         
         if (found_root_yet(xroot,roots,nroots_found) == 0 && nroots_found < 3) {
             roots[nroots_found] = xroot;

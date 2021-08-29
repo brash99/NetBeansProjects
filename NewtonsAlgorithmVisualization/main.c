@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
     clock_t start, end;
     
     double a[4] = {1.0,-3.0,-1.0,3.0};
+    //double a[4] = {0.0,1.0,0.0,-4.0};
     
     // Set the upper lower limits for the search.
     double xmin = -4.0;
@@ -45,7 +46,8 @@ int main(int argc, char** argv) {
     int counter = 0;
     
     for (int Npoints=1000; Npoints>=10; Npoints=Npoints-1) {
-        
+    //for (int j=13;j>=3;j--) {
+    //    int Npoints = pow(2,j)-1;
         start = clock();
         
         double dx = (xmax-xmin)/Npoints;
@@ -69,6 +71,7 @@ int main(int argc, char** argv) {
                 diff = xroot - x0;
                 x0 = xroot;
                 diff = fabs(diff);
+                //printf("%g:  %g\n",x0,diff);
  
             }
         
