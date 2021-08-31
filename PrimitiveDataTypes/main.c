@@ -17,6 +17,24 @@
 /*
  * 
  */
+
+void convert_long_to_bin(unsigned long n)
+  {
+    unsigned long i;
+    //printf("%lu\n",sizeof(n));
+    //printf("%d\n",CHAR_BIT);
+    printf("0");
+    for (i = 1UL << (sizeof(n)*CHAR_BIT-1); i > 0; i = i / 2) {
+      //printf("%ld\n",i);
+      if((n & i) != 0) {
+        printf("1");
+      }
+      else {
+        printf("0");
+      }
+    }
+  }
+
 int main(int argc, char** argv) {
     
     printf("CHAR_BIT    :   %d\n", CHAR_BIT);
@@ -45,6 +63,15 @@ int main(int argc, char** argv) {
     printf("-DBL_MAX     :  %g\n", (double) -DBL_MAX);
     printf("Precision value for float: %d\n", FLT_DIG );
     printf("Precision value for double: %d\n", DBL_DIG );
+    
+    printf("\n");
+    unsigned long decimal_number = (unsigned long)9223372036854775807;
+    convert_long_to_bin(decimal_number);
+    printf("\n\n");
+    
+    decimal_number = (unsigned long)18446744073709551615;
+    convert_long_to_bin(decimal_number);
+    printf("\n\n");
 
     return (EXIT_SUCCESS);
 }
