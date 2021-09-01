@@ -21,11 +21,8 @@
 void convert_long_to_bin(unsigned long n)
   {
     unsigned long i;
-    //printf("%lu\n",sizeof(n));
-    //printf("%d\n",CHAR_BIT);
     printf("0");
     for (i = 1UL << (sizeof(n)*CHAR_BIT-1); i > 0; i = i / 2) {
-      //printf("%ld\n",i);
       if((n & i) != 0) {
         printf("1");
       }
