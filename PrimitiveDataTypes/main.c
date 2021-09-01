@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <float.h>
+#include <math.h>
 
 /*
  * 
@@ -46,14 +47,28 @@ int main(int argc, char** argv) {
     printf("Precision value for float: %d\n", FLT_DIG );
     printf("Precision value for double: %d\n", DBL_DIG );
     
-    double a = 1.0;
-    double b = 2.0;
+    double a = 0.1;
+    double b = 0.2;
     double c = a + b;
     
     printf("\n");
     printf("a = %21.19f\n",a);
     printf("b = %21.19f\n",b);
     printf("c = a + b = %21.19f\n",c);
+    
+    if (c == 0.3) {
+        printf("Ok, cool! \n");
+    } else {
+        printf("WTF?\n");
+    }
+    
+    double epsilon = 1.0E-12;
+    
+    if (fabs(c-0.3)<epsilon) {
+        printf("Oh, okay, cool! \n");
+    } else {
+        printf("WTF?\n");
+    }
 
     return (EXIT_SUCCESS);
 }
