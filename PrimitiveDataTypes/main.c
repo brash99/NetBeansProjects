@@ -45,6 +45,15 @@ int main(int argc, char** argv) {
     printf("-DBL_MAX     :  %g\n", (double) -DBL_MAX);
     printf("Precision value for float: %d\n", FLT_DIG );
     printf("Precision value for double: %d\n", DBL_DIG );
+    
+    double a = 1.0;
+    double b = 2.0;
+    double c = a + b;
+    
+    printf("\n");
+    printf("a = %21.19f\n",a);
+    printf("b = %21.19f\n",b);
+    printf("c = a + b = %21.19f\n",c);
 
     return (EXIT_SUCCESS);
 }
