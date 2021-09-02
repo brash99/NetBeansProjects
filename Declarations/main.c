@@ -15,7 +15,9 @@
 #include <stdlib.h>
 
 // Another useful pre-processor directive is the #define directive
-#define THE_ANSWER 42
+#define THE_ANSWER 42 // numerical constants
+#define REALTYPE double // variable types - makes it easy to switch between
+                        // double and float, for example.
 
 /* Let's also include math.h, which is a header file which defines:
  a) mathematical constants, using #define statements
@@ -72,7 +74,7 @@ double length(struct cartesianVector r) {
 
 /*
  * Main function ... the use of (int argc, char** argv) allows us
- * to pass arguments from the commmand line. More on this later!
+ * to pass arguments from the command line. More on this later!
  */
 
 int main(int argc, char** argv) {
@@ -87,6 +89,9 @@ int main(int argc, char** argv) {
     double t = 2.0, w = 3.0;
     double a, b;
     a=b=0.0;
+    
+    printf("Uninitialized variables: x = %g, y = %g, i,j = %d,%d \n",x,y,i,j);
+    printf("Initialized variables: z,t,w,a,b = %g,%g,%g,%g,%g \n\n",z,t,w,a,b);
     
     /* A MAJOR bug source in C can occur when performing calculations with
      variables of mixed type ... be careful!!!!!!!! */
@@ -110,7 +115,6 @@ int main(int argc, char** argv) {
     printf("Ratio of %d to %d is %g\n",i,j,ratio);
     printf("Phew!\n\n");
     
-    
     int n1, n2;
     n1 = 73;
     n2 = 56;
@@ -120,6 +124,7 @@ int main(int argc, char** argv) {
     printf("n1 = %d and n2 = %d\n", n1, n2);
 
     /* Swap Variables Using Bitwise Operator */
+    /* ^ is the "exclusive OR" operator */
 
     n1 = n1 ^ n2;
     n2 = n1 ^ n2;
@@ -183,7 +188,7 @@ int main(int argc, char** argv) {
     printf ("\n");
     printf ("This department is called %s.\n",mystring);
     
-    double mydouble = 124.456;
+    double mydouble = 123.456;
     printf ("The number is %g\n",mydouble);
     printf ("The number is %7.3f\n",mydouble);
     printf ("The number is %7.3e\n",mydouble);
