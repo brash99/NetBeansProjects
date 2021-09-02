@@ -1,0 +1,2 @@
+#!/bin/sh
+find nbproject/ -type f | xargs grep GNU-MacOSX | sed -e 's/:/ /g' | awk '{print $1}' | xargs sed -i 's/GNU-MacOSX/GNU-Linux/g'
