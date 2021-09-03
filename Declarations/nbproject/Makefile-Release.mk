@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
+CND_PLATFORM=GNU-MacOSX
 CND_DLIB_EXT=dylib
 CND_CONF=Release
 CND_DISTDIR=dist
