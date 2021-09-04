@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=declarations
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/declarations
+CND_ARTIFACT_NAME_Debug=filereader
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/filereader
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=declarations.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/declarations.tar
+CND_PACKAGE_NAME_Debug=filereader.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/filereader.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=declarations
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/declarations
+CND_ARTIFACT_NAME_Release=filereader
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/filereader
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=declarations.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/declarations.tar
+CND_PACKAGE_NAME_Release=filereader.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/filereader.tar
 #
 # include compiler specific variables
 #
