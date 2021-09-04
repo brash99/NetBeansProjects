@@ -16,7 +16,7 @@
 #include <math.h>
 
 /*
- * This is program that solves the five Zylabs that are part of chapter 2
+ * This is program that solves the six Zylabs that are part of chapter 2
  * 
  * There is a single main function (as required in C) that calls six
  * functions (which each return void) corresponding to the six Zylabs
