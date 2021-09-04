@@ -156,8 +156,7 @@ int main(int argc, char** argv) {
             printf("Calling Zylab4 ... \n");
             zylab4();
             break;
-            
-            
+               
         case 5:
             printf("Calling Zylab5 ... \n");
             zylab5();
@@ -166,8 +165,7 @@ int main(int argc, char** argv) {
         case 6:
             printf("Calling Zylab6 ... \n");
             zylab6();
-            break;
-                   
+            break;      
                       
     }
 
