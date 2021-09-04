@@ -29,10 +29,14 @@ int main(int argc, char** argv) {
     
     const unsigned int nMax = 1000;
     
-    FILE* inFile = NULL; //This variable will be a "pointer" to the file
+    FILE* inFile = NULL; //This variable will be a "pointer" to the input file
+    FILE* outFile = NULL; //This variable will be a "pointer" to the output file
     
     char lastName[nMax][LINE], firstName[nMax][LINE];
     int score1[nMax],score2[nMax],score3[nMax];
+    char letterGrade[nMax];
+    double scoreAvg[nMax];
+    double test1Average,test2Average,test3Average;
     
     /* Get the filename from the user */  
     char filename[LINE];
@@ -108,11 +112,49 @@ int main(int argc, char** argv) {
 
     }
     
-    double scoreAvg[nMax];
+    outFile = fopen("report.txt", "w");
+    
+    int sum1=0,sum2=0,sum3=0;
     for (int idx=0;idx<j;idx++) {
-        scoreAvg[idx]=(score1[idx]+score2[idx]+score3[idx])/3.0;
-        printf("%s %s %d:%d:%d = %7.2f\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],scoreAvg[idx]);
+        
+        sum1=sum1+score1[idx];
+        sum2=sum2+score2[idx];
+        sum3=sum3+score3[idx];
+        
+        scoreAvg[idx] = (score1[idx]+score2[idx]+score3[idx])/3.0;
+        
+        if (scoreAvg[idx] >= 90.0) {
+            letterGrade[idx] = 'A';
+        } else {
+            if (scoreAvg[idx] >= 80.0) {
+                letterGrade[idx] = 'B';
+            } else {
+                if (scoreAvg[idx] >= 70.0) {
+                    letterGrade[idx] = 'C';
+                } else {
+                    if (scoreAvg[idx] >= 60.0) {
+                        letterGrade[idx] = 'D';
+                    } else {
+                        letterGrade[idx] = 'F';
+                    }
+                }
+            }
+        }
+        
+        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
     }
+    
+    fprintf(outFile,"\n");
+    
+    test1Average = (double)sum1/j;
+    test2Average = (double)sum2/j;
+    test3Average = (double)sum3/j;
+    
+    fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
+    
+    fclose(inFile);
+    fclose(outFile);
+    
     
     return (EXIT_SUCCESS);
 }
