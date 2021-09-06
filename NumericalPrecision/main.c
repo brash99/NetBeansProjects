@@ -15,7 +15,7 @@
 #include <math.h>
 #include <gplot.h>
 
-#define REALTYPE double
+#define REALTYPE float
 
 /* Define a function, of type REALTYPE, that will take the x-value and return
  the value of the function at that x-value */
@@ -45,18 +45,18 @@ int main(int argc, char** argv) {
     
     /* Define the x-value where we will evaluate the function 
      * and its derivative */
-    REALTYPE xval = 1.0;
-    REALTYPE fval = function(xval);
-    REALTYPE fprimeval = deriv(xval);
+    REALTYPE x0 = 1.0;
+    REALTYPE fval = function(x0);
+    REALTYPE fprimeval = deriv(x0);
     
-    printf("At x = %g, the exact value of the function f(x) = %g ... exact value of the derivative f'(x) = %g\n\n",xval,fval,fprimeval);
+    printf("At x = %g, the exact value of the function f(x) = %g ... exact value of the derivative f'(x) = %g\n\n",x0,fval,fprimeval);
     
     for (int i=0; i<N_max; i++) {
         int power = -20+i;
         h[i] = pow(10,power);
-        f[i] = function(xval);
-        fprime_exact[i] = deriv(xval);
-        fprime_numerical[i] = (function(xval+h[i]) - function(xval))/h[i];
+        f[i] = function(x0);
+        fprime_exact[i] = deriv(x0);
+        fprime_numerical[i] = (function(x0+h[i]) - function(x0))/h[i];
         diff[i] = fabs(fprime_exact[i]-fprime_numerical[i]);
         printf("%5g %2.1f %2.1f %12.10f %12.10f\n",h[i],f[i],
                 fprime_exact[i],fprime_numerical[i],diff[i]);

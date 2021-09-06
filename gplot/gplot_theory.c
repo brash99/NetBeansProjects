@@ -5,7 +5,7 @@
  *
  */
 
-#define REALTYPE double
+#define REALTYPE float
 
 #include <stdio.h>
 #include <stdlib.h>
