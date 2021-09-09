@@ -62,6 +62,8 @@ int main(int argc, char** argv) {
                 fprime_exact[i],fprime_numerical[i],diff[i]);
     }
     
+    
+    // Plot the results
     gplot_basicline_loglog(h,diff,N_max,"Numerical Calculation of Derivative",
             "h","Difference","My Data","Unix");
     
