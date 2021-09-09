@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#define REALTYPE float
+#define REALTYPE double
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -11,7 +11,7 @@
  * Created on July 29, 2021, 10:00 AM
  */
 
-#define REALTYPE float
+#define REALTYPE double
 
 #ifndef GPLOT_H
 #define GPLOT_H

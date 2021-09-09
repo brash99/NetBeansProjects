@@ -1,4 +1,4 @@
-set terminal qt
+set terminal x11
 set logscale xy
 set key font 'Arial,16'
 set tics font 'Arial,12'
