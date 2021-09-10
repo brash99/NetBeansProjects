@@ -37,20 +37,7 @@
       <compileType>
         <cTool>
           <standard>3</standard>
-          <incDir>
-            <pElem>../gplot</pElem>
-          </incDir>
         </cTool>
-        <linkerTool>
-          <linkerAddLib>
-            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
-            <pElem>../gplot/dist/Debug/GNU-Linux</pElem>
-          </linkerAddLib>
-          <linkerLibItems>
-            <linkerLibLibItem>gplot</linkerLibLibItem>
-            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
-          </linkerLibItems>
-        </linkerTool>
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>

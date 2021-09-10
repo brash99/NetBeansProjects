@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=numericalprecision
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/numericalprecision
+CND_ARTIFACT_NAME_Debug=archimedianspiral
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/archimedianspiral
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=numericalprecision.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/numericalprecision.tar
+CND_PACKAGE_NAME_Debug=archimedianspiral.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/archimedianspiral.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=numericalprecision
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/numericalprecision
+CND_ARTIFACT_NAME_Release=archimedianspiral
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/archimedianspiral
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=numericalprecision.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/numericalprecision.tar
+CND_PACKAGE_NAME_Release=archimedianspiral.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/archimedianspiral.tar
 #
 # include compiler specific variables
 #

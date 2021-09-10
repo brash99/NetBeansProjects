@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=numericalprecision
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/numericalprecision
+CND_ARTIFACT_NAME_Debug=floatingpoint64
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/floatingpoint64
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=numericalprecision.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/numericalprecision.tar
+CND_PACKAGE_NAME_Debug=floatingpoint64.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/floatingpoint64.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=numericalprecision
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/numericalprecision
+CND_ARTIFACT_NAME_Release=floatingpoint64
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/floatingpoint64
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=numericalprecision.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/numericalprecision.tar
+CND_PACKAGE_NAME_Release=floatingpoint64.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/floatingpoint64.tar
 #
 # include compiler specific variables
 #
