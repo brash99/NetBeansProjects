@@ -43,8 +43,7 @@
         </cTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>../gplot/dist/Debug/GNU-MacOSX</pElem>
-            <pElem>../gplot/dist/Debug/GNU-Linux</pElem>
+            <pElem>../gplot/dist/Release/GNU-Linux</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>gplot</linkerLibLibItem>

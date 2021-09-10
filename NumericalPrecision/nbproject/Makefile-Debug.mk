@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../gplot/dist/Debug/GNU-MacOSX -L../gplot/dist/Debug/GNU-Linux -lgplot -lm
+LDLIBSOPTIONS=-L../gplot/dist/Release/GNU-Linux -lgplot -lm
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

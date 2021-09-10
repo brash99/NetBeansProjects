@@ -65,6 +65,9 @@
         <cTool>
           <developmentMode>5</developmentMode>
           <standard>3</standard>
+          <incDir>
+            <pElem>../gplot</pElem>
+          </incDir>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -75,6 +78,15 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../gplot/dist/Release/GNU-Linux</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>gplot</linkerLibLibItem>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
