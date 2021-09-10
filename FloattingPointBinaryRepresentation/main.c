@@ -22,7 +22,7 @@
 int main(int argc, char** argv) {
     
     
-    float x = 0.25;
+    float x = 0.1;
     
     // the binary representation of a floating point number (32 bits) is:
     // 

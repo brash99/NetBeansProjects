@@ -88,10 +88,10 @@ int main(int argc, char** argv) {
         // value.
         
         if (i==0) {
-            strcpy(lastName[j], line);
+            strncpy(lastName[j], line, LINE);
         }
         if (i==1) {
-            strcpy(firstName[j], line);
+            strncpy(firstName[j], line, LINE);
         }
         if (i==2) {
             score1[j]=atoi(line);
