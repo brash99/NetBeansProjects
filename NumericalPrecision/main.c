@@ -15,7 +15,7 @@
 #include <math.h>
 #include <gplot.h>
 
-#define REALTYPE float
+#define REALTYPE double
 
 /* Define a function, of type REALTYPE, that will take the x-value and return
  the value of the function at that x-value */
