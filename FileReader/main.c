@@ -53,12 +53,12 @@ int main(int argc, char** argv) {
     // reads newline character and here used * indicates that this 
     // newline character is discarded.
     
-    //scanf("%[^\n]%*c", filename);
-    //printf("Filename = %s",filename);
+    scanf("%[^\n]%*c", filename);
+    printf("Filename = %s",filename);
     
     /* Open the file for reading */
-    //inFile = fopen(filename, "r");
-    inFile = fopen("StudentInfo.tsv", "r");
+    inFile = fopen(filename, "r");
+    //inFile = fopen("StudentInfo.tsv", "r");
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);

@@ -28,10 +28,10 @@ int main(int argc, char** argv) {
     
     clock_t t;
     t = clock();
-    printf("%ju",(uintmax_t)t/CLOCKS_PER_SEC);
+    printf("%ju\n",(uintmax_t)t/CLOCKS_PER_SEC);
     
-    const int N_max = 8;
-    int nexp[] = {2,3,4,5,6,7,8,9};
+    const int N_max = 9;
+    int nexp[] = {2,3,4,5,6,7,8,9,10};
     long n[N_max];
     double nd[N_max];
     double sum_up[N_max];
@@ -52,25 +52,25 @@ int main(int argc, char** argv) {
     
     for (int i = 0; i<N_max; i++) {
         start = clock();
-        printf("sum up i = %d\n",i);
+        //printf("sum up i = %d\n",i);
         for (unsigned long long j = 1; j <= n[i]; j++) {
-            if (j%10000000 == 0) {
-                printf("%d %llu\n",i,j);
-            }
+            //if (j%10000000 == 0) {
+            //    printf("%d %llu\n",i,j);
+            //}
             sum_up[i]+= 1.0/pow(j,2);
         }
         end = clock();
         cpu_time_used[i]=((double) (end-start))/CLOCKS_PER_SEC;
-        printf("CPU Time Taken = %g\n",cpu_time_used[i]);
+        //printf("CPU Time Taken = %g\n",cpu_time_used[i]);
     }
     
     for (int i = 0; i<N_max; i++) {
-        printf("sum down i = %d\n",i);
+        //printf("sum down i = %d\n",i);
         for (unsigned long long j = n[i]; j >= 1; j--) {
             sum_down[i]+= 1.0/pow(j,2);
-            if (j%10000000 == 0) {
-                printf("%d %llu\n",i,j);
-            }
+            //if (j%10000000 == 0) {
+            //    printf("%d %llu\n",i,j);
+            //}
         }
     }
     
