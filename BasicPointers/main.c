@@ -180,6 +180,8 @@ void swap(int* p1, int* p2) {
      * locations in memory 
      */
     
+    printf("location pointed to by p1 = %p, location pointed to by p2 = %p\n", p1,p2);
+    
     
     /* 
      * Step 1: get the value that is stored at the memory location p1 and
