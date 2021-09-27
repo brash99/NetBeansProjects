@@ -15,18 +15,20 @@ SimpleCar InitCar(){
    
    newCar.miles = 0;
    
+   printf("In InitCar: address of newCar = %p\n",&newCar);
+   
    return newCar;
 }
 
 SimpleCar Drive(int dist, SimpleCar car){
    car.miles = car.miles + dist;
-   
+   printf("In Drive: address of car = %p\n",&car);
    return car;
 }
  
 SimpleCar Reverse(int dist, SimpleCar car){
    car.miles = car.miles - dist;
-   
+   printf("In Reverse: address of car = %p\n",&car);
    return car;
 }
    
@@ -35,9 +37,11 @@ int GetOdometer(SimpleCar car){
 }
 
 void HonkHorn(SimpleCar car){
+   printf("In HonkHorn: address of car = %p\n",&car);
    printf("beep beep\n");
 }
 
 void Report(SimpleCar car){
+   printf("In Report: address of car = %p\n",&car);
    printf("Car has driven: %d miles\n", car.miles);
 }
