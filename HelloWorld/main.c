@@ -17,6 +17,13 @@ int main(int argc, char** argv) {
     
     printf("Hello World!!!!\n");
     
+    int i;
+    double a = 2.0;
+    double b = 2.5;
+    i = (int)(a*b*b);
+    
+    printf("%d",i);
+    
     return (EXIT_SUCCESS);
 }
 
