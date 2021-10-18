@@ -14,53 +14,88 @@
 #include <iostream> //cout, endl, fixed
 #include <cstdlib>
 #include <iomanip> //setprecision, setw
+#include <cmath> //C math library functions
+#include <string> // The string class
+
+using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
     
-    std::cout << "Hello World!" << std::endl;
+    cout << "Hello World!" << endl;
     
     int a=14657;
     float b = 0.54;
     double c = 4.5678902392;
     
-    std::cout << std::endl;
+    cout << endl;
     
-    std::cout << "a = " << a << " b = " << b << " c = " << c << std::endl;
+    cout << "a = " << a << " b = " << b << " c = " << c << endl;
     
-    std::cout << std::endl;
+    cout << endl;
     
-    std::cout << "c = " << std::setprecision(5) << c << std::endl;
+    cout << "c = " << setprecision(5) << c << endl;
     
-    std::cout << "c = " << std::setprecision(9) << c << std::endl;
+    cout << "c = " << setprecision(9) << c << endl;
     
-    std::cout << std::fixed;
+    cout << fixed;
     
-    std::cout << std::endl;
+    cout << endl;
     
-    std::cout << "b = " << std::setprecision(5) << b << std::endl;
+    cout << "b = " << setprecision(5) << b << endl;
     
-    std::cout << "b = " << std::setprecision(9) << b << std::endl;
+    cout << "b = " << setprecision(9) << b << endl;
     
-    std::cout << std::scientific;
+    cout << scientific;
     
-    std::cout << std::endl;
+    cout << endl;
     
-    std::cout << "c = " << std::setprecision(5) << c << std::endl;
+    cout << "c = " << setprecision(5) << c << endl;
     
-    std::cout << "c = " << std::setprecision(9) << c << std::endl;
+    cout << "c = " << setprecision(9) << c << endl;
     
-    std::cout << std::endl;
+    cout << endl;
     
     int i,j;
-    std::cout << "Enter a number:" << std::endl;
-    std::cin >> i;
-    std::cout << "Enter another number:" << std::endl;
-    std::cin >> j;
+    cout << "Enter a number:" << endl;
+    cin >> i;
+    cout << "Enter another number:" << endl;
+    cin >> j;
     
-    std::cout << "The numbers are " << i << " and " << j << std::endl;
+    cout << "The numbers are " << i << " and " << j << endl;
+    
+    int k;
+    double d = 2.0;
+    double e = 2.5;
+    k = static_cast<int>(d*e*e);
+    
+    cout << "The integer k is " << k << endl;
+    
+    cout << "The integer k^2 is " << pow(k,2) << endl;
+    
+    /* 
+    string s1,s2,s3;
+    
+    cout << "Enter a name on a single line" << endl;
+    
+    cin >> s1;
+    cin >> s2;
+    
+    cout << "S1 = <" << s1 << ">" << endl;
+    cout << "S2 = <" << s2 << ">" << endl;
+     */
+    
+    string sphrase;
+    
+    cout << "Enter a name on a single line: " << endl;
+    
+    cin.ignore();
+    getline(cin,sphrase);
+    
+    cout << "Name = <" << sphrase << ">" << endl;
+    
 
     return 0;
 }
