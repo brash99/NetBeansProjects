@@ -39,6 +39,8 @@
 /SockPulling/dist/
 /HelloWorld/build/
 /HelloWorld/dist/
+/HelloWorldCPP/build/
+/HelloWorldCPP/dist/
 /NewtonsAlgorithm/build/
 /NewtonsAlgorithm/dist/
 /NewtonsAlgorithmComplete/build/
@@ -83,3 +85,5 @@
 /Zybooks_Ch9_Lab9/build/
 /Zybooks_Ch9_Lab10/dist/
 /Zybooks_Ch9_Lab10/build/
+/UnitTesting/dist/
+/UnitTesting/build/
