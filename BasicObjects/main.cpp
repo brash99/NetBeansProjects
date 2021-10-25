@@ -18,6 +18,8 @@ Restaurant getFavorite(vector<Restaurant>& myRestaurants);
 
 int main(int argc, char** argv) {
     
+    // Define some objects ... the first two call the default constructor, and the last
+    // calls the initialization constructor.
     Restaurant schooners;
     Restaurant moes;
     Restaurant mickydees("MacDonald's",-10000);
@@ -34,17 +36,20 @@ int main(int argc, char** argv) {
     moes.SetName("Moe's");
     moes.SetRating(5);
     
+    
+    // Define a vector of Restaurant objects, and add our three restaurants to it!!!
     vector<Restaurant> myRestaurants;
     
     myRestaurants.push_back(schooners);
     myRestaurants.push_back(moes);
     myRestaurants.push_back(mickydees);
     
+    
+    // Figure out the restaurant with the highest rating.
     Restaurant myFavorite;
     
     myFavorite = getFavorite(myRestaurants);
     
-
     cout << "My favorite restaurant: " << endl;
     cout << myFavorite.GetName() << " -- Rating = " << myFavorite.GetRating() << endl;
     
@@ -68,7 +73,7 @@ Restaurant getFavorite(vector<Restaurant>& myRestaurants) {
     }
     cout << endl;
     
-    bestRestaurant = myRestaurants[maxRatingIndex];
+    bestRestaurant = myRestaurants[maxRatingIndex]; // copy!!! This is what "=" does by default.
     
     return bestRestaurant;
 }

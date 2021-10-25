@@ -24,12 +24,12 @@ class Restaurant {
         //Restaurant(string userName, int userRating); // Initialization Constructor
         Restaurant(string userName = "No Name", int userRating = -1);  //Default constructor with default values.
         
-        void SetName(string restaurantName); // prototype mutator function ... define below
+        void SetName(string restaurantName); // prototype mutator function ... define in .cpp file
         void SetRating(int userRating);
         
         string GetName() const {return name;} // inline accessor function ... define right here!
         int GetRating() const {return rating;}
-        void Print() const;
+        void Print() const; // Use const to indicate/require that object cannot be altered in the function!!!
 };
 
 #endif /* RESTAURANT_H */

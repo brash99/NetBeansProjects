@@ -15,8 +15,8 @@ void Restaurant::SetName(string restaurantName) {
     return;
 }
 
-void Restaurant::SetRating(int userRating) {
-    rating = userRating;
+void Restaurant::SetRating(int rating) {
+    this->rating = rating; //Need to specify this->rating to remove confusion with parameter name
     return;
 }
 
