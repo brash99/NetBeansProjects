@@ -20,8 +20,9 @@ class Restaurant {
         int rating;
     
     public:
-        Restaurant();
-        Restaurant(string userName, int userRating); // Initialization Constructor
+        //Restaurant(); // Default Constructor
+        //Restaurant(string userName, int userRating); // Initialization Constructor
+        Restaurant(string userName = "No Name", int userRating = -1);  //Default constructor with default values.
         
         void SetName(string restaurantName); // prototype mutator function ... define below
         void SetRating(int userRating);

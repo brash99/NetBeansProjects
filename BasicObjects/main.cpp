@@ -10,14 +10,16 @@
  */
 
 #include <cstdlib>
+#include <vector>
 
 #include "Restaurant.h"
+
+Restaurant getFavorite(vector<Restaurant>& myRestaurants);
 
 int main(int argc, char** argv) {
     
     Restaurant schooners;
     Restaurant moes;
-    Restaurant favorite;
     Restaurant mickydees("MacDonald's",-10000);
     
     mickydees.Print();
@@ -30,18 +32,44 @@ int main(int argc, char** argv) {
     schooners.SetName("Schooner's");
     schooners.SetRating(4);
     moes.SetName("Moe's");
-    moes.SetRating(1);
-    favorite.SetName("Paul's Deli");
-    favorite.SetRating(5);
+    moes.SetRating(5);
     
-    cout << "My favorite restaurants: " << endl;
-    schooners.Print();
-    favorite.Print();
+    vector<Restaurant> myRestaurants;
     
-    cout << endl;
+    myRestaurants.push_back(schooners);
+    myRestaurants.push_back(moes);
+    myRestaurants.push_back(mickydees);
     
-    cout << "My favorite restaurant: " << favorite.GetName() << " -- Rating = " << favorite.GetRating() << endl;
+    Restaurant myFavorite;
+    
+    myFavorite = getFavorite(myRestaurants);
+    
+
+    cout << "My favorite restaurant: " << endl;
+    cout << myFavorite.GetName() << " -- Rating = " << myFavorite.GetRating() << endl;
     
     return 0;
+}
+
+Restaurant getFavorite(vector<Restaurant>& myRestaurants) {
+    
+    Restaurant bestRestaurant;
+    
+    int maxRatingIndex = 0;
+    int maxRating = -1000000;
+    
+    cout << "Ratings:" << endl;
+    for (int i = 0; i<myRestaurants.size(); i++) {
+        myRestaurants[i].Print();
+        if (myRestaurants[i].GetRating() > maxRating) {
+            maxRatingIndex = i;
+            maxRating = myRestaurants[i].GetRating();
+        }
+    }
+    cout << endl;
+    
+    bestRestaurant = myRestaurants[maxRatingIndex];
+    
+    return bestRestaurant;
 }
 

@@ -1,9 +1,9 @@
 #include "Restaurant.h"
 
-Restaurant::Restaurant() {
-    name = "NoName";
-    rating = -1;
-}
+//Restaurant::Restaurant() {
+//    name = "NoName";
+//    rating = -1;
+//}
 
 Restaurant::Restaurant(string userName, int userRating) {
     name = userName;
