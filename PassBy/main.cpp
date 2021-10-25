@@ -28,6 +28,11 @@ void passByPtr(int* p) {
     *p = 4;
 }
 
+void passByRef(int& r) {
+    
+    r = 10;
+}
+
 void passByArray(int a[], int length) {
     
     for (int i = 0; i<length; i++) {
@@ -60,11 +65,6 @@ void passByConstVectorRef(const vector<int>& q) {
     }
     cout << endl;
     
-}
-
-void passByRef(int& r) {
-    
-    r = 10;
 }
 
 /*
