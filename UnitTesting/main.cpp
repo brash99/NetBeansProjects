@@ -26,7 +26,7 @@ double HrMinToMin(int origHours, int origMinutes) {
     
     totMinutes = static_cast<double>((origHours*60) + origMinutes);
     
-    return origMinutes;
+    return totMinutes;
 }
 
 void testHrMinToMin(void) {

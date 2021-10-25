@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
     
     cout << "The integer k^2 is " << pow(k,2) << endl;
     
-    /* 
+    
     string s1,s2,s3;
     
     cout << "Enter a name on a single line" << endl;
@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
     
     cout << "S1 = <" << s1 << ">" << endl;
     cout << "S2 = <" << s2 << ">" << endl;
-     */
+    
     
     string sphrase;
     
