@@ -20,17 +20,22 @@ using namespace std;
 void passBy(int y) {
     
     y = 4;
+    return;
     
 }
 
 void passByPtr(int* p) {
     
     *p = 4;
+    return;
+
 }
 
 void passByRef(int& r) {
     
     r = 10;
+    return;
+    
 }
 
 void passByArray(int a[], int length) {
@@ -43,18 +48,22 @@ void passByArray(int a[], int length) {
     //    cout << a[i] << endl;
     //}
     
+    return;
+    
 }
 
 void passByVector(vector<int> q) {
     for (int i = 0; i<q.size(); i++) {
         q.at(i) = 4;
     }
+    return;
 }
 
 void passByVectorRef(vector<int>& q) {
     for (int i = 0; i<q.size(); i++) {
         q.at(i) = 4;
     }
+    return;
 }
 
 void passByConstVectorRef(const vector<int>& q) {
@@ -64,6 +73,7 @@ void passByConstVectorRef(const vector<int>& q) {
         cout << q.at(i) << " ";
     }
     cout << endl;
+    return;
     
 }
 
