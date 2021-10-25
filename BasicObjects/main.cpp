@@ -10,51 +10,8 @@
  */
 
 #include <cstdlib>
-#include <iostream>
-#include <string>
 
-
-using namespace std;
-
-class Restaurant {
-
-    private:
-        string name;
-        int rating;
-    
-    public:
-        Restaurant();
-        Restaurant(string userName, int userRating); // Initialization Constructor
-        void SetName(string restaurantName); // prototype mutator function ... define below
-        void SetRating(int userRating);
-        string GetName() const {return name;} // inline accessor function ... define right here!
-        int GetRating() const {return rating;}
-        void Print() const;
-};
-
-Restaurant::Restaurant() {
-    name = "NoName";
-    rating = -1;
-}
-
-Restaurant::Restaurant(string userName, int userRating) {
-    name = userName;
-    rating = userRating;
-}
-
-void Restaurant::SetName(string restaurantName) {
-    name = restaurantName;
-    return;
-}
-
-void Restaurant::SetRating(int userRating) {
-    rating = userRating;
-    return;
-}
-
-void Restaurant::Print() const {
-    cout << name << " has a rating of " << rating << endl; 
-}
+#include "Restaurant.h"
 
 int main(int argc, char** argv) {
     
