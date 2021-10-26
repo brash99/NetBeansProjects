@@ -35,7 +35,7 @@ class Restaurant {
         string GetName() const {return name;} // inline accessor function ... define right here!
         int GetRating() const {return rating;}
         string GetPrice() const {return price;}
-        string GetCuisineType() const{return cuisine;}
+        string GetCuisineType() const {return cuisine;}
         
         void Print() const; // Use const to indicate/require that object cannot be altered in the function!!!
 };
