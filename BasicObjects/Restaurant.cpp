@@ -1,8 +1,10 @@
 #include "Restaurant.h"
 
 //Restaurant::Restaurant() {
-//    name = "NoName";
+//    name = "No Name";
 //    rating = -1;
+//    price = "No Price";
+//    cuisine = "No Type"
 //}
 
 Restaurant::Restaurant(string userName, int userRating, string price, string cuisineType) {

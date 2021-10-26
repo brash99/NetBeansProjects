@@ -23,7 +23,7 @@ class Restaurant {
     
     public:
         //Restaurant(); // Default Constructor
-        //Restaurant(string userName, int userRating); // Initialization Constructor
+        //Restaurant(string userName, int userRating, string price, string cuisineType); // Initialization Constructor
         Restaurant(string userName = "No Name", int userRating = -1, string price = "No Price",
                 string cuisineType = "No Type");  //Default constructor with default values.
         
@@ -36,6 +36,7 @@ class Restaurant {
         int GetRating() const {return rating;}
         string GetPrice() const {return price;}
         string GetCuisineType() const{return cuisine;}
+        
         void Print() const; // Use const to indicate/require that object cannot be altered in the function!!!
 };
 
