@@ -5,9 +5,11 @@
 //    rating = -1;
 //}
 
-Restaurant::Restaurant(string userName, int userRating) {
+Restaurant::Restaurant(string userName, int userRating, string price, string cuisineType) {
     name = userName;
     rating = userRating;
+    this->price = price;
+    cuisine = cuisineType;
 }
 
 void Restaurant::SetName(string restaurantName) {
@@ -20,8 +22,20 @@ void Restaurant::SetRating(int rating) {
     return;
 }
 
+void Restaurant::SetPrice(string price) {
+    this->price = price;
+    return;
+}
+
+void Restaurant::SetCuisineType(string cuisineType) {
+    cuisine = cuisineType;
+    return;
+}
+
 void Restaurant::Print() const {
-    cout << name << " has a rating of " << rating << endl; 
+    cout << name << ": " << endl;
+    cout << "Rating = " << rating << " Price = " << price << " Cuisine Type = " 
+            << cuisine << endl; 
 }
 
 

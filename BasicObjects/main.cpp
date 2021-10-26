@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     // calls the initialization constructor.
     Restaurant schooners;
     Restaurant moes;
-    Restaurant mickydees("MacDonald's",-10000);
+    Restaurant mickydees("MacDonald's",-10000,"$","Fast Food");
     
     mickydees.Print();
     cout << endl;
@@ -33,9 +33,13 @@ int main(int argc, char** argv) {
     
     schooners.SetName("Schooner's");
     schooners.SetRating(4);
+    schooners.SetPrice("$$$");
+    schooners.SetCuisineType("American Fare");
+    
     moes.SetName("Moe's");
     moes.SetRating(5);
-    
+    moes.SetPrice("$$");
+    moes.SetCuisineType("Mexican");
     
     // Define a vector of Restaurant objects, and add our three restaurants to it!!!
     vector<Restaurant> myRestaurants;
@@ -51,7 +55,10 @@ int main(int argc, char** argv) {
     myFavorite = getFavorite(myRestaurants);
     
     cout << "My favorite restaurant: " << endl;
-    cout << myFavorite.GetName() << " -- Rating = " << myFavorite.GetRating() << endl;
+    cout << myFavorite.GetName() << endl;
+    cout << "Rating = " << myFavorite.GetRating() << endl;
+    cout << "Price = " << myFavorite.GetPrice() << endl;
+    cout << "Cuisine Type = " << myFavorite.GetCuisineType() << endl;
     
     return 0;
 }
