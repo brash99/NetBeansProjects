@@ -16,11 +16,19 @@ class TimeHrMn {
 
 public:
    TimeHrMn(int timeHours = 0, int timeMinutes = 0, double timeSeconds = 0.0);
-   void Print() const;
+
    TimeHrMn operator+(TimeHrMn rhs);
+   TimeHrMn operator-(TimeHrMn rhs);
+   
+   void SetHr(int userHours);
+   void SetMn(int userMinutes);
+   void SetSec(double userSeconds);
+   
    int GetHr() const;
    int GetMn() const;
    double GetSec() const;
+   
+   void Print() const;
    
 private:
    int hours;
@@ -28,7 +36,6 @@ private:
    double seconds;
    
 };
-  
 
 #endif /* TIMEHRMN_H */
 
