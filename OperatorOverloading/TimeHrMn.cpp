@@ -8,7 +8,8 @@
 // Equality (==) operator for two TimeHrMn objects
 bool operator==(const TimeHrMn& lhs, const TimeHrMn& rhs) {
    return (lhs.GetHr() == rhs.GetHr()) && 
-          (lhs.GetMn() == rhs.GetMn());
+          (lhs.GetMn() == rhs.GetMn()) &&
+          (lhs.GetSec() == rhs.GetSec());
 }
 
 // Less-than (<) operator for two Review objects
@@ -34,18 +35,27 @@ TimeHrMn TimeHrMn::operator+(TimeHrMn rhs) {
    
    timeTotal.hours   = hours   + rhs.hours;
    timeTotal.minutes = minutes + rhs.minutes;
+   timeTotal.seconds = seconds + rhs.seconds;
    
-   while (timeTotal.minutes>=60) {
-       timeTotal.hours += 1;
-       timeTotal.minutes -= 60;
+   while (timeTotal.seconds>=60.0) {
+       
+       timeTotal.minutes +=1;
+       
+       while (timeTotal.minutes>=60) {
+            timeTotal.hours += 1;
+            timeTotal.minutes -= 60;
+       }
+       
+       timeTotal.seconds -=60.0;
    }
    
    return timeTotal;
 }
 
-TimeHrMn::TimeHrMn(int timeHours, int timeMinutes) {
+TimeHrMn::TimeHrMn(int timeHours, int timeMinutes, double timeSeconds) {
    hours  = timeHours;
    minutes = timeMinutes;
+   seconds = timeSeconds;
 }
 
 int TimeHrMn::GetHr() const {
@@ -56,6 +66,11 @@ int TimeHrMn::GetMn() const {
     return minutes;
 }
 
+double TimeHrMn::GetSec() const {
+    return seconds;
+}
+
+
 void TimeHrMn::Print() const {
-   cout << "H:" << hours << ", " << "M:" << minutes << endl;
+   cout << "H:" << hours << ", " << "M:" << minutes << ", " << "S:" << seconds << endl;
 }

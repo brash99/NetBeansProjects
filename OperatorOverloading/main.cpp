@@ -20,14 +20,13 @@ using namespace std;
 
 int main(int argc, char** argv) {
     
-    TimeHrMn time1(3, 22);
-    TimeHrMn time2(2, 50);
+    TimeHrMn time1(3, 22, 45.0);
+    TimeHrMn time2(2, 50, 34.2);
     TimeHrMn sumTime;
 
     sumTime = time1 + time2;
     sumTime.Print();
-
-
+    
     return 0;
 }
 

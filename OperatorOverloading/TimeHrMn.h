@@ -15,15 +15,17 @@ using namespace std;
 class TimeHrMn {
 
 public:
-   TimeHrMn(int timeHours = 0, int timeMinutes = 0);
+   TimeHrMn(int timeHours = 0, int timeMinutes = 0, double timeSeconds = 0.0);
    void Print() const;
    TimeHrMn operator+(TimeHrMn rhs);
    int GetHr() const;
    int GetMn() const;
+   double GetSec() const;
    
 private:
    int hours;
    int minutes;
+   double seconds;
    
 };
   
