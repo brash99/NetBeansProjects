@@ -83,5 +83,6 @@ Restaurant getFavorite(vector<Restaurant>& myRestaurants) {
     bestRestaurant = myRestaurants[maxRatingIndex]; // copy!!! This is what "=" does by default.
     
     return bestRestaurant;
+    
 }
 

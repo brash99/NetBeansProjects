@@ -20,6 +20,9 @@ class Restaurant {
         int rating;
         string price;
         string cuisine;
+        int id;
+        static int nextID; // a static member variable is a member of the CLASS, and
+                            // not to any particular object of the class!!!!!!!
     
     public:
         //Restaurant(); // Default Constructor
@@ -31,11 +34,13 @@ class Restaurant {
         void SetRating(int userRating);
         void SetPrice(string price);
         void SetCuisineType(string cuisineType);
+        void SetID(int id);
         
         string GetName() const {return name;} // inline accessor function ... define right here!
         int GetRating() const {return rating;}
         string GetPrice() const {return price;}
         string GetCuisineType() const {return cuisine;}
+        int GetID() const{return id;}
         
         void Print() const; // Use const to indicate/require that object cannot be altered in the function!!!
 };

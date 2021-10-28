@@ -12,7 +12,11 @@ Restaurant::Restaurant(string userName, int userRating, string price, string cui
     rating = userRating;
     this->price = price;
     cuisine = cuisineType;
+    id = nextID;
+    ++nextID;
 }
+
+int Restaurant::nextID = 1001; // Initialize nextID = the id number of the FIRST object created.
 
 void Restaurant::SetName(string restaurantName) {
     name = restaurantName;
@@ -35,7 +39,7 @@ void Restaurant::SetCuisineType(string cuisineType) {
 }
 
 void Restaurant::Print() const {
-    cout << name << ": " << endl;
+    cout << name << ": " << "ID = " << id << endl;
     cout << "Rating = " << rating << " Price = " << price << " Cuisine Type = " 
             << cuisine << endl; 
 }
