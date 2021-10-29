@@ -20,13 +20,14 @@ using namespace std;
 class FoodItem {
    public:
        
-      FoodItem(); // Default Constructor
+      FoodItem(); // Default Constructor - must have the same name as the class name!!!!!
       FoodItem(string userName, double userFat, double userCarbs, double userProtein); // Initialization Constructor
 
       string GetName();
       double GetFat();
       double GetCarbs();
       double GetProtein();
+      
       double GetCalories(double numServings);
 
       void PrintInfo();

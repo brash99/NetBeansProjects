@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
    cout << endl << endl;
 
    FoodItem2.PrintInfo();
+   
    cout << "Number of calories for " << numServings << " serving(s): " << FoodItem2.GetCalories(numServings) << endl;
 
    return 0;

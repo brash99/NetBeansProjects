@@ -1,10 +1,10 @@
-d#include "Restaurant.h"
+#include "Restaurant.h"
 
 //Restaurant::Restaurant() {
 //    name = "No Name";
 //    rating = -1;
 //    price = "No Price";
-//    cuisine = "No Type"
+//    cuisine = "No Type";
 //}
 
 Restaurant::Restaurant(string userName, int userRating, string price, string cuisineType) {
@@ -12,6 +12,7 @@ Restaurant::Restaurant(string userName, int userRating, string price, string cui
     rating = userRating;
     this->price = price;
     cuisine = cuisineType;
+    
     id = nextID;
     ++nextID;
 }

@@ -21,6 +21,7 @@ class Restaurant {
         string price;
         string cuisine;
         int id;
+        
         static int nextID; // a static member variable is a member of the CLASS, and
                             // not to any particular object of the class!!!!!!!
     

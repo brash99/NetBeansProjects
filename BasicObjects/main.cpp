@@ -20,9 +20,9 @@ int main(int argc, char** argv) {
     
     // Define some objects ... the first two call the default constructor, and the last
     // calls the initialization constructor.
-    Restaurant schooners;
-    Restaurant moes;
-    Restaurant mickydees("MacDonald's",-10000,"$","Fast Food");
+    Restaurant schooners; // default values, id = 1001
+    Restaurant moes; // default values, id = 1002
+    Restaurant mickydees("MacDonald's",-10000,"$","Fast Food"); // specified values, id = 1003
     
     mickydees.Print();
     cout << endl;
@@ -40,6 +40,9 @@ int main(int argc, char** argv) {
     moes.SetRating(5);
     moes.SetPrice("$$");
     moes.SetCuisineType("Mexican");
+    
+    schooners.Print();
+    moes.Print();
     
     // Define a vector of Restaurant objects, and add our three restaurants to it!!!
     vector<Restaurant> myRestaurants;
