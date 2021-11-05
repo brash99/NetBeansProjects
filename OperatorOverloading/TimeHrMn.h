@@ -13,12 +13,14 @@
 using namespace std;
 
 class TimeHrMn {
+    
+private:
+   int hours;
+   int minutes;
+   double seconds;
 
 public:
    TimeHrMn(int timeHours = 0, int timeMinutes = 0, double timeSeconds = 0.0);
-
-   TimeHrMn operator+(TimeHrMn rhs);
-   TimeHrMn operator-(TimeHrMn rhs);
    
    void SetHr(int userHours);
    void SetMn(int userMinutes);
@@ -30,10 +32,8 @@ public:
    
    void Print() const;
    
-private:
-   int hours;
-   int minutes;
-   double seconds;
+   TimeHrMn operator+(TimeHrMn rhs);
+   TimeHrMn operator-(TimeHrMn rhs);
    
 };
 

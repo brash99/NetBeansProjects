@@ -43,6 +43,13 @@ bool operator<(const TimeHrMn& lhs, const TimeHrMn& rhs) {
 }
 
 
+// Complete the set of relational operators by using previous methods for "==" and "<"
+bool operator!=(const TimeHrMn& lhs, const TimeHrMn& rhs) { return !(lhs == rhs); }
+bool operator>(const TimeHrMn& lhs, const TimeHrMn& rhs)  { return rhs < lhs;    }
+bool operator<=(const TimeHrMn& lhs, const TimeHrMn& rhs) { return !(lhs > rhs); }
+bool operator>=(const TimeHrMn& lhs, const TimeHrMn& rhs) { return !(lhs < rhs); }
+
+
 int main(int argc, char** argv) {
     
     TimeHrMn time1(3, 22, 45.0);
