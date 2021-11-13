@@ -20,17 +20,19 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     
-    // Create a linked list
+   // Create a linked list
    LinkedList* list = new LinkedList;
+   
+   // Prepend several nodes to list 
    for (int i = 1; i <= 6; ++i) {
       list->Prepend(i * 10);
-      cout << "Head now at: " << list->head << endl;
+      cout << "Head now at: " << list->GetHead() << endl;
    } 
       
    // Free the linked list.
    // The LinkedList class destructor frees each node.
    delete list;
 
-    return 0;
+   return 0;
 }
 

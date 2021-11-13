@@ -17,7 +17,7 @@ LinkedList::~LinkedList() {
     
    // The destructor deletes each node in the linked list
    while (head) {
-      IntNode* next = head->next;
+      IntNode* next = head->GetNext();
       delete head;
       head = next;
    }
@@ -25,7 +25,15 @@ LinkedList::~LinkedList() {
 
 void LinkedList::Prepend(int dataValue) {
    IntNode* newNode = new IntNode(dataValue);
-   newNode->next = head;
+   newNode->SetNext(head);
    head = newNode;
+}
+
+IntNode* LinkedList::GetHead() const {
+    return this->head;
+}
+
+void LinkedList::SetHead(IntNode* headPtr) {
+    this->head = headPtr;
 }
 

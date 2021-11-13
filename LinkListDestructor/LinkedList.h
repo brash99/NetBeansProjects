@@ -25,7 +25,11 @@ public:
    ~LinkedList();
    
    void Prepend(int dataValue);
-    
+   
+   IntNode* GetHead() const;
+   void SetHead(IntNode* headPtr); 
+   
+private:
    IntNode* head;
    
 };

@@ -17,11 +17,18 @@
 using namespace std;
 
 class IntNode {
+    
 public:
-    IntNode(int dataValue); 
-    
+   IntNode(int dataValue); 
    ~IntNode();
+   
+   int GetData() const;
+   IntNode* GetNext() const;
+   
+   void SetData(int dataValue);
+   void SetNext(IntNode* nextPtr);
     
+private:
    int data;
    IntNode* next;
    

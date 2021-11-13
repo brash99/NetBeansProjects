@@ -15,3 +15,19 @@ IntNode::~IntNode() {
       cout << "In IntNode destructor (";
       cout << data << "," << next << ")" << endl;      
 }
+
+int IntNode::GetData() const {
+    return data;
+}
+
+IntNode* IntNode::GetNext() const {
+    return next;
+}
+
+void IntNode::SetData(int dataValue) {
+    this->data = dataValue;
+}
+
+void IntNode::SetNext(IntNode* nextPtr) {
+    this->next = nextPtr;
+}
