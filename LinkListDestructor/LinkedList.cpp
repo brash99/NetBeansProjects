@@ -7,12 +7,13 @@
 #include "IntNode.h"
 
 LinkedList::LinkedList() {
-   cout << "In LinkedList constructor" << endl;
+   
    head = nullptr;
+   cout << "In LinkedList constructor: " << head << endl;
 }
 
 LinkedList::~LinkedList() {
-   cout << "In LinkedList destructor" << endl;
+   cout << "In LinkedList destructor: " << endl;
     
    // The destructor deletes each node in the linked list
    while (head) {

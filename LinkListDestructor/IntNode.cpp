@@ -6,11 +6,12 @@
 #include "IntNode.h"
 
 IntNode::IntNode(int dataValue) {
-      cout << "In IntNode constructor (" << dataValue << ")" << endl;
+      cout << "In IntNode constructor (" << dataValue << "," << next << ")" << endl;
       data = dataValue;
+      next = nullptr;
 }
 
 IntNode::~IntNode() {
       cout << "In IntNode destructor (";
-      cout << data << ")" << endl;
+      cout << data << "," << next << ")" << endl;      
 }
