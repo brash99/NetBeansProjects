@@ -17,8 +17,11 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
 
 using namespace std;
+
+static const unsigned int nelements = 2000;
 
 static const char alpha[] =
 "abcdefghijklmnopqrstuvwxyz";
@@ -73,7 +76,7 @@ Book genBook(long isbn) {
     //cout << isbn << endl;
     //cout << book_author << endl;
     
-    tempBook = Book(book_author,book_title,isbn);
+    tempBook = Book(book_title,book_author,isbn);
     
     return tempBook;
     
@@ -88,7 +91,7 @@ void CreateRandomLibrary(LinkedListLibrary &linkedListLibrary, VectorLibrary &ve
     int linkedListOperations = 0;
     int vectorOperations = 0;
     
-    for (int i = 0; i<20000; i++) {
+    for (int i = 0; i<2*nelements; i++) {
         
         tempBook = genBook(isbn+i*4000);
         vectorOperations = vectorLibrary.InsertSorted(tempBook, vectorOperations);
@@ -126,7 +129,7 @@ void FillLibraries(LinkedListLibrary &linkedListLibrary, VectorLibrary &vectorLi
       currNode = new BookNode(bookTitle, bookAuthor, bookISBN);
       linkedListOperations = linkedListLibrary.InsertSorted(currNode, linkedListOperations);
       linkedListLibrary.lastNode = currNode;
-
+      
       // Insert into vector
       tempBook = Book(bookTitle, bookAuthor, bookISBN);
       vectorOperations = vectorLibrary.InsertSorted(tempBook, vectorOperations);
@@ -165,28 +168,46 @@ int main (int argc, const char* argv[]) {
    //cout << "Enter the book author: " << endl;
    //getline(cin, bookAuthor);
    
-   for (unsigned int j =0; j<1000; j++) {
+   unsigned long int durationl_int = 0;
+   unsigned long int durationv_int = 0;
+   
+   for (unsigned int j = 0; j<nelements; j++) {
        bookISBN = 9780400000000+j*4001;
        tempBook = genBook(bookISBN);
-       bookAuthor = tempBook.Get
+       bookAuthor = tempBook.GetBookAuthor();
+       bookTitle = tempBook.GetBookTitle();
 
+       auto startl = chrono::high_resolution_clock::now();
+       
        // Insert into linked list
        // No need to delete currNode, deleted by LinkedListLibrary destructor
        currNode = new BookNode(bookTitle, bookAuthor, bookISBN);
    
-   // TODO: Call LL_Library's InsertSorted() method to insert currNode and return
-   //       the number of operations performed
+       // TODO: Call LL_Library's InsertSorted() method to insert currNode and return
+       //       the (updated) number of operations performed
    
-   linkedListOperations = linkedListLibrary.InsertSorted(currNode,linkedListOperations);
-   linkedListLibrary.lastNode = currNode;
+       linkedListOperations = linkedListLibrary.InsertSorted(currNode,linkedListOperations);
+       linkedListLibrary.lastNode = currNode;
+       
+       auto stopl = chrono::high_resolution_clock::now();
+       auto durationl = duration_cast<chrono::microseconds>(stopl - startl);
+       durationl_int += long(durationl.count());
+       
 
-   // Insert into VectorList
-   tempBook  = Book(bookTitle, bookAuthor, bookISBN);
+       auto startv = chrono::high_resolution_clock::now();
+       
+       tempBook  = Book(bookTitle, bookAuthor, bookISBN);
    
-   // TODO: Call VectorLibrary's InsertSorted() method to insert tempBook and return
-   //       the number of operations performed
+       // TODO: Call VectorLibrary's InsertSorted() method to insert tempBook and return
+       //       the (updated) number of operations performed
    
-   vectorOperations = vectorLibrary.InsertSorted(tempBook,vectorOperations);
+       vectorOperations = vectorLibrary.InsertSorted(tempBook,vectorOperations);
+       
+       auto stopv = chrono::high_resolution_clock::now();
+       auto durationv = duration_cast<chrono::microseconds>(stopv - startv);
+       durationv_int += long(durationv.count());
+       
+   }
 
    // TODO: Print number of operations for linked list
    cout << "Number of linked list operations: " << linkedListOperations << endl;
@@ -195,15 +216,21 @@ int main (int argc, const char* argv[]) {
    cout << "Number of vector operations: " << vectorOperations << endl;
    cout << endl;
    
+   cout << "Time (useconds) for List Operations: " << durationl_int << endl;
+   cout << "Time (useconds) for Vector Operations: " << durationv_int << endl;
+   cout << endl;
+   cout << "Performance Factor: " << 1.0*durationv_int/durationl_int;
+   cout << endl;
+   
    // Print Libraries
    
    /*cout << "-----------------------------" << endl;
    cout << "Linked List Library:" << endl;
    cout << "-----------------------------" << endl;
    linkedListLibrary.PrintLibrary();
-   cout << endl;
+   cout << endl;*/
    
-   cout << "-----------------------------" << endl;
+   /*cout << "-----------------------------" << endl;
    cout << "Vector Library: " << endl;
    cout << "-----------------------------" << endl;
    vectorLibrary.PrintLibrary();*/

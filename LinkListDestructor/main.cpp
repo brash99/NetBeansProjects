@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
    LinkedList* list = new LinkedList;
    
    // Prepend several nodes to list 
-   for (int i = 1; i <= 6; ++i) {
+   for (int i = 1; i <= 1000; ++i) {
       list->Prepend(i * 10);
       cout << "Head now at: " << list->GetHead() << endl;
    } 
