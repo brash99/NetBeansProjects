@@ -14,7 +14,93 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
+
+static const char alpha[] =
+"abcdefghijklmnopqrstuvwxyz";
+
+static const char caps[] =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+int stringLength = sizeof(alpha) - 1;
+int capsLength = sizeof(caps) - 1;
+
+char genRandom() { // Random lower case generator function.
+    return alpha[rand() % stringLength];
+}
+
+char genCap() { // Random upper case generator function.
+    return caps[rand() % capsLength];
+}
+
+Book genBook(long isbn) {
+    
+    Book tempBook;
+    
+    string book_author, book_title;
+    
+    string temp = "The";
+    
+    for (int j=0; j<4; j++) {
+        temp += " ";
+        temp += genCap();
+        for (int i=0; i<6; i++) {
+            temp += genRandom();
+        }
+    }
+    
+    book_title = temp;
+    //cout << book_title << endl;
+    
+    temp = "";
+    
+    temp += genCap();
+    for (int i=0; i<8; i++) {
+        temp += genRandom();
+    }
+    temp += ", ";
+    
+    temp += genCap();
+    for (int i=0; i<6; i++) {
+        temp += genRandom();
+    }
+    
+    book_author = temp;
+    //cout << isbn << endl;
+    //cout << book_author << endl;
+    
+    tempBook = Book(book_author,book_title,isbn);
+    
+    return tempBook;
+    
+}
+
+void CreateRandomLibrary(LinkedListLibrary &linkedListLibrary, VectorLibrary &vectorLibrary) {
+    
+    long isbn = 9780400000000;
+    BookNode* currNode;
+    Book tempBook;
+    
+    int linkedListOperations = 0;
+    int vectorOperations = 0;
+    
+    for (int i = 0; i<20000; i++) {
+        
+        tempBook = genBook(isbn+i*4000);
+        vectorOperations = vectorLibrary.InsertSorted(tempBook, vectorOperations);
+        
+        currNode = new BookNode(tempBook.GetBookTitle(), tempBook.GetBookAuthor(),
+                tempBook.GetBookISBN());
+        linkedListOperations = linkedListLibrary.InsertSorted(currNode, linkedListOperations);
+        linkedListLibrary.lastNode = currNode;
+        
+    }
+    
+}
 
 void FillLibraries(LinkedListLibrary &linkedListLibrary, VectorLibrary &vectorLibrary) {
    ifstream inputFS; // File input stream
@@ -56,9 +142,12 @@ int main (int argc, const char* argv[]) {
    // Create libraries
    LinkedListLibrary linkedListLibrary = LinkedListLibrary();
    VectorLibrary vectorLibrary;
+   
+   // Create library file
+   CreateRandomLibrary(linkedListLibrary, vectorLibrary);
 
    // Fill libraries with 100 books
-   FillLibraries(linkedListLibrary, vectorLibrary);
+   //FillLibraries(linkedListLibrary, vectorLibrary);
 
    // Create new book to insert into libraries
    BookNode* currNode;
@@ -68,14 +157,22 @@ int main (int argc, const char* argv[]) {
    string bookAuthor;
    long bookISBN;
 
-   getline(cin, bookTitle);
-   cin >> bookISBN;
-   cin.ignore();
-   getline(cin, bookAuthor);
+   //cout << "Enter the book title: " << endl;
+   //getline(cin, bookTitle);
+   //cout << "Enter the 13 digit ISBN number: " << endl;
+   //cin >> bookISBN;
+   //cin.ignore();
+   //cout << "Enter the book author: " << endl;
+   //getline(cin, bookAuthor);
+   
+   for (unsigned int j =0; j<1000; j++) {
+       bookISBN = 9780400000000+j*4001;
+       tempBook = genBook(bookISBN);
+       bookAuthor = tempBook.Get
 
-   // Insert into linked list
-   // No need to delete currNode, deleted by LinkedListLibrary destructor
-   currNode = new BookNode(bookTitle, bookAuthor, bookISBN);
+       // Insert into linked list
+       // No need to delete currNode, deleted by LinkedListLibrary destructor
+       currNode = new BookNode(bookTitle, bookAuthor, bookISBN);
    
    // TODO: Call LL_Library's InsertSorted() method to insert currNode and return
    //       the number of operations performed
@@ -100,7 +197,7 @@ int main (int argc, const char* argv[]) {
    
    // Print Libraries
    
-   cout << "-----------------------------" << endl;
+   /*cout << "-----------------------------" << endl;
    cout << "Linked List Library:" << endl;
    cout << "-----------------------------" << endl;
    linkedListLibrary.PrintLibrary();
@@ -109,7 +206,9 @@ int main (int argc, const char* argv[]) {
    cout << "-----------------------------" << endl;
    cout << "Vector Library: " << endl;
    cout << "-----------------------------" << endl;
-   vectorLibrary.PrintLibrary();
+   vectorLibrary.PrintLibrary();*/
+   
+   return 0;
 
 }
 

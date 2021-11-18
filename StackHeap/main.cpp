@@ -20,31 +20,30 @@ using namespace std;
  * 
  */
 
-int myGlobal = 33;
+int myGlobal = 33;                        // Static Memory
 
 void myFunction() {
-    int myLocal;
+    int myLocal;                          // The Stack
     myLocal = 999;
     cout << " " << myLocal;
-    return;
+    return;                               // Removes from Stack!!!!!
 }
 
 int main(int argc, char** argv) {
     
-    int myInt;
-    int* myPtr = nullptr;
-    
+    int myInt;                            // The Stack
+    int* myPtr = nullptr;                 // The Stack (for now)    
     myInt = 555;
     
-    myPtr = new int;
+    myPtr = new int;                      // The Heap
     *myPtr = 222;
     
     cout << *myPtr << " " << myInt;
     
-    delete myPtr;
+    delete myPtr;                         // Removes from the Heap AND Stack
     
-    myFunction();
+    myFunction();                         // Only myInt exists on Stack
     
-    return 0;
+    return 0;                             // Removes myInt from Stack
 }
 

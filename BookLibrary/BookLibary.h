@@ -25,6 +25,8 @@ class Book{
       Book(string userBookTitle, string userBookAuthor, long userBookISBN);
 
       long GetBookISBN() const;
+      string GetBookTitle() const;
+      string GetBookAuthor() const;
 
       void PrintInfo() const;
    
@@ -89,8 +91,8 @@ class VectorLibrary {
       void PrintLibrary() const;
    
    private:
-   // vector library
-   vector<Book> library;
+      // vector library
+      vector<Book> library;
 
 };
 

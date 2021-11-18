@@ -20,7 +20,7 @@ class IntNode {
     
 public:
    IntNode(int dataValue); 
-   ~IntNode();
+   ~IntNode();  // destructor
    
    int GetData() const;
    IntNode* GetNext() const;

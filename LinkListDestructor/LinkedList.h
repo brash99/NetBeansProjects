@@ -22,7 +22,7 @@ class LinkedList {
 public:
     
    LinkedList();
-   ~LinkedList();
+   ~LinkedList();  //destructor frees up entire linked list
    
    void Prepend(int dataValue);
    
