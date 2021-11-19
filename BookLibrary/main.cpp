@@ -21,7 +21,7 @@
 
 using namespace std;
 
-static const unsigned int nelements = 2000;
+static const unsigned int nelements = 10000;
 
 static const char alpha[] =
 "abcdefghijklmnopqrstuvwxyz";
@@ -168,8 +168,8 @@ int main (int argc, const char* argv[]) {
    //cout << "Enter the book author: " << endl;
    //getline(cin, bookAuthor);
    
-   unsigned long int durationl_int = 0;
-   unsigned long int durationv_int = 0;
+   double durationl_fps = 0.0;
+   double durationv_fps = 0.0;
    
    for (unsigned int j = 0; j<nelements; j++) {
        bookISBN = 9780400000000+j*4001;
@@ -190,8 +190,8 @@ int main (int argc, const char* argv[]) {
        linkedListLibrary.lastNode = currNode;
        
        auto stopl = chrono::high_resolution_clock::now();
-       auto durationl = duration_cast<chrono::microseconds>(stopl - startl);
-       durationl_int += long(durationl.count());
+       chrono::duration<double,micro> durationl_fp = stopl - startl;
+       durationl_fps += double(durationl_fp.count());
        
 
        auto startv = chrono::high_resolution_clock::now();
@@ -204,9 +204,8 @@ int main (int argc, const char* argv[]) {
        vectorOperations = vectorLibrary.InsertSorted(tempBook,vectorOperations);
        
        auto stopv = chrono::high_resolution_clock::now();
-       auto durationv = duration_cast<chrono::microseconds>(stopv - startv);
-       durationv_int += long(durationv.count());
-       
+       chrono::duration<double,micro> durationv_fp = stopv - startv;
+       durationv_fps += double(durationv_fp.count());
    }
 
    // TODO: Print number of operations for linked list
@@ -216,10 +215,10 @@ int main (int argc, const char* argv[]) {
    cout << "Number of vector operations: " << vectorOperations << endl;
    cout << endl;
    
-   cout << "Time (useconds) for List Operations: " << durationl_int << endl;
-   cout << "Time (useconds) for Vector Operations: " << durationv_int << endl;
+   cout << "Time (useconds) for List Operations: " << durationl_fps << endl;
+   cout << "Time (useconds) for Vector Operations: " << durationv_fps << endl;
    cout << endl;
-   cout << "Performance Factor: " << 1.0*durationv_int/durationl_int;
+   cout << "Performance Factor: " << 1.0*durationv_fps/durationl_fps;
    cout << endl;
    
    // Print Libraries
