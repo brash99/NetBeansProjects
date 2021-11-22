@@ -13,12 +13,14 @@
 #include "Business.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 /*
  * 
  */
+
 int main(int argc, char** argv) {
     
     Business genericBusiness;
@@ -32,8 +34,32 @@ int main(int argc, char** argv) {
    
     favoritePlace.SetRating(5); // calls the SetRating method of the Restaurant class
     
+    
+    //  Notes on Polymorphism:
+    //
+    //  1. Compile-Time polymorphism ... the compiler can figure out which function (of the same name)
+    //  to call based on the ARGUMENTS to the function, or based on explicit reference to functions of the
+    //  class of a particular type of object.
+       
     cout << favoritePlace.GetDescription() << endl << endl; // calls the GetDescription method of the Restaurant class!
     cout << genericBusiness.GetDescription() << endl; // calls the GetDescription method of the Business class!
+    
+    //
+    //  2. Run-Time polymorphism ... if the compiler cannot figure out which is the appropriate function,
+    //  then this has to be determined at run time.  We can use VIRTUAL function definitions in these cases
+    //  to speed things up.
+    
+    Business* businessPtr;
+    
+    // Point to genericBusiness
+    businessPtr = &genericBusiness;
+    
+    cout << endl << businessPtr->GetDescription() << endl << endl;
+    
+    // Point to favoritePlace
+    businessPtr = &favoritePlace;
+
+    cout << endl << businessPtr->GetDescription() << endl << endl;
     
     return 0;
 }
