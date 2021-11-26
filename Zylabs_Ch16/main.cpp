@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "Dog.h"
 #include "StringInstrument.h"
 #include "OfferedCourse.h"
@@ -26,20 +27,20 @@ using namespace std;
  */
 
 void PrintVector(vector<Plant*> myGarden) {
-   size_t i;
+    size_t i;
 
-   for (i = 0; i < myGarden.size(); ++i) {
-      myGarden.at(i)->PrintInfo();
-      cout << endl;
-   }
+    for (i = 0; i < myGarden.size(); ++i) {
+        myGarden.at(i)->PrintInfo();
+        cout << endl;
+    }
 }
 
 int main(int argc, char** argv) {
-    
+
     int choice = 5;
-    
+
     if (choice == 1) {
-    
+
         string petName, dogName, dogBreed;
         int petAge, dogAge;
 
@@ -58,7 +59,7 @@ int main(int argc, char** argv) {
         myPet.SetAge(petAge);
         myPet.SetName(petName);
         myPet.PrintInfo();
-        
+
 
         // TODO: Create dog pet (using dogName, dogAge, dogBreed) and then call PrintInfo
         myDog.SetName(dogName);
@@ -68,163 +69,162 @@ int main(int argc, char** argv) {
 
         // TODO: Use GetBreed(), to output the breed of the dog
         cout << "   Breed: " << myDog.GetBreed() << endl;
-    
+
     }
-    
+
     if (choice == 2) {
         Instrument myInstrument;
-	StringInstrument myStringInstrument;
+        StringInstrument myStringInstrument;
 
-	string instrumentName, manufacturerName, stringInstrumentName, stringManufacturer, yearBuilt,
-			cost, stringYearBuilt, stringCost, numStrings, numFrets;
+        string instrumentName, manufacturerName, stringInstrumentName, stringManufacturer, yearBuilt,
+                cost, stringYearBuilt, stringCost, numStrings, numFrets;
 
-	getline(cin, instrumentName);
-	getline(cin, manufacturerName);
-	getline(cin, yearBuilt);
-	getline(cin, cost);
+        getline(cin, instrumentName);
+        getline(cin, manufacturerName);
+        getline(cin, yearBuilt);
+        getline(cin, cost);
 
-	getline(cin, stringInstrumentName);
-	getline(cin, stringManufacturer);
-	getline(cin, stringYearBuilt);
-	getline(cin, stringCost);
-	getline(cin, numStrings);
-	getline(cin, numFrets);
+        getline(cin, stringInstrumentName);
+        getline(cin, stringManufacturer);
+        getline(cin, stringYearBuilt);
+        getline(cin, stringCost);
+        getline(cin, numStrings);
+        getline(cin, numFrets);
 
-	myInstrument.SetName(instrumentName);
-	myInstrument.SetManufacturer(manufacturerName);
-	myInstrument.SetYearBuilt(yearBuilt);
-	myInstrument.SetCost(cost);
-	myInstrument.PrintInfo();
+        myInstrument.SetName(instrumentName);
+        myInstrument.SetManufacturer(manufacturerName);
+        myInstrument.SetYearBuilt(yearBuilt);
+        myInstrument.SetCost(cost);
+        myInstrument.PrintInfo();
 
-	myStringInstrument.SetName(stringInstrumentName);
-	myStringInstrument.SetManufacturer(stringManufacturer);
-	myStringInstrument.SetYearBuilt(stringYearBuilt);
-	myStringInstrument.SetCost(stringCost);
-	myStringInstrument.SetNumOfStrings(numStrings);
-	myStringInstrument.SetNumOfFrets(numFrets);
-	myStringInstrument.PrintInfo();
+        myStringInstrument.SetName(stringInstrumentName);
+        myStringInstrument.SetManufacturer(stringManufacturer);
+        myStringInstrument.SetYearBuilt(stringYearBuilt);
+        myStringInstrument.SetCost(stringCost);
+        myStringInstrument.SetNumOfStrings(numStrings);
+        myStringInstrument.SetNumOfFrets(numFrets);
+        myStringInstrument.PrintInfo();
 
-	cout << "   Number of strings: " << myStringInstrument.GetNumOfStrings() << endl;
-	cout << "   Number of frets: " << myStringInstrument.GetNumOfFrets() << endl;
-                
+        cout << "   Number of strings: " << myStringInstrument.GetNumOfStrings() << endl;
+        cout << "   Number of frets: " << myStringInstrument.GetNumOfFrets() << endl;
+
     }
-    
+
     if (choice == 3) {
-        
-		Course myCourse;
-		OfferedCourse myOfferedCourse;
 
-		string courseNumber, courseTitle;
-		string oCourseNumber, oCourseTitle, instructorName, term, classTime;
+        Course myCourse;
+        OfferedCourse myOfferedCourse;
 
-		getline(cin, courseNumber);
-		getline(cin, courseTitle);
+        string courseNumber, courseTitle;
+        string oCourseNumber, oCourseTitle, instructorName, term, classTime;
 
-		getline(cin, oCourseNumber);
-		getline(cin, oCourseTitle);
-		getline(cin, instructorName);
-		getline(cin, term);
-		getline(cin, classTime);
+        getline(cin, courseNumber);
+        getline(cin, courseTitle);
 
-		myCourse.SetCourseNumber(courseNumber);
-		myCourse.SetCourseTitle(courseTitle);
-		myCourse.PrintInfo();
+        getline(cin, oCourseNumber);
+        getline(cin, oCourseTitle);
+        getline(cin, instructorName);
+        getline(cin, term);
+        getline(cin, classTime);
 
-		myOfferedCourse.SetCourseNumber(oCourseNumber);
-		myOfferedCourse.SetCourseTitle(oCourseTitle);
-		myOfferedCourse.SetInstructorName(instructorName);
-		myOfferedCourse.SetTerm(term);
-		myOfferedCourse.SetClassTime(classTime);
-		myOfferedCourse.PrintInfo();
+        myCourse.SetCourseNumber(courseNumber);
+        myCourse.SetCourseTitle(courseTitle);
+        myCourse.PrintInfo();
 
-		cout << "   Instructor Name: " << myOfferedCourse.GetInstructorName() << endl;
-		cout << "   Term: " << myOfferedCourse.GetTerm() << endl;
-		cout << "   Class Time: " << myOfferedCourse.GetClassTime() << endl;        
-        
+        myOfferedCourse.SetCourseNumber(oCourseNumber);
+        myOfferedCourse.SetCourseTitle(oCourseTitle);
+        myOfferedCourse.SetInstructorName(instructorName);
+        myOfferedCourse.SetTerm(term);
+        myOfferedCourse.SetClassTime(classTime);
+        myOfferedCourse.PrintInfo();
+
+        cout << "   Instructor Name: " << myOfferedCourse.GetInstructorName() << endl;
+        cout << "   Term: " << myOfferedCourse.GetTerm() << endl;
+        cout << "   Class Time: " << myOfferedCourse.GetClassTime() << endl;
+
     }
-    
+
     if (choice == 4) {
-        
-            Book myBook;
-            Encyclopedia myEncyclopedia;
 
-            string title, author, publisher, publicationDate;
-            string eTitle, eAuthor, ePublisher, ePublicationDate, edition;
-            int numVolumes;
+        Book myBook;
+        Encyclopedia myEncyclopedia;
 
-            getline(cin, title);
-            getline(cin, author);
-            getline(cin, publisher);
-            getline(cin, publicationDate);
+        string title, author, publisher, publicationDate;
+        string eTitle, eAuthor, ePublisher, ePublicationDate, edition;
+        int numVolumes;
 
-            getline(cin, eTitle);
-            getline(cin, eAuthor);
-            getline(cin, ePublisher);
-            getline(cin, ePublicationDate);
-            getline(cin, edition);
-            cin >> numVolumes;
+        getline(cin, title);
+        getline(cin, author);
+        getline(cin, publisher);
+        getline(cin, publicationDate);
 
-            myBook.SetTitle(title);
-            myBook.SetAuthor(author);
-            myBook.SetPublisher(publisher);
-            myBook.SetPublicationDate(publicationDate);
-            myBook.PrintInfo();
+        getline(cin, eTitle);
+        getline(cin, eAuthor);
+        getline(cin, ePublisher);
+        getline(cin, ePublicationDate);
+        getline(cin, edition);
+        cin >> numVolumes;
 
-            myEncyclopedia.SetTitle(eTitle);
-            myEncyclopedia.SetAuthor(eAuthor);
-            myEncyclopedia.SetPublisher(ePublisher);
-            myEncyclopedia.SetPublicationDate(ePublicationDate);
-            myEncyclopedia.SetEdition(edition);
-            myEncyclopedia.SetNumVolumes(numVolumes);
-            myEncyclopedia.PrintInfo();
-        
+        myBook.SetTitle(title);
+        myBook.SetAuthor(author);
+        myBook.SetPublisher(publisher);
+        myBook.SetPublicationDate(publicationDate);
+        myBook.PrintInfo();
+
+        myEncyclopedia.SetTitle(eTitle);
+        myEncyclopedia.SetAuthor(eAuthor);
+        myEncyclopedia.SetPublisher(ePublisher);
+        myEncyclopedia.SetPublicationDate(ePublicationDate);
+        myEncyclopedia.SetEdition(edition);
+        myEncyclopedia.SetNumVolumes(numVolumes);
+        myEncyclopedia.PrintInfo();
+
     }
-    
+
     if (choice == 5) {
-            vector<Plant*> myGarden;
-            // Declare variables - plantName, plantCost, flowerName, flowerCost,
-            //       colorOfFlowers, isAnnual
-            string plantName, flowerName, colorOfFlowers;
-            int plantCost;
-            bool isAnnual;
-            string input;
+        vector<Plant*> myGarden;
+        // Declare variables - plantName, plantCost, flowerName, flowerCost,
+        //       colorOfFlowers, isAnnual
+        string plantName, flowerName, colorOfFlowers;
+        int plantCost;
+        bool isAnnual;
+        string input;
 
+        cin >> input;
+
+        while (input != "-1") {
+            // Check if input is a plant or flower
+            //       Store as a plant object or flower object
+            //       Add to the vector myGarden
+            if (input == "plant") {
+                Plant* myPlant = new Plant();
+                cin >> plantName;
+                cin >> plantCost;
+                myPlant->SetPlantName(plantName);
+                myPlant->SetPlantCost(plantCost);
+                myGarden.push_back(myPlant);
+            } else if (input == "flower") {
+                Flower* myFlower = new Flower();
+                cin >> plantName;
+                cin >> plantCost;
+                cin >> boolalpha >> isAnnual;
+                cin >> colorOfFlowers;
+                myFlower->SetPlantName(plantName);
+                myFlower->SetPlantCost(plantCost);
+                myFlower->SetPlantType(isAnnual);
+                myFlower->SetColorOfFlowers(colorOfFlowers);
+                myGarden.push_back(myFlower);
+            }
             cin >> input;
+        }
+        // Call the method PrintVector to print myGarden
+        PrintVector(myGarden);
 
-            while(input != "-1") {
-                // Check if input is a plant or flower
-                //       Store as a plant object or flower object
-                //       Add to the vector myGarden
-                if (input == "plant") {
-                    Plant* myPlant = new Plant();
-                    cin >> plantName;
-                    cin >> plantCost;
-                    myPlant->SetPlantName(plantName);
-                    myPlant->SetPlantCost(plantCost);
-                    myGarden.push_back(myPlant);
-                }
-                else if (input == "flower") {
-                    Flower* myFlower = new Flower();
-                    cin >> plantName;
-                    cin >> plantCost;
-                    cin >> boolalpha >> isAnnual;
-                    cin >> colorOfFlowers;
-                    myFlower->SetPlantName(plantName);
-                    myFlower->SetPlantCost(plantCost);
-                    myFlower->SetPlantType(isAnnual);
-                    myFlower->SetColorOfFlowers(colorOfFlowers);
-                    myGarden.push_back(myFlower);
-                }
-                cin >> input;
-            }
-            // Call the method PrintVector to print myGarden
-            PrintVector(myGarden);
+        for (size_t i = 0; i < myGarden.size(); ++i) {
+            delete myGarden.at(i);
+        }
 
-            for (size_t i = 0; i < myGarden.size(); ++i) {
-                delete myGarden.at(i);
-            }
-        
-        
+
     }
 
     return 0;

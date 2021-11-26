@@ -16,33 +16,33 @@
 #include "Instrument.h"
 
 class StringInstrument : public Instrument {
-    
-	// TODO: Declare private data members: numStrings, numFrets
-        private:
-            string numStrings;
-            string numFrets;
+    // TODO: Declare private data members: numStrings, numFrets
+private:
+    string numStrings;
+    string numFrets;
 
-	// TODO: Declare mutator functions - 
-	//      SetNumOfStrings(), SetNumOfFrets()
-        public:
-            
-            void SetNumOfStrings(string userNumStrings) {
-                numStrings = userNumStrings;
-            }
-            
-            void SetNumOfFrets(string userNumFrets) {
-                numFrets = userNumFrets;
-            }
-            
-	// TODO: Declare accessor functions -
-	//      GetNumOfStrings(), GetNumOfFrets()
-            string GetNumOfStrings() {
-                return numStrings;
-            }
-            
-            string GetNumOfFrets() {
-                return numFrets;
-            }
+    // TODO: Declare mutator functions - 
+    //      SetNumOfStrings(), SetNumOfFrets()
+public:
+
+    void SetNumOfStrings(string userNumStrings) {
+        numStrings = userNumStrings;
+    }
+
+    void SetNumOfFrets(string userNumFrets) {
+        numFrets = userNumFrets;
+    }
+
+    // TODO: Declare accessor functions -
+    //      GetNumOfStrings(), GetNumOfFrets()
+
+    string GetNumOfStrings() {
+        return numStrings;
+    }
+
+    string GetNumOfFrets() {
+        return numFrets;
+    }
 
 };
 

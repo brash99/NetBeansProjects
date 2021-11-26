@@ -16,44 +16,46 @@
 #include "Book.h"
 
 class Encyclopedia : public Book {
-    
-   public:
-      // Define mutator functions -
-      //       SetEdition(), SetNumVolumes()
-      void SetEdition(string userEdition) {
-          edition = userEdition;
-      }
+public:
+    // Define mutator functions -
+    //       SetEdition(), SetNumVolumes()
 
-      void SetNumVolumes(int userNumVolumes) {
-          numVolumes = userNumVolumes;
-      }
+    void SetEdition(string userEdition) {
+        edition = userEdition;
+    }
 
-      // Define accessor functions -
-      //       GetEdition(), GetNumVolumes()
-      string GetEdition() {
-          return edition;
-      }
+    void SetNumVolumes(int userNumVolumes) {
+        numVolumes = userNumVolumes;
+    }
 
-      int GetNumVolumes() {
-          return numVolumes;
-      }
+    // Define accessor functions -
+    //       GetEdition(), GetNumVolumes()
 
-      // Define a PrintInfo() function that overrides
-      //       the PrintInfo in Book class
-      void PrintInfo() {
-            cout << "Book Information: " << endl;
-            cout << "   Book Title: " << title << endl;
-            cout << "   Author: " << author << endl;
-            cout << "   Publisher: " << publisher << endl;
-            cout << "   Publication Date: " << publicationDate << endl;
-            cout << "   Edition: " + edition << endl;
-            cout << "   Number of Volumes: " << numVolumes << endl;
-      }
+    string GetEdition() {
+        return edition;
+    }
 
-   private:
-      // Declare private fields: edition, numVolumes
-      string edition;
-      int numVolumes;
+    int GetNumVolumes() {
+        return numVolumes;
+    }
+
+    // Define a PrintInfo() function that overrides
+    //       the PrintInfo in Book class
+
+    void PrintInfo() {
+        cout << "Book Information: " << endl;
+        cout << "   Book Title: " << title << endl;
+        cout << "   Author: " << author << endl;
+        cout << "   Publisher: " << publisher << endl;
+        cout << "   Publication Date: " << publicationDate << endl;
+        cout << "   Edition: " + edition << endl;
+        cout << "   Number of Volumes: " << numVolumes << endl;
+    }
+
+private:
+    // Declare private fields: edition, numVolumes
+    string edition;
+    int numVolumes;
 };
 
 #endif /* ENCYCLOPEDIA_H */

@@ -15,40 +15,39 @@
 
 #include "Course.h"
 
-class OfferedCourse: public Course {
-    
-    private:
-        string instructorName;
-        string term;
-        string classTime;
-        
-    public:
-        
-        void SetInstructorName(string userInstructorName) {
-            instructorName = userInstructorName;
-        }
-        
-        void SetTerm(string userTerm) {
-            term = userTerm;
-        }
-                
-        void SetClassTime(string userClassTime) {
-            classTime = userClassTime;
-        }
-        
-        string GetInstructorName() {
-            return instructorName;
-        }
-        
-        string GetTerm() {
-            return term;
-        }        
-        
-        string GetClassTime() {
-            return classTime;
-        }            
-    
-    
+class OfferedCourse : public Course {
+private:
+    string instructorName;
+    string term;
+    string classTime;
+
+public:
+
+    void SetInstructorName(string userInstructorName) {
+        instructorName = userInstructorName;
+    }
+
+    void SetTerm(string userTerm) {
+        term = userTerm;
+    }
+
+    void SetClassTime(string userClassTime) {
+        classTime = userClassTime;
+    }
+
+    string GetInstructorName() {
+        return instructorName;
+    }
+
+    string GetTerm() {
+        return term;
+    }
+
+    string GetClassTime() {
+        return classTime;
+    }
+
+
 };
 
 

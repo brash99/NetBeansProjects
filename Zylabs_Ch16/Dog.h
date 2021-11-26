@@ -17,17 +17,18 @@
 #include "Pet.h"
 
 class Dog : public Pet {
-	private:
-		string dogBreed;
+private:
+    string dogBreed;
 
-	public:
-		void SetBreed(string userBreed) {
-                    dogBreed = userBreed;
-                };
+public:
 
-		string GetBreed() {
-                    return dogBreed;
-                };
+    void SetBreed(string userBreed) {
+        dogBreed = userBreed;
+    };
+
+    string GetBreed() {
+        return dogBreed;
+    };
 };
 
 

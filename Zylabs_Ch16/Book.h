@@ -14,53 +14,53 @@
 #define BOOK_H
 
 class Book {
-    
-   protected:
-      string title;
-      string author;
-      string publisher;
-      string publicationDate;
+protected:
+    string title;
+    string author;
+    string publisher;
+    string publicationDate;
 
-   public:
-      void SetTitle(string userTitle) {
-          title = userTitle;
-      }
+public:
 
-      string GetTitle() {
-          return title;
-      }
+    void SetTitle(string userTitle) {
+        title = userTitle;
+    }
 
-      void SetAuthor(string userAuthor) {
-          author = userAuthor; 
-      }
+    string GetTitle() {
+        return title;
+    }
 
-      string GetAuthor() {
-          return author;
-      }
+    void SetAuthor(string userAuthor) {
+        author = userAuthor;
+    }
 
-      void SetPublisher(string userPublisher) {
-          publisher = userPublisher;
-      }
+    string GetAuthor() {
+        return author;
+    }
 
-      string GetPublisher() {
-          return publisher;
-      }
+    void SetPublisher(string userPublisher) {
+        publisher = userPublisher;
+    }
 
-      void SetPublicationDate(string userPublicationDate) {
-          publicationDate = userPublicationDate;
-      }
+    string GetPublisher() {
+        return publisher;
+    }
 
-      string GetPublicationDate() {
-          return publicationDate;
-      }
+    void SetPublicationDate(string userPublicationDate) {
+        publicationDate = userPublicationDate;
+    }
 
-      void PrintInfo() {
-            cout << "Book Information: " << endl;
-            cout << "   Book Title: " << title << endl;
-            cout << "   Author: " << author << endl;
-            cout << "   Publisher: " << publisher << endl;
-            cout << "   Publication Date: " << publicationDate << endl;
-      }
+    string GetPublicationDate() {
+        return publicationDate;
+    }
+
+    void PrintInfo() {
+        cout << "Book Information: " << endl;
+        cout << "   Book Title: " << title << endl;
+        cout << "   Author: " << author << endl;
+        cout << "   Publisher: " << publisher << endl;
+        cout << "   Publication Date: " << publicationDate << endl;
+    }
 
 
 };

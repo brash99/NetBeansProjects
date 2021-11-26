@@ -17,32 +17,33 @@
 using namespace std;
 
 class Pet {
-	protected:
-		string petName;
-		int petAge;
+protected:
+    string petName;
+    int petAge;
 
-	public:
-		void SetName(string userName) {
-                    petName = userName;
-                };
+public:
 
-		string GetName() {
-                    return petName;
-                };
+    void SetName(string userName) {
+        petName = userName;
+    };
 
-		void SetAge(int userAge) {
-                    petAge = userAge;
-                };
+    string GetName() {
+        return petName;
+    };
 
-		int GetAge() {
-                    return petAge;
-                };
+    void SetAge(int userAge) {
+        petAge = userAge;
+    };
 
-		void PrintInfo() {
-                    cout << "Pet Information: " << endl;
-                    cout << "   Name: " << petName << endl;
-                    cout << "   Age: " << petAge << endl;
-                };
+    int GetAge() {
+        return petAge;
+    };
+
+    void PrintInfo() {
+        cout << "Pet Information: " << endl;
+        cout << "   Name: " << petName << endl;
+        cout << "   Age: " << petAge << endl;
+    };
 };
 
 #endif /* PET_H */

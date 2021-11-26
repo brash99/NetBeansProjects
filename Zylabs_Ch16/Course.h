@@ -17,36 +17,35 @@
 #include <string>
 
 class Course {
-    
 private:
     string courseNumber;
     string courseTitle;
-    
+
 public:
-    
+
     void SetCourseNumber(string userCourseNumber) {
         courseNumber = userCourseNumber;
     }
-    
+
     void SetCourseTitle(string userCourseTitle) {
         courseTitle = userCourseTitle;
     }
-    
+
     string GetCourseNumber() {
         return courseNumber;
     }
-    
+
     string GetCourseTitle() {
         return courseTitle;
     }
-    
+
     void PrintInfo() {
         cout << "Course Information: " << endl;
         cout << "   Course Number: " << courseNumber << endl;
-        cout << "   Course Title: " << courseTitle << endl;  
+        cout << "   Course Title: " << courseTitle << endl;
     }
-    
-    
+
+
 };
 
 #endif /* COURSE_H */
