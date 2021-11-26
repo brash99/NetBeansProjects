@@ -26,8 +26,8 @@ class Business {
        void SetAddress(string address) {this->address = address;}
        string GetAddress() const {return address;}
        
-       string GetDescription() const { return name + " -- " + address;}
-       //virtual string GetDescription() const { return name + " -- " + address;}
+       //string GetDescription() const { return name + " -- " + address;}
+       virtual string GetDescription() const { return name + " -- " + address;}
 
    // Protected member variables!!! Derived classes have access, but nobody else!
    protected:
@@ -45,15 +45,16 @@ class Restaurant : public Business {
        int GetRating() const {return rating;}
        
       // Override the GetDescription method of the base class! 
-      string GetDescription() const {
-         return name + " -- " + address + 
-            "\n  Rating: " + to_string(rating);
-      }
-      
-      /*string GetDescription() const override {
+       
+      /*string GetDescription() const {
          return name + " -- " + address + 
             "\n  Rating: " + to_string(rating);
       }*/
+      
+      string GetDescription() const override {
+         return name + " -- " + address + 
+            "\n  Rating: " + to_string(rating);
+      }
 
    private:
       int rating;

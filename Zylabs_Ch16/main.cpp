@@ -37,7 +37,7 @@ void PrintVector(vector<Plant*> myGarden) {
 
 int main(int argc, char** argv) {
 
-    int choice = 5;
+    int choice = 1;
 
     if (choice == 1) {
 
