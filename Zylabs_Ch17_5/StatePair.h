@@ -24,6 +24,7 @@ class StatePair {
 public:
 
     // TODO: Define constructors
+    
     StatePair() {};
     
     StatePair(T1 userKey, T2 userValue){
@@ -32,6 +33,7 @@ public:
     };
 
     // TODO: Define mutators, and accessors for StatePair
+    
     void SetKey(T1 newKey) {
         key = newKey;
     };
