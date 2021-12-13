@@ -54,6 +54,20 @@ int main() {
   bstCopy.insert(30);
   cout << "\nAfter adding 30 to the copy: ";
   bstCopy.display();
+  
+  cout << "\n\nNow let's search for things in the copy ... " << endl;
+  
+  bool myvar = bstCopy.search(0);
+  cout << "\n\nSearching for 0 ... " << myvar << endl;
+  
+  myvar = bstCopy.search(17);
+  cout << "Searching for 17 ... " << myvar << endl;
+  
+  myvar = bstCopy.search(51);
+  cout << "Searching for 51 ... " << myvar << endl;
+  
+  myvar = bstCopy.search(68);
+  cout << "Searching for 68 ... " << myvar << endl;
 
   cout << "\n\nEnd of the program, getting ready for the destructor\n\n";
   

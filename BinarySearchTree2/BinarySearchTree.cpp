@@ -14,6 +14,30 @@ BinarySearchTree::BinarySearchTree()
     this->root_= nullptr;
 }
 
+bool BinarySearchTree::search(Element key) const {
+    return !(this->search(key,this->root_));
+}
+
+bool BinarySearchTree::search(Element key, TreeNode* r) const {
+    
+    bool result = true;
+    
+    if (r == nullptr) {
+        return true;
+    }
+    
+    if (r->value == key) {
+        return false;
+    }
+    
+    result = result*search(key,r->left);
+    result = result*search(key,r->right);
+    
+    return result;
+    
+}
+
+
 //the public insert method                  
 void BinarySearchTree::insert(Element key)
 {

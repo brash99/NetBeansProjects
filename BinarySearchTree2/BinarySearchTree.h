@@ -34,7 +34,8 @@ private:
   std::string InOrder(TreeNode* r) const; // private method to create a one-line string of all elements in tree in order
   int getHeight(TreeNode* r) const; // private method to retrieve current height of the tree
   void copyHelper(TreeNode* &thisRoot, TreeNode* sourceRoot); // private method to copy one (existing) tree into another new tree.
- 
+  bool search(Element key, TreeNode* r) const; // private helper method for searching tree for a value
+  
 public:
   // constructors and destructors
   BinarySearchTree(); // default constructor
@@ -46,6 +47,7 @@ public:
   void insert(Element key); //public insert method
   void display() const; //public display method
   int height() const; //public method to get height of tree
+  bool search(Element key) const; // public method to search tree for existence of a value
   BinarySearchTree& operator=(const BinarySearchTree &source); // public override of = operator
   
 };
