@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=gplot2
+PROJECTNAME=gplot
 
 # Active Configuration
 DEFAULTCONF=Debug

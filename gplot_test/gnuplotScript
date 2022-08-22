@@ -1,4 +1,4 @@
-set terminal qt
+set terminal x11
 set key outside
 set key font 'Arial,10'
 set tics font 'Arial,12'
