@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=libgplot.a
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libgplot.a
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=gplot.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/gplot.tar
+CND_PLATFORM_Debug=GNU-MacOSX
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
+CND_ARTIFACT_NAME_Debug=libgplot2.a
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/libgplot2.a
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
+CND_PACKAGE_NAME_Debug=gplot2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/gplot2.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=libgplot.a
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libgplot.a
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=gplot.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/gplot.tar
+CND_PLATFORM_Release=GNU-MacOSX
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
+CND_ARTIFACT_NAME_Release=libgplot2.a
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/libgplot2.a
+CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
+CND_PACKAGE_NAME_Release=gplot2.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/gplot2.tar
 #
 # include compiler specific variables
 #
