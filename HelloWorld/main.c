@@ -9,11 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/***********************************************************/
-/*                                                         */
-/* The simplest program, which prints out "Hello World!!!" */
-/*                                                         */
-/***********************************************************/
 /************************************************************/
 /*                                                          */
 /* The simplest program, which prints out "Hello World!!!"  */
