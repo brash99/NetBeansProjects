@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>gplot.h</itemPath>
-      <itemPath>mtwister.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -18,7 +17,6 @@
       <itemPath>gplot_errors.c</itemPath>
       <itemPath>gplot_errorstheory.c</itemPath>
       <itemPath>gplot_theory.c</itemPath>
-      <itemPath>mtwister.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -41,9 +39,6 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
-        <cTool>
-          <standard>3</standard>
-        </cTool>
         <archiverTool>
         </archiverTool>
       </compileType>
@@ -57,10 +52,6 @@
       </item>
       <item path="gplot_theory.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="mtwister.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="mtwister.h" ex="false" tool="3" flavor2="0">
-      </item>
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
@@ -71,7 +62,6 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
-          <standard>3</standard>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -94,10 +84,6 @@
       <item path="gplot_errorstheory.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="gplot_theory.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="mtwister.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="mtwister.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
