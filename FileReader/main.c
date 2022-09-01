@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     // newline character is discarded.
     
     scanf("%[^\n]%*c", filename);
-    printf("Filename = %s",filename);
+    printf("Filename = %s\n",filename);
     
     /* Open the file for reading */
     inFile = fopen(filename, "r");
@@ -141,15 +141,18 @@ int main(int argc, char** argv) {
             }
         }
         
+        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
         fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
     }
     
+    fprintf(stdout,"\n");
     fprintf(outFile,"\n");
     
     test1Average = (double)sum1/j;
     test2Average = (double)sum2/j;
     test3Average = (double)sum3/j;
     
+    fprintf(stdout,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
     fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
     
     fclose(inFile);
