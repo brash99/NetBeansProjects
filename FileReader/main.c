@@ -15,7 +15,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define LINE 80
+#define LINE 80  // define can be used to define GLOBAL variables
+                 // this is super useful for certain things that might
+                 // change from system to system
 
 /*
  *  Program to read data from a file and process
@@ -27,7 +29,7 @@ int main(int argc, char** argv) {
     
     /* Define necessary variables */
     
-    const unsigned int nMax = 1000;
+    const unsigned int nMax = 1000; // maximum number of lines in the file
     
     FILE* inFile = NULL; //This variable will be a "pointer" to the input file
     FILE* outFile = NULL; //This variable will be a "pointer" to the output file
@@ -37,6 +39,8 @@ int main(int argc, char** argv) {
     char letterGrade[nMax];
     double scoreAvg[nMax];
     double test1Average,test2Average,test3Average;
+    
+    printf("The pointer corresponding to the input file, before opening, = %p\n",inFile);
     
     /* Get the filename from the user */  
     char filename[LINE];
@@ -59,6 +63,8 @@ int main(int argc, char** argv) {
     /* Open the file for reading */
     inFile = fopen(filename, "r");
     //inFile = fopen("StudentInfo.tsv", "r");
+   
+    printf("The pointer corresponding to the input file, after opening, = %p\n",inFile);
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);

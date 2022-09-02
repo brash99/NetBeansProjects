@@ -66,6 +66,7 @@ int main(int argc, char** argv) {
     /* Open the file for reading */
     //inFile = fopen(filename, "r");
     inFile = fopen("StudentInfo.csv", "r");
+    //inFile = fopen("StudentInfo.tsv", "r");
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);
@@ -78,15 +79,19 @@ int main(int argc, char** argv) {
     
     int j=0;  // This will hold the row number
     
-    while (EOF != fscanf(inFile, "%s", line)) {
+    //while (EOF != fscanf(inFile, "%s", line)) {
+    while (fgets(line,sizeof line, inFile) != NULL) {
         
         // Read and parse line, with commas as separators
         
-        strncpy(lastName[j],getfield(strdup(line),1),LINE);     
-        strncpy(firstName[j],getfield(strdup(line),2),LINE);        
-        score1[j]=atoi(getfield(strdup(line),3));
-        score2[j]=atoi(getfield(strdup(line),4));              
-        score3[j]=atoi(getfield(strdup(line),5));     
+        sscanf(line,"%[^,],%[^,],%d,%d,%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
+        //sscanf(line,"%s\t%s\t%d\t%d\t%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
+        
+        //strncpy(lastName[j],getfield(strdup(line),1),LINE);     
+        //strncpy(firstName[j],getfield(strdup(line),2),LINE);        
+        //score1[j]=atoi(getfield(strdup(line),3));
+        //score2[j]=atoi(getfield(strdup(line),4));              
+        //score3[j]=atoi(getfield(strdup(line),5));     
         
         j++;
         
