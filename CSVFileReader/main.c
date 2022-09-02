@@ -80,9 +80,6 @@ int main(int argc, char** argv) {
     
     while (EOF != fscanf(inFile, "%s", line)) {
         
-        //printf("%s\n",line);
-        //printf("%d %d\n",i,j);
-        
         // Read and parse line, with commas as separators
         
         strncpy(lastName[j],getfield(strdup(line),1),LINE);     
