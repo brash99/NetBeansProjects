@@ -16,19 +16,6 @@
 
 #define LINE 80
 
-const char* getfield(char* line, int num)
-{
-    const char* tok;
-    for (tok = strtok(line, ",");
-            tok && *tok;
-            tok = strtok(NULL, ",\n"))
-    {
-        if (!--num)
-            return tok;
-    }
-    return NULL;
-}
-
 /*
  * 
  */
@@ -47,7 +34,7 @@ int main(int argc, char** argv) {
     
     /* Get the filename from the user */  
     char filename[LINE];
-    printf("Enter the filename:\n");
+    //printf("Enter the filename:\n");
     
     //gets(filename);
     // Note:  gets will work, and you will see it in a lot of
@@ -72,7 +59,7 @@ int main(int argc, char** argv) {
         printf("Error:  Could not open file:  %s\n",filename);
         exit(-1);
     } else {
-        printf("File opened successfully ... \n");
+        printf("File opened successfully ... \n\n");
     }
     
     char line[LINE]; //char array to hold each "line" read from the file
@@ -85,13 +72,7 @@ int main(int argc, char** argv) {
         // Read and parse line, with commas as separators
         
         sscanf(line,"%[^,],%[^,],%d,%d,%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
-        //sscanf(line,"%s\t%s\t%d\t%d\t%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
-        
-        //strncpy(lastName[j],getfield(strdup(line),1),LINE);     
-        //strncpy(firstName[j],getfield(strdup(line),2),LINE);        
-        //score1[j]=atoi(getfield(strdup(line),3));
-        //score2[j]=atoi(getfield(strdup(line),4));              
-        //score3[j]=atoi(getfield(strdup(line),5));     
+        //sscanf(line,"%s\t%s\t%d\t%d\t%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);  
         
         j++;
         
@@ -126,8 +107,10 @@ int main(int argc, char** argv) {
             }
         }
         
-        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        fprintf(stdout,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        fprintf(outFile,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        //fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        //fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
     }
     
     fprintf(stdout,"\n");
