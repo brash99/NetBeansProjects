@@ -32,6 +32,8 @@ int main(int argc, char** argv) {
     double scoreAvg[nMax];
     double test1Average,test2Average,test3Average;
     
+    int filetype=2;
+    
     /* Get the filename from the user */  
     char filename[LINE];
     //printf("Enter the filename:\n");
@@ -52,8 +54,12 @@ int main(int argc, char** argv) {
     
     /* Open the file for reading */
     //inFile = fopen(filename, "r");
-    inFile = fopen("StudentInfo.csv", "r");
-    //inFile = fopen("StudentInfo.tsv", "r");
+    
+    if (filetype==1) {
+        inFile = fopen("StudentInfo.csv", "r");
+    } else {
+        inFile = fopen("StudentInfo.tsv", "r");
+    }
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);
@@ -71,8 +77,11 @@ int main(int argc, char** argv) {
         
         // Read and parse line, with commas as separators
         
-        sscanf(line,"%[^,],%[^,],%d,%d,%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
-        //sscanf(line,"%s\t%s\t%d\t%d\t%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);  
+        if (filetype == 1) {
+            sscanf(line,"%[^,],%[^,],%d,%d,%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);
+        } else {
+            sscanf(line,"%s\t%s\t%d\t%d\t%d\n",lastName[j],firstName[j],&score1[j],&score2[j],&score3[j]);  
+        }
         
         j++;
         
@@ -107,10 +116,14 @@ int main(int argc, char** argv) {
             }
         }
         
-        fprintf(stdout,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        fprintf(outFile,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        //fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        //fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        if (filetype == 1) {
+            fprintf(stdout,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+            fprintf(outFile,"%s,%s,%d,%d,%d,%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        } else {
+            fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+            fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        }
+        
     }
     
     fprintf(stdout,"\n");
