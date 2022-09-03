@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     double scoreAvg[nMax];
     double test1Average,test2Average,test3Average;
     
-    int filetype=2;
+    int filetype=1;
     
     /* Get the filename from the user */  
     char filename[LINE];
