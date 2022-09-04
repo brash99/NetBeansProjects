@@ -153,7 +153,7 @@ int main(int argc, char** argv) {
     //
     float xpad = 1.234567;
     printf("%012.6f\n",xpad); //field width = 12, pad with leading zeroes
-    printf("%-012.6f\n",xpad); //0 is ignored when minus sign is present!!
+    //printf("%-012.6f\n",xpad); //0 is ignored when minus sign is present!!
     printf("\n");
     
     int ipad = 713;
@@ -164,8 +164,8 @@ int main(int argc, char** argv) {
     printf("%08d\n",ipadm);
     printf("%+08d\n",ipad);
     printf("%+08d\n",ipadm);
-    printf("%-08d\n",ipad); //again, 0 is ignored when minus sign is present
-    printf("%-08d\n",ipadm);
+    //printf("%-08d\n",ipad); //again, 0 is ignored when minus sign is present
+    //printf("%-08d\n",ipadm);
     printf("\n");
     
     //Illustrate alignment with strings (char arrays)
