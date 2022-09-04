@@ -148,6 +148,12 @@ int main(int argc, char** argv) {
     printf("%10d\n",imm); //number width = 9, plus minus sign => 10 characters
     printf("\n");
     
+    //Illustrate zero-padding
+    //
+    float xpad = 1.234567;
+    printf("%012.6f\n",xpad); //field width = 12, pad with leading zeroes
+    printf("%-012.6f\n",xpad); //0 is ignored when minus sign is present!!
+    
     return (EXIT_SUCCESS);
 }
 
