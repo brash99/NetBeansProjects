@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
         printf("Error:  Could not open file:  %s\n",filename);
         exit(-1);
     } else {
-        printf("File opened successfully .... \n\n");
+        printf("File opened successfully ...... \n\n");
     }
     
     char line[LINE]; //char array to hold each "line" read from the file
