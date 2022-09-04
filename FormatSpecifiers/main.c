@@ -153,6 +153,29 @@ int main(int argc, char** argv) {
     float xpad = 1.234567;
     printf("%012.6f\n",xpad); //field width = 12, pad with leading zeroes
     printf("%-012.6f\n",xpad); //0 is ignored when minus sign is present!!
+    printf("\n");
+    
+    int ipad = 713;
+    int ipadm = -713;
+    printf("%04d\n",ipad);
+    printf("%04d\n",ipadm); //in padding negative numbers with zeros, the minus sign IS included in field width
+    printf("%08d\n",ipad);
+    printf("%08d\n",ipadm);
+    printf("%+08d\n",ipad);
+    printf("%+08d\n",ipadm);
+    printf("%-08d\n",ipad);
+    printf("%-08d\n",ipadm);
+    printf("\n");
+    
+    //Illustrate alignment with strings (char arrays)
+    char sss[] = "Hello World"; //11 character string
+    printf("Here is the |%s| string.\n",sss);
+    printf("Here is the |%20s| string.\n",sss); //Field width = 20, right aligned
+    printf("Here is the |%-20s| string.\n",sss); //Field width = 20, left aligned
+    printf("Here is the |%20.5s| string.\n",sss); //Field width = 20, first 5 characters, right aligned
+    printf("Here is the |%-20.5s| string.\n",sss); //Field width = 20, first 5 characters, left aligned
+    printf("\n");
+  
     
     return (EXIT_SUCCESS);
 }
