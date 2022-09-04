@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/main.c to edit this template
+ * CPSC 256 - C/C+ for Scientists and Engineers
+ * Christopher Newport University
+ * Department of Physics, Computer Science & Engineering
  */
 
 /* 
