@@ -19,7 +19,7 @@
  */
 int main(int argc, char** argv) {
     
-    char a = 'A';
+    char a = 'C';
     // char b[7] = "BCDEFGH"; <- No! don't do this!!!
     char b[] = "BCDEFGH";
     printf("%c\n",a);
