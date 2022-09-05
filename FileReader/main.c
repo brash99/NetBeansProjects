@@ -40,7 +40,8 @@ int main(int argc, char** argv) {
     double scoreAvg[nMax];
     double test1Average,test2Average,test3Average;
     
-    printf("The pointer corresponding to the input file, before opening, = %p\n",inFile);
+    printf("The pointer corresponding to the input file, before opening, = %p\n",
+            inFile);
     
     /* Get the filename from the user */  
     char filename[LINE];
@@ -50,21 +51,16 @@ int main(int argc, char** argv) {
     // Note:  gets will work, and you will see it in a lot of
     // code, but it has been deprecated in C11, so we probably should not use it
     // anymore.
-    // 
-    // Instead, we will use scanf.  The format code is weird!
-    // Explanation : Here, [] is the scanset character. ^\n tells to take 
-    // input until newline doesn’t get encountered. Then, with this %*c, it 
-    // reads newline character and here used * indicates that this 
-    // newline character is discarded.
-    
-    scanf("%[^\n]%*c", filename);
+   
+    scanf("%s",filename);
     printf("Filename = %s\n",filename);
     
     /* Open the file for reading */
     inFile = fopen(filename, "r");
     //inFile = fopen("StudentInfo.tsv", "r");
    
-    printf("The pointer corresponding to the input file, after opening, = %p\n",inFile);
+    printf("The pointer corresponding to the input file, after opening, = %p\n",
+            inFile);
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);
@@ -147,8 +143,10 @@ int main(int argc, char** argv) {
             }
         }
         
-        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],
+                score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],
+                score1[idx],score2[idx],score3[idx],letterGrade[idx]);
     }
     
     fprintf(stdout,"\n");
@@ -158,8 +156,10 @@ int main(int argc, char** argv) {
     test2Average = (double)sum2/j;
     test3Average = (double)sum3/j;
     
-    fprintf(stdout,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
-    fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
+    fprintf(stdout,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",
+            test1Average,test2Average,test3Average);
+    fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",
+            test1Average,test2Average,test3Average);
     
     fclose(inFile);
     fclose(outFile);
