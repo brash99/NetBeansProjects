@@ -40,7 +40,8 @@ int main(int argc, char** argv) {
     double scoreAvg[nMax];
     double test1Average,test2Average,test3Average;
     
-    printf("The pointer corresponding to the input file, before opening, = %p\n",inFile);
+    printf("The pointer corresponding to the input file, before opening, = %p\n",
+            inFile);
     
     /* Get the filename from the user */  
     char filename[LINE];
@@ -64,7 +65,8 @@ int main(int argc, char** argv) {
     inFile = fopen(filename, "r");
     //inFile = fopen("StudentInfo.tsv", "r");
    
-    printf("The pointer corresponding to the input file, after opening, = %p\n",inFile);
+    printf("The pointer corresponding to the input file, after opening, = %p\n",
+            inFile);
     
     if (inFile == NULL) {
         printf("Error:  Could not open file:  %s\n",filename);
@@ -77,7 +79,9 @@ int main(int argc, char** argv) {
     
     int i = 0, j=0;  // These will hold the column number and row number
     
-    while (EOF != fscanf(inFile, "%s", line)) {
+    printf("EOF = %d\n",EOF);
+    
+    while (!feof(inFile)) {
         
         //printf("%s\n",line);
         //printf("%d %d\n",i,j);
@@ -92,6 +96,10 @@ int main(int argc, char** argv) {
         // 
         // We can use the atoi() function to convert a string to an integer
         // value.
+        
+        int numRead;
+        numRead = fscanf(inFile, "%s", line);
+        printf("numRead = %d\n", numRead);
         
         if (i==0) {
             strncpy(lastName[j], line, LINE);
@@ -147,8 +155,12 @@ int main(int argc, char** argv) {
             }
         }
         
-        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
-        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",lastName[idx],firstName[idx],score1[idx],score2[idx],score3[idx],letterGrade[idx]);
+        fprintf(stdout,"%s\t%s\t%d\t%d\t%d\t%c\n",
+                lastName[idx],firstName[idx],score1[idx],score2[idx],
+                score3[idx],letterGrade[idx]);
+        fprintf(outFile,"%s\t%s\t%d\t%d\t%d\t%c\n",
+                lastName[idx],firstName[idx],score1[idx],score2[idx],
+                score3[idx],letterGrade[idx]);
     }
     
     fprintf(stdout,"\n");
@@ -158,8 +170,10 @@ int main(int argc, char** argv) {
     test2Average = (double)sum2/j;
     test3Average = (double)sum3/j;
     
-    fprintf(stdout,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
-    fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",test1Average,test2Average,test3Average);
+    fprintf(stdout,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",
+            test1Average,test2Average,test3Average);
+    fprintf(outFile,"Averages: midterm1 %4.2f, midterm2 %4.2f, final %4.2f\n",
+            test1Average,test2Average,test3Average);
     
     fclose(inFile);
     fclose(outFile);
