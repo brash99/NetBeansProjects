@@ -23,13 +23,16 @@
  */
 
 double mean(double [], int); // prototype for mean function
-double stdev(double[], int); // protoype for standard deviation function
+double stdev(double [], int); // protoype for standard deviation function
+                             // Even though we define these functions in this 
+                             // C file, we MUST ALWAYS define prototypes for all
+                             // new functions!
 
 int main(int argc, char** argv) {
     
     const int N_Max = 1000;
     double inputData[N_Max];
-    FILE *inputFilePointer;  // inputFilePointer is a POINTER to a file object on the hard drive
+    FILE* inputFilePointer;  // inputFilePointer is a POINTER to a file object on the hard drive
     
     inputFilePointer = fopen("inputData.dat","r"); // fopen returns a POINTER to a file object on the hard drive
     
@@ -56,6 +59,10 @@ int main(int argc, char** argv) {
         
     }
     
+    // Let's look at where in memory the array called inputData is stored
+    printf("\n");
+    printf("Address of first element of inputData: %p\n",inputData);
+    
     return (EXIT_SUCCESS);
 }
 
@@ -66,11 +73,15 @@ double mean(double a[], int n) {
     }
     double mean = sum/n;
     
+    printf("\n");
+    printf("Address of first element of a, in mean() function: %p\n",a);
+    
     return mean;
 }
 
 double stdev(double a[], int n) {
     
+    printf("Calling mean function from stdev() ... \n");
     double localmean = mean(a,n);
     double sum = 0.0;
     
@@ -80,6 +91,9 @@ double stdev(double a[], int n) {
     
     sum = sum / (n-1);
     double stdev = sqrt(sum);
+    
+    printf("\n");
+    printf("Address of first element of a, in stdev() function: %p\n",a);
     
     return stdev;
 }
