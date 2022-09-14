@@ -13,8 +13,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <gplot.h>
+#include <string.h> // need this to get variables like NULL, for example
+#include <math.h>   // need this for things like pow(), sqrt(), on some systems
 
 /*
  * Program to calculate the mean and standard deviation of a set of
@@ -37,8 +37,7 @@ int main(int argc, char** argv) {
     // if the file is opened successfully, then inputFilePointer will be a non-NULL pointer
     if (inputFilePointer != NULL) { 
         
-        do
-        {
+        do {
             fscanf(inputFilePointer,"%lf",&inputData[i]);
             i++;
         } while (!feof(inputFilePointer));
