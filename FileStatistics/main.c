@@ -47,6 +47,12 @@ int main(int argc, char** argv) {
         
         printf("Number of elements read from file = %d\n",(i-1));
         const int N_Elem = i-1;
+        
+        // Let's look at where in memory the array called inputData is stored
+        printf("\n");
+        printf("Address of first element of inputData: %p\n",inputData);
+        printf("\n");
+        printf("Address of N_Elem: %p\n",&N_Elem);
     
         printf("Mean value of elements = %g\n",mean(inputData,N_Elem));
         printf("Std. Dev. of elements = %g\n",stdev(inputData,N_Elem));
@@ -57,10 +63,7 @@ int main(int argc, char** argv) {
         return (EXIT_FAILURE);
         
     }
-    
-    // Let's look at where in memory the array called inputData is stored
-    printf("\n");
-    printf("Address of first element of inputData: %p\n",inputData);
+   
     
     return (EXIT_SUCCESS);
 }
@@ -74,6 +77,7 @@ double mean(double a[], int n) {
     
     printf("\n");
     printf("Address of first element of a, in mean() function: %p\n",a);
+    printf("Address of n, in mean() function: %p\n",&n);
     
     return mean;
 }
@@ -93,6 +97,8 @@ double stdev(double a[], int n) {
     
     printf("\n");
     printf("Address of first element of a, in stdev() function: %p\n",a);
+    printf("Address of n, in stdev() function: %p\n",&n);
+    
     
     return stdev;
 }
