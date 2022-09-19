@@ -171,6 +171,7 @@ int main(int argc, char** argv) {
     }
     printf("\n");
     
+    
     swapNumberCopy(xd,1,2);
     
     for (int i=0; i<length; i++){
@@ -267,8 +268,10 @@ void swapNumber(double* x, int n1, int n2) {
 }
 
 void swapNumberCopy(double x[], int n1, int n2) {
+    
     double temp = x[n1-1];
     x[n1-1] = x[n2-1];
     x[n2-1] = temp;
+    
 }
 
