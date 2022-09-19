@@ -19,8 +19,8 @@
  */
 
 void swap(int*, int*);
-char getChar(char*, int);
-char getChar2(char[], int);
+char getCharPointer(char*, int);
+char getChar(char[], int);
 void changeChar(char*, int, char);
 void swapNumber(double*, int, int);
 
@@ -80,8 +80,11 @@ int main(int argc, char** argv) {
                    * that is stored at the memory location, p, which is a
                    * pointer to the memory location of the integer variable, i */
     
-    printf("i = %d, val = %d \n",i,val);
+    printf("i = %d, p = %p, val = %d\n",i,p,val);
     
+    i = 8;
+    
+    printf("i = %d, p = %p, val = %d\n",i,p,val);
     
     /* 
      * Example 2:  Character Arrays a.k.a. strings in C
@@ -109,19 +112,19 @@ int main(int argc, char** argv) {
     
     int n = 8;
     
-    /* Method 1: a function using pointers */
-    char myChar = getChar(a,n); /* this function should return the n-th character of the string
+    /* Method 1: a function which makes a local copy */
+    char myChar1 = getChar(a,n); /* this function should return the n-th character of the string
                                  * Note that when we pass the STRING itself, we are passing an
                                  * array ... in reality, we are passing a pointer to the first
                                  * element in that array!!! */
     
-    /* Method 2: a function which makes a local copy */
-    char myChar2 = getChar2(a,n); /* this function should return the n-th character of the string
+    /* Method 2: a function which uses pointers */
+    char myChar2 = getCharPointer(a,n); /* this function should return the n-th character of the string
                                  * Note that when we pass the STRING itself, we are passing an
                                  * array ... in reality, we are passing a pointer to the first
                                  * element in that array!!! */
     
-    printf("The %d-th character of '%s' is %c.\n",n,a,myChar);
+    printf("The %d-th character of '%s' is %c.\n",n,a,myChar1);
     printf("The %d-th character of '%s' is %c.\n",n,a,myChar2);
     
     /* Example 5:  Let's CHANGE the string in some way within a function
@@ -204,7 +207,7 @@ void swap(int* p1, int* p2) {
     
 }
 
-char getChar(char* someString, int n) {
+char getCharPointer(char* someString, int n) {
     
     /* A function to return the n-th character of a string
      * Notice that we pass the string from the main program, but
@@ -219,7 +222,7 @@ char getChar(char* someString, int n) {
     
 }
 
-char getChar2(char someString[], int n) {
+char getChar(char someString[], int n) {
     
     /* A function to return the n-th character of a string
      * Notice that we pass the string from the main program, and the
