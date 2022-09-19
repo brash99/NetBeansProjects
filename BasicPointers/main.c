@@ -23,6 +23,7 @@ char getCharPointer(char*, int);
 char getChar(char[], int);
 void changeChar(char*, int, char);
 void swapNumber(double*, int, int);
+void swapNumberCopy(double[], int, int);
 
 int main(int argc, char** argv) {
     
@@ -112,6 +113,8 @@ int main(int argc, char** argv) {
     
     int n = 8;
     
+    printf("The address of a[0] is %p.\n",&a[0]);
+    
     /* Method 1: a function which makes a local copy */
     char myChar1 = getChar(a,n); /* this function should return the n-th character of the string
                                  * Note that when we pass the STRING itself, we are passing an
@@ -168,6 +171,14 @@ int main(int argc, char** argv) {
     }
     printf("\n");
     
+    swapNumberCopy(xd,1,2);
+    
+    for (int i=0; i<length; i++){
+        printf("%g ",xd[i]);
+    }
+    printf("\n");
+    
+    
             
     return (EXIT_SUCCESS);
 
@@ -215,6 +226,8 @@ char getCharPointer(char* someString, int n) {
      * a pointer to the first character in the character array.
      */
     
+    printf("The address of someString[0] is %p.\n",&someString[0]);
+    
     char* pa = &someString[n-1];
     char thisChar = *pa;
     
@@ -229,6 +242,8 @@ char getChar(char someString[], int n) {
      * argument here is a char array, which makes sense.  So, in the local
      * function an entire copy of the char array is created locally.
      */
+    
+    printf("The address of someString[0] is %p.\n",&someString[0]);
     
     char thisChar = someString[n-1];
     
@@ -249,5 +264,11 @@ void swapNumber(double* x, int n1, int n2) {
     x[n1-1] = x[n2-1];
     x[n2-1] = temp;
     
+}
+
+void swapNumberCopy(double x[], int n1, int n2) {
+    double temp = x[n1-1];
+    x[n1-1] = x[n2-1];
+    x[n2-1] = temp;
 }
 
