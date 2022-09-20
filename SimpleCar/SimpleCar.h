@@ -42,7 +42,6 @@ SimpleCar SetModel(SimpleCar car, char* model);
 
 SimpleCar Drive(int dist, SimpleCar car);
 SimpleCar Reverse(int dist, SimpleCar car);
-int GetOdometer(SimpleCar car);
 void HonkHorn(SimpleCar car);
 void Report(SimpleCar car);
 

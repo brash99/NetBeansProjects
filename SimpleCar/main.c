@@ -43,10 +43,6 @@ int main() {
    myCar = SetModel(myCar,"E350");
    myCar = SetAge(myCar,16.0);
    
-   printf("Car Make = %s\n",GetMake(myCar));
-   printf("Car Model = %s\n",GetModel(myCar));
-   printf("Car Age = %lf\n",GetAge(myCar));
-   
    HonkHorn(myCar);   
    Report(myCar);
   

@@ -72,16 +72,14 @@ SimpleCar SetModel(SimpleCar car, char* model){
 
 SimpleCar Drive(int dist, SimpleCar car){
    printf("In Drive:  address of car = %p\n",&car);
-   //car.miles = car.miles + dist;
-   car = SetOdometer(car,car.miles+dist);
+   car = SetOdometer(car,GetOdometer(car)+dist);
    printf("In Drive: address of car = %p\n",&car);
    return car;
 }
  
 SimpleCar Reverse(int dist, SimpleCar car){
    printf("In Reverse:  address of car = %p\n",&car);
-   //car.miles = car.miles - dist;
-   car = SetOdometer(car,car.miles-dist);
+   car = SetOdometer(car,GetOdometer(car)-dist);
    printf("In Reverse: address of car = %p\n",&car);
    return car;
 }
@@ -93,5 +91,9 @@ void HonkHorn(SimpleCar car){
 
 void Report(SimpleCar car){
    printf("In Report: address of car = %p\n",&car);
+   
+   printf("Make of Car: %s\n",GetMake(car));
+   printf("Model of Car: %s\n",GetModel(car));
+   printf("Age of Car: %lf\n",GetAge(car));
    printf("Car has driven: %d miles\n", GetOdometer(car));
 }
