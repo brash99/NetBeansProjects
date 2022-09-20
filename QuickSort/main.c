@@ -38,6 +38,8 @@ int compare_double(const void *ap, const void *bp) {
     if (*a > *b ) {
         return 1;
     }
+
+    return -2;
     
 }
 
@@ -67,7 +69,7 @@ int main(int argc, char** argv) {
     
     qsort(a,6,sizeof(double),compare_double);
     
-    printf("Original array is:\n"); 
+    printf("Sorted array is:\n"); 
     for (int i=0;i<6;i++) {
         printf("a[%i]=%e\n",i,a[i]); 
     }
