@@ -20,9 +20,26 @@ extern "C" {
 
 typedef struct SimpleCar_struct {
    int miles;
+   double age;
+   char make[20];
+   char model[20];
 } SimpleCar;
 
 SimpleCar InitCar();
+
+// Getter and Setter Methods
+
+int GetOdometer(SimpleCar car);
+SimpleCar SetOdometer(SimpleCar car, int mileage);
+double GetAge(SimpleCar car);
+SimpleCar SetAge(SimpleCar car, double age);
+char* GetMake(SimpleCar car);
+SimpleCar SetMake(SimpleCar car, char* make);
+char* GetModel(SimpleCar car);
+SimpleCar SetModel(SimpleCar car, char* model);
+
+// Complex Methods
+
 SimpleCar Drive(int dist, SimpleCar car);
 SimpleCar Reverse(int dist, SimpleCar car);
 int GetOdometer(SimpleCar car);

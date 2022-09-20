@@ -19,19 +19,33 @@
 int main() {
 
    int milesForward, milesReverse;
+   printf("Miles forward = ");
    scanf("%d", &milesForward);
+   printf("\n");
+   printf("Miles reverse = ");
    scanf("%d", &milesReverse);
+   printf("\n");
    
    SimpleCar myCar = InitCar();
    printf("In main 1:  address of myCar = %p\n",&myCar);
+   printf("Mileage = %d\n",GetOdometer(myCar));
    
    myCar = Drive(milesForward,myCar);
-   
    printf("In main 2:  address of myCar = %p\n",&myCar);
+   printf("Mileage = %d\n",GetOdometer(myCar));
    
    myCar = Reverse(milesReverse,myCar);
-   
    printf("In main 3:  address of myCar = %p\n",&myCar);
+   printf("Mileage = %d\n",GetOdometer(myCar));
+   
+   
+   myCar = SetMake(myCar,"Mercedes-Benz");
+   myCar = SetModel(myCar,"E350");
+   myCar = SetAge(myCar,16.0);
+   
+   printf("Car Make = %s\n",GetMake(myCar));
+   printf("Car Model = %s\n",GetModel(myCar));
+   printf("Car Age = %lf\n",GetAge(myCar));
    
    HonkHorn(myCar);   
    Report(myCar);
