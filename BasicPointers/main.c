@@ -19,9 +19,12 @@
  */
 
 void swap(int*, int*);
+
 char getCharPointer(char*, int);
 char getChar(char[], int);
+
 void changeChar(char*, int, char);
+
 void swapNumber(double*, int, int);
 void swapNumberCopy(double[], int, int);
 
@@ -229,8 +232,10 @@ char getCharPointer(char* someString, int n) {
     
     printf("The address of someString[0] is %p.\n",&someString[0]);
     
-    char* pa = &someString[n-1];
-    char thisChar = *pa;
+    //char* pa = &someString[n-1];
+    //char thisChar = *pa;
+    
+    char thisChar = someString[n-1];
     
     return thisChar;
     
