@@ -40,30 +40,31 @@ double GetAge(SimpleCar car){
 }
 
 SimpleCar SetAge(SimpleCar car, double age){
+   printf("In SetAge:  address of car = %p\n",&car);
    car.age = age;
    return car;
 }
 
 char* GetMake(SimpleCar car){
-   return car.make;
+    static char localmake[20];
+    strcpy(localmake,car.make);
+    return localmake;
 }
 
 SimpleCar SetMake(SimpleCar car, char* make){
-    char localmake[strlen(make)+1];
-    strcpy(localmake,make);
-    strcpy(car.make,localmake);
+    strcpy(car.make,make);
     printf("In SetMake: make = %s\n",car.make);
     return car;
 }
 
 char* GetModel(SimpleCar car){
-   return car.model;
+    static char localmodel[20];
+    strcpy(localmodel,car.model);
+    return localmodel;
 }
 
 SimpleCar SetModel(SimpleCar car, char* model){
-    char localmodel[strlen(model)+1];
-    strcpy(localmodel,model);
-    strcpy(car.model,localmodel);
+    strcpy(car.model,model);
     printf("In SetModel: model = %s\n",car.model);
     return car;
 }

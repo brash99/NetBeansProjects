@@ -14,10 +14,6 @@
 #ifndef SIMPLECAR_H
 #define SIMPLECAR_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct SimpleCar_struct {
    int miles;
    double age;
@@ -44,10 +40,6 @@ SimpleCar Drive(int dist, SimpleCar car);
 SimpleCar Reverse(int dist, SimpleCar car);
 void HonkHorn(SimpleCar car);
 void Report(SimpleCar car);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* SIMPLECAR_H */
 

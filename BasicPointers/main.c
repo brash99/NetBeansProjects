@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     printf("i = %d, p = %p, val = %d\n",i,p,val);
     
     /* 
-     * Example 2:  Character Arrays a.k.a. strings in C
+     * Example 3:  Character Arrays a.k.a. strings in C
      * 
      * And now, some examples with arrays!!!! 
      * 
@@ -232,10 +232,10 @@ char getCharPointer(char* someString, int n) {
     
     printf("The address of someString[0] is %p.\n",&someString[0]);
     
-    //char* pa = &someString[n-1];
-    //char thisChar = *pa;
+    char* pa = &someString[n-1];
+    char thisChar = *pa;
     
-    char thisChar = someString[n-1];
+    //char thisChar = someString[n-1];
     
     return thisChar;
     
