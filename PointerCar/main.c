@@ -22,22 +22,39 @@
 int main(int argc, char** argv) {
     
    int milesForward, milesReverse;
+   printf("Miles forward = ");
    scanf("%d", &milesForward);
+   printf("\n");
+   printf("Miles reverse = ");
    scanf("%d", &milesReverse);
-   
+   printf("\n");
+
    PointerCar myCar = InitCar();
-   printf("In main 1:  address of myCar = %p\n",&myCar);
+   PointerCar* pCar = &myCar;
    
-   Drive(milesForward,&myCar);
+   printf("\n");
+   printf("In main 1:  address of myCar = %p\n", pCar);
+   printf("Mileage = %d\n", GetOdometer(pCar));
+   printf("\n");
+
+   Drive(milesForward, pCar);
+   printf("\n");
+   printf("In main 2:  address of myCar = %p\n", pCar);
+   printf("Mileage = %d\n", GetOdometer(pCar));
+   printf("\n");
+
+   Reverse(milesReverse, pCar);
+   printf("\n");
+   printf("In main 3:  address of myCar = %p\n", pCar);
+   printf("Mileage = %d\n", GetOdometer(pCar));
+   printf("\n");
+
+   SetMake(pCar, "Mercedes-Benz");
+   SetModel(pCar, "E350");
+   SetAge(pCar, 16.0);
    
-   printf("In main 2:  address of myCar = %p\n",&myCar);
-   
-   Reverse(milesReverse,&myCar);
-   
-   printf("In main 3:  address of myCar = %p\n",&myCar);
-   
-   HonkHorn(&myCar);   
-   Report(&myCar);
+   HonkHorn(pCar);   
+   Report(pCar);
 
    return (EXIT_SUCCESS);
 }

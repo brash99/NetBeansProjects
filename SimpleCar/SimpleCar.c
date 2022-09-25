@@ -12,11 +12,11 @@
 
 SimpleCar InitCar(){
    SimpleCar newCar;
-   
+
    newCar.miles = 0;
    newCar.age = 0.0;
-   strcpy(newCar.make,"Toyota");
-   strcpy(newCar.model,"Camry");
+   strcpy(newCar.make, "Toyota");
+   strcpy(newCar.model, "Camry");
    
    printf("In InitCar: address of newCar = %p\n",&newCar);
    

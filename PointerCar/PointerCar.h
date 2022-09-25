@@ -20,14 +20,27 @@ extern "C" {
 
 typedef struct PointerCar_struct {
    int miles;
+   double age;
+   char make[20];
+   char model[20];
 } PointerCar;
 
 PointerCar InitCar();
-void Drive(int dist, PointerCar* car);
-void Reverse(int dist, PointerCar* car);
-int GetOdometer(PointerCar* car);
-void HonkHorn(PointerCar* car);
-void Report(PointerCar* car);
+
+int GetOdometer(PointerCar* pCar);
+void SetOdometer(PointerCar* car, int mileage);
+double GetAge(PointerCar* pCar);
+void SetAge(PointerCar* pCar, double age);
+char* GetMake(PointerCar* pCar);
+void SetMake(PointerCar* pCar, char* make);
+char* GetModel(PointerCar* pCar);
+void SetModel(PointerCar* pCar, char* model);
+
+
+void Drive(int dist, PointerCar* pCar);
+void Reverse(int dist, PointerCar* pCar);
+void HonkHorn(PointerCar* pCar);
+void Report(PointerCar* pCar);
 
 
 #ifdef __cplusplus
