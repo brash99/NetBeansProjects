@@ -230,10 +230,15 @@ char getCharPointer(char* someString, int n) {
      * a pointer to the first character in the character array.
      */
     
-    printf("The address of someString[0] is %p.\n",&someString[0]);
+    printf("The address of someString[0] is %p.\n",someString);
     
     char* pa = &someString[n-1];
+    char* pb = someString + (n-1)*sizeof(char);
+    printf("%p %p\n",pa,pb);
+    
     char thisChar = *pa;
+    char thisChar2 = *pb;
+    printf("%c %c\n",thisChar,thisChar2);
     
     //char thisChar = someString[n-1];
     
