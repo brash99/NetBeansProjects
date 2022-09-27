@@ -10,6 +10,11 @@
 
 #include "SimpleCar.h"
 
+//  Initializer method
+//  
+//   create a SimpleCar struct, initialize the variables within that
+//   struct, and the return the entire struct.
+//
 SimpleCar InitCar(){
    SimpleCar newCar;
 
