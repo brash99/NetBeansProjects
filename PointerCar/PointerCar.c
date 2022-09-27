@@ -9,6 +9,7 @@
 
 #include "PointerCar.h"
 
+// Initializer method ... same as in SimpleCar!
 PointerCar InitCar(){
    
    PointerCar newCar;
