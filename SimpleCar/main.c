@@ -38,7 +38,6 @@ int main() {
    printf("In main 3:  address of myCar = %p\n",&myCar);
    printf("Mileage = %d\n",GetOdometer(myCar));
    
-   
    myCar = SetMake(myCar,"Mercedes-Benz");
    myCar = SetModel(myCar,"E350");
    myCar = SetAge(myCar,16.0);
