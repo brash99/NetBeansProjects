@@ -14,10 +14,6 @@
 #ifndef POINTERCAR_H
 #define POINTERCAR_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct PointerCar_struct {
    int miles;
    double age;
@@ -26,6 +22,13 @@ typedef struct PointerCar_struct {
 } PointerCar;
 
 PointerCar InitCar();
+
+// If we compare to SimpleCar.h, there are two main differences:
+//
+//  1. We will pass POINTERS to structs, rather than the structs themselves
+//  2. For the setter methods, they are now of type void ... this is because
+//     we will be manipulating the actual structs inside these methods, and
+//     not copies!!!!
 
 int GetOdometer(PointerCar* pCar);
 void SetOdometer(PointerCar* car, int mileage);
@@ -42,10 +45,6 @@ void Reverse(int dist, PointerCar* pCar);
 void HonkHorn(PointerCar* pCar);
 void Report(PointerCar* pCar);
 
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* POINTERCAR_H */
 

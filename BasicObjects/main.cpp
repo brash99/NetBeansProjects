@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     Restaurant moes; // default values, id = 1002
     Restaurant mickydees("MacDonald's",-10000,"$","Fast Food"); // specified values, id = 1003
     
+    cout << "Initial Definition of MacDonald's" << endl;
     mickydees.Print();
     cout << endl;
     
