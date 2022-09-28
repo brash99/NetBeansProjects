@@ -22,6 +22,7 @@ using namespace std;
  */
 
 void printVector(vector<int> a) {
+    
     for (int i=0; i<a.size(); i++) {
         cout << a.at(i) << " ";
     }
