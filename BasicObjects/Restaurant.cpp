@@ -10,7 +10,15 @@
 Restaurant::Restaurant(string userName, int userRating, string price, string cuisineType) {
     name = userName;
     rating = userRating;
-    this->price = price;
+    this->price = price;  // We use the keyword "this" to distinguish between
+                          // the internal 'price' variable of the class, and
+                          // the external 'price' variable that is used for
+                          // initialization.
+                          // 
+                          // You might think we could have been smarter and not
+                          // had this duplication in the first place, and you would
+                          // be correct!  But, still, in large projects, it can
+                          // happen!
     cuisine = cuisineType;
     
     id = nextID;
