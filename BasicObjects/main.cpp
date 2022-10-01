@@ -14,7 +14,7 @@
 
 #include "Restaurant.h"
 
-Restaurant getFavorite(vector<Restaurant> &myRestaurants);
+Restaurant getFavorite(vector<Restaurant> myRestaurants);
 
 int main(int argc, char** argv) {
     
@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
     // calls the initialization constructor.
     Restaurant schooners; // default values, id = 1001
     Restaurant moes; // default values, id = 1002
+    //Restaurant mickydees;
     Restaurant mickydees("MacDonald's",-10000,"$","Fast Food"); // specified values, id = 1003
     
     cout << "Initial Definition of MacDonald's" << endl;
@@ -75,7 +76,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-Restaurant getFavorite(vector<Restaurant> &myRestaurants) {
+Restaurant getFavorite(vector<Restaurant> myRestaurants) {
     
     Restaurant bestRestaurant;
     

@@ -1,11 +1,13 @@
 #include "Restaurant.h"
 
-//Restaurant::Restaurant() {
-//    name = "No Name";
-//    rating = -1;
-//    price = "No Price";
-//    cuisine = "No Type";
-//}
+Restaurant::Restaurant() {
+    name = "No Name";
+    rating = -1;
+    price = "No Price";
+    cuisine = "No Type";
+    id = nextID;
+    ++nextID;
+}
 
 Restaurant::Restaurant(string userName, int userRating, string price, string cuisineType) {
     name = userName;

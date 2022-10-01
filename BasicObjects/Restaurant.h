@@ -26,13 +26,13 @@ class Restaurant {
                             // not to any particular object of the class!!!!!!!
     
     public:
-        //Restaurant(); // Default Constructor
-        //Restaurant(string userName, int userRating, 
-        //    string price, string cuisineType); // Initialization Constructor
+        Restaurant(); // Default Constructor
+        Restaurant(string userName, int userRating, 
+            string price, string cuisineType); // Initialization Constructor
         
-        Restaurant(string userName = "No Name", int userRating = -1, 
-                string price = "No Price",string cuisineType = "No Type");  
-                        //Initialization constructor with default values.
+        //Restaurant(string userName = "No Name", int userRating = -1, 
+        //        string price = "No Price",string cuisineType = "No Type");  
+        //                //Initialization constructor with default values.
         
         void SetName(string restaurantName); // prototype mutator/setter function ... define in .cpp file
         void SetRating(int userRating);
