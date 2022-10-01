@@ -65,6 +65,7 @@ int main(int argc, char** argv) {
     // Figure out the restaurant with the highest rating.
     Restaurant myFavorite;
     
+    cout << "Address of myRestaurants in main:  " << &myRestaurants << endl;
     myFavorite = getFavorite(myRestaurants);
     
     cout << "My favorite restaurant: " << endl;
@@ -77,6 +78,9 @@ int main(int argc, char** argv) {
 }
 
 Restaurant getFavorite(vector<Restaurant> myRestaurants) {
+    
+    cout << "Address of my Restaurants in getFavorite:  " << &myRestaurants << endl;
+    cout << endl;
     
     Restaurant bestRestaurant;
     
