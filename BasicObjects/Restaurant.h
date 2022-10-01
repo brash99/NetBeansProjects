@@ -27,10 +27,12 @@ class Restaurant {
     
     public:
         //Restaurant(); // Default Constructor
-        //Restaurant(string userName, int userRating, string price, string cuisineType); // Initialization Constructor
+        //Restaurant(string userName, int userRating, 
+        //    string price, string cuisineType); // Initialization Constructor
         
-        Restaurant(string userName = "No Name", int userRating = -1, string price = "No Price",
-                string cuisineType = "No Type");  //Default constructor with default values.
+        Restaurant(string userName = "No Name", int userRating = -1, 
+                string price = "No Price",string cuisineType = "No Type");  
+                        //Initialization constructor with default values.
         
         void SetName(string restaurantName); // prototype mutator/setter function ... define in .cpp file
         void SetRating(int userRating);
@@ -42,7 +44,7 @@ class Restaurant {
         int GetRating() const {return rating;}
         string GetPrice() const {return price;}
         string GetCuisineType() const {return cuisine;}
-        int GetID() const{return id;}
+        int GetID() const {return id;}
         
         void Print() const; // Use const to indicate/require that object cannot be altered in the function!!!
 };

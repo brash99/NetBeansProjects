@@ -14,7 +14,7 @@
 
 #include "Restaurant.h"
 
-Restaurant getFavorite(vector<Restaurant>& myRestaurants);
+Restaurant getFavorite(vector<Restaurant> &myRestaurants);
 
 int main(int argc, char** argv) {
     
@@ -37,13 +37,22 @@ int main(int argc, char** argv) {
     schooners.SetPrice("$$$");
     schooners.SetCuisineType("American Fare");
     
+    cout << "New Definition of Schooner's" << endl;
+    schooners.Print();
+    cout << endl;
+    
+    cout << "Initial Definition of Moe's" << endl;
+    moes.Print();
+    cout << endl;
+    
     moes.SetName("Moe's");
     moes.SetRating(5);
     moes.SetPrice("$$");
     moes.SetCuisineType("Mexican");
     
-    schooners.Print();
+    cout << "New Definition of Moe's" << endl;
     moes.Print();
+    cout << endl;
     
     // Define a vector of Restaurant objects, and add our three restaurants to it!!!
     vector<Restaurant> myRestaurants;
@@ -51,7 +60,6 @@ int main(int argc, char** argv) {
     myRestaurants.push_back(schooners);
     myRestaurants.push_back(moes);
     myRestaurants.push_back(mickydees);
-    
     
     // Figure out the restaurant with the highest rating.
     Restaurant myFavorite;
@@ -67,7 +75,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-Restaurant getFavorite(vector<Restaurant>& myRestaurants) {
+Restaurant getFavorite(vector<Restaurant> &myRestaurants) {
     
     Restaurant bestRestaurant;
     
