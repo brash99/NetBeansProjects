@@ -160,3 +160,7 @@
 /FormatSpecifiers/build/
 /Zybooks_Ch1_Zylabs/dist/
 /Zybooks_Ch1_Zylabs/build/
+/Other_Examples/gplot/build/
+/Other_Examples/gplot/dist/
+/Other_Examples/gplot_test/build/
+/Other_Examples/gplot_test/dist/
