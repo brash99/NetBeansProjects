@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/file.cc to edit this template
  */
 
+#include <iomanip>
 #include "IntNode.h"
 
 // Constructor
@@ -10,7 +11,7 @@ IntNode::IntNode(int dataInit, IntNode* nextLoc) {
    this->dataVal = dataInit;
    this->nextNodePtr = nextLoc;
    
-   cout << "Constructor: (" << dataInit << " : " << &nextLoc << ")" << endl;
+   cout << "Constructor: (" << dataInit << " : " << nextLoc << ")" << endl;
    
 }
 
@@ -25,12 +26,21 @@ void IntNode::InsertAfter(IntNode* nodeLoc) {
    this->nextNodePtr = nodeLoc;    // this -- node -- ?
    nodeLoc->nextNodePtr = tmpNext; // this -- node -- next
    
-   cout << "Insert After ... This (" << this->dataVal << " : " << &(this->nextNodePtr) << ")" << endl;
+   cout << "Insert After ... This (" << this->dataVal << " : " << this->nextNodePtr << ")" << endl;
 }
 
 // Print dataVal
 void IntNode::PrintNodeData() {
-   cout << this->dataVal << endl;
+    
+    cout << "Node: "  << &(this->dataVal) << endl;
+    cout << "---------------------" << endl;
+    cout << "|" << setw(12) << this->dataVal << "       |" << endl;
+    cout << "---------------------" << endl;
+    cout << "|  " << setw(14) << this->nextNodePtr << "   |" << endl;
+    cout << "---------------------" << endl;
+    cout << "          |          " << endl;
+    cout << "         \\_/         " << endl;
+    
 }
 
 // Grab location pointed by nextNodePtr

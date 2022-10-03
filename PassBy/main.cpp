@@ -17,9 +17,9 @@
 
 using namespace std;
 
-void passBy(int y) {
+void passByValue(int y) {
     
-    cout << "The address of y in passBy is: " << &y << endl;
+    cout << "The address of y in passByValue is: " << &y << endl;
     y = 4;
     return;
     
@@ -36,14 +36,15 @@ void passByPtr(int* p) {
 void passByRef(int& q) {
     
     cout << "The value of q in PassByRef is: " << q << endl;
+    cout << "The address of q in PassByRef is: " << &q << endl;
     q = 10;
     return;
     
 }
 
-void passByArray(int a[], int length) {
+void passArrayByValue(int a[], int length) {
     
-    cout << "The address of a in passByArray is: " << &a << " ... in other words, a COPY!" << endl;
+    cout << "The address of a in passArrayByValue is: " << &a << " ... in other words, a COPY!" << endl;
     cout << "        a = ";
     for (int i = 0; i<length; i++) {
         a[i] = 4;
@@ -55,9 +56,9 @@ void passByArray(int a[], int length) {
     
 }
 
-void passByArrayPtr(int* a, int length) {
+void passArrayByPtr(int* a, int length) {
     
-    cout << "The address of a in passByArrayPtr is: " << a << " ... in other words, the same as x in main!!!" << endl;
+    cout << "The address of a in passArrayByPtr is: " << a << " ... in other words, the same as x in main!!!" << endl;
     cout << "        a = ";
     for (int i = 0; i<length; i++) {
         a[i] = 4;
@@ -69,7 +70,7 @@ void passByArrayPtr(int* a, int length) {
     
 }
 
-void passByVector(vector<int> q) {
+void passVectorByValue(vector<int> q) {
     
     cout << "The address of the first element of vector q, in PassByVector, is: " << &q[0] << " ... i.e. a COPY!!!" << endl;
     cout << "        q = ";
@@ -82,7 +83,7 @@ void passByVector(vector<int> q) {
     return;
 }
 
-void passByVectorRef(vector<int>& q) {
+void passVectorByRef(vector<int>& q) {
     cout << "The address of the first element of vector q, in PassByVectorRef, is: " << &q[0] << " ... i.e. a COPY?!?" << endl;
     cout << "        q = ";
     for (int i = 0; i<q.size(); i++) {
@@ -93,7 +94,7 @@ void passByVectorRef(vector<int>& q) {
     return;
 }
 
-void passByConstVectorRef(const vector<int>& q) {
+void passConstVectorByRef(const vector<int>& q) {
     
     cout << "The address of the first element of vector q, in PassByVectorRef, is: " << &q[0] << " ... i.e. a COPY?!?" << endl;
     cout << "        q = ";
@@ -113,10 +114,10 @@ int main(int argc, char** argv) {
     
     
     cout << endl;
-    cout << "Integers ... " << endl;
+    cout << "Values ... " << endl;
     int z = 10;
     cout << "The address of z in main is: " << &z << endl;
-    passBy(z);
+    passByValue(z);
     cout << "z = "  << z << " ... still!" <<endl;
     cout << endl;
     cout << "------------------------------------------------------------------" << endl;
@@ -133,20 +134,18 @@ int main(int argc, char** argv) {
     cout << endl;
     
     cout << "References ... these are like 'aliases'" << endl;
-    int& r = z;
+    cout << "The address of z in main is: " << &z << endl;
     cout << "z = " << z << endl;
-    cout << "r = " << r << endl;
     
     passByRef(z);
     
-    cout << "z = " << z << endl;
-    cout << "r = " << r << " ... in other words, r is the same of z!!" << endl;
+    cout << "z = " << z << " ... we see z actually changed!" << endl;
     cout << endl;
     cout << "------------------------------------------------------------------" << endl;
     cout << endl;
     
     
-    cout << "Arrays ... " << endl;
+    cout << "Arrays by Value ... " << endl;
     const int size = 10;
     
     int x[size];
@@ -159,7 +158,7 @@ int main(int argc, char** argv) {
     }
     cout << endl;
     
-    passByArray(x,size);
+    passArrayByValue(x,size);
     
     cout <<"After:  x = ";
     for (int i=0; i<size; i++) {
@@ -182,7 +181,7 @@ int main(int argc, char** argv) {
     }
     cout << endl;
     
-    passByArrayPtr(x,size);
+    passArrayByPtr(x,size);
     
     cout <<"After:  x = ";
     for (int i=0; i<size; i++) {
@@ -211,7 +210,7 @@ int main(int argc, char** argv) {
     }
     cout << endl;
     
-    passByVector(xvector);
+    passVectorByValue(xvector);
     
     for (int i=0; i<xvector.size(); i++) {
         if (i==0) {
@@ -241,7 +240,7 @@ int main(int argc, char** argv) {
     }
     cout << endl;
     
-    passByVectorRef(xvector2);
+    passVectorByRef(xvector2);
     
     for (int i=0; i<xvector2.size(); i++) {
         if (i==0) {
@@ -271,7 +270,7 @@ int main(int argc, char** argv) {
     }
     cout << endl;
     
-    passByConstVectorRef(xvector3);
+    passConstVectorByRef(xvector3);
     
    for (int i=0; i<xvector3.size(); i++) {
         if (i==0) {

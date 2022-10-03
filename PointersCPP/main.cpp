@@ -73,29 +73,29 @@ int GetTotalMiles(vector<Car*> carsList) {
 //////////////////////////////////////
 
 int main() {
-   Point* point1 = new Point; // define a pointer to an object of type Point.
+   Point* pp1 = new Point; // define a pointer to an object of type Point.
                               // This will call the constructor and assign
                               // default values to member variables.
    
-   (*point1).Print();   // Dereference the point1 pointer, and call the print
+   (*pp1).Print();   // Dereference the point1 pointer, and call the print
                         // method for that dereferenced object.  Expect (0,0)
    
-   point1->Print();     // use the member access operator (->).  Expect (0,0)
+   pp1->Print();     // use the member access operator (->).  Expect (0,0)
    
 
-   Point* point2 = new Point(8, 9); // define a second pointer to a Point object
+   Point* pp2 = new Point(8, 9); // define a second pointer to a Point object
                                     // provide initialization values.
    
-   (*point2).Print();   // Dereference the point2 pointer, and print.
+   (*pp2).Print();   // Dereference the point2 pointer, and print.
                         // Expect (8,9)
    
-   point2->Print();     // use the member access operator (->).  Expect (8,9)
+   pp2->Print();     // use the member access operator (->).  Expect (8,9)
    
-   delete point1;       // Free up the memory allocated to these pointers!
-   delete point2;
+   delete pp1;       // Free up the memory allocated to these pointers!
+   delete pp2;
    
-   point1->Print();     // Could be anything!!!!!!!
-   point2->Print();
+   pp1->Print();     // Could be anything!!!!!!!
+   pp2->Print();
    
    // Create an vector of pointers to Car objects ... a garage :)
    
