@@ -1,0 +1,16 @@
+set terminal qt
+binwidth = 10
+binstart = 1600
+set key outside
+set key font 'Arial,10'
+set tics font 'Arial,12'
+set grid
+set boxwidth 0.90*binwidth
+set style fill solid 0.5
+hist = 'u (binwidth*(floor(($1-binstart)/binwidth)+0.5)+binstart):(1.0) smooth freq w boxes'
+set title 'Solitaire Simulation' font 'Arial,20'
+set xlabel 'Number of Games to 60 PerCent' font 'Arial,16'
+set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 pointtype 7 pointsize 1.5
+set style line 2 linecolor rgb '#8b0000' linewidth 2
+set macro
+plot 'gnuplotHistData' i 0 @hist ls 1 title 'Simulated Data'

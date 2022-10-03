@@ -1,0 +1,4 @@
+binwidth = 10
+binstart = 1600
+load 'hist.fct'
+plot 'gnuplotData' i 0 @hist ls 1
