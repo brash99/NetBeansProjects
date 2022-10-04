@@ -49,15 +49,16 @@ class MyClassIntPointer {
      }
      
      MyClassIntPointer& operator=(const MyClassIntPointer& objToCopy) {
-     cout << "Assignment op called." << endl;
+     
+          cout << "Assignment op called." << endl;
    
-     if (this != &objToCopy) {             // 1. Don't self-assign
-       delete dataObject;                  // 2. Delete old dataObject
-       dataObject = new int;               // 3. Allocate new dataObject
-       *dataObject = *(objToCopy.dataObject); // 4. Copy dataObject
-     }
+          if (this != &objToCopy) {             // 1. Don't self-assign
+              delete dataObject;                  // 2. Delete old dataObject
+              dataObject = new int;               // 3. Allocate new dataObject
+              *dataObject = *(objToCopy.dataObject); // 4. Copy dataObject
+          }
    
-     return *this;
+          return *this;
      
      }
      
@@ -69,7 +70,7 @@ class MyClassIntPointer {
      void SetDataObject(const int i) { *dataObject = i; }
      int GetDataObject() const { return *dataObject; }
 
-  private:
+  //private:
      int* dataObject;
 };
 
@@ -78,6 +79,7 @@ class MyClassIntPointer {
 void SomePointerFunction(MyClassIntPointer localObject) {
   // Do something with localObject
     cout << "Value within SomePointerFunction = " << localObject.GetDataObject() << endl;
+    cout << "                                   " << localObject.dataObject << endl;
 }
 
 void SomeFunction(MyClassInt localObject) {
@@ -104,6 +106,7 @@ int main() {
  
   cout << "After: " << tempObject.GetDataObject() << endl;
   
+  cout << endl;
   cout << "--- Copy Constructor Issues -----" << endl;
   
   // When passed by value to a function, a local copy of the object
@@ -124,12 +127,15 @@ int main() {
   // Set and print data member value
   tempPointerObject.SetDataObject(9);
   cout << "Before: " << tempPointerObject.GetDataObject() << endl;
+  cout << "        " << tempPointerObject.dataObject << endl;
  
   // Calls SomeFunction(), tempClassObject is passed by value
   SomePointerFunction(tempPointerObject);          
  
   cout << "After: " << tempPointerObject.GetDataObject() << endl;
+  cout << "       " << tempPointerObject.dataObject << endl;
   
+  cout << endl;
   cout << "---- Assignment operator overloading ----" << endl;
   
   MyClassIntPointer pointerObject1;
@@ -139,6 +145,16 @@ int main() {
    pointerObject1.SetDataObject(9);
    
    // Copy class object using copy assignment operator
+   //
+   // The default behaviour here is that it will make a literal copy
+   // of the object .. if the object contains pointers, this can cause
+   // issues!
+   // 
+   // The solution is to provide a "definition" of what we want "=" to mean
+   //
+   // So, we "overload" the '=' operator by providing our own version of it
+   // in the class definition.
+   //
    pointerObject2 = pointerObject1;
    
    // Set object 1 data member value
