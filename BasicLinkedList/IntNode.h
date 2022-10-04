@@ -20,7 +20,11 @@ using namespace std;
 class IntNode {
 public:
    IntNode(int dataInit = 0, IntNode* nextLoc = nullptr); // constructor
+   ~IntNode(); // destructor
+   
    void InsertAfter(IntNode* nodeLoc);
+   void RemoveAfter();
+   
    IntNode* GetNext();
    void PrintNodeData();
 private:

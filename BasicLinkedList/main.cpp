@@ -71,6 +71,19 @@ int main(int argc, char** argv) {
       currObj->PrintNodeData();
       currObj = currObj->GetNext();
    }
+   
+   // Remove the second node
+   headObj->RemoveAfter();
+   
+   // Print linked list
+   currObj = headObj;
+   cout << endl;
+   cout << "Linked List after removal:" << endl;
+   cout << endl;
+   while (currObj != nullptr) {
+      currObj->PrintNodeData();
+      currObj = currObj->GetNext();
+   }
   
     return 0;
 }

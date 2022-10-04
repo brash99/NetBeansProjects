@@ -14,20 +14,17 @@
 #include "Metric.h"
 #include "Imperial.h"
 
-using namespace std;
+using namespace Metric;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
     
-    Metric::BiggerUnit();
-
-    Imperial::SmallerUnit();
+    BiggerUnit();
+    SmallerUnit();
     
-    Metric::SmallerUnit();
-
-    Imperial::BiggerUnit();
+    std::cout << "See, it works!" << endl;
 
     return 0;
 }

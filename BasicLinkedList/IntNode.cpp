@@ -15,6 +15,10 @@ IntNode::IntNode(int dataInit, IntNode* nextLoc) {
    
 }
 
+IntNode::~IntNode() {
+    cout << "Destructor: (" << this->dataVal << " : " << this->nextNodePtr << ")" << endl;
+}
+
 /* Insert node after this node.
  * Before: this -- next
  * After:  this -- node -- next
@@ -27,6 +31,26 @@ void IntNode::InsertAfter(IntNode* nodeLoc) {
    nodeLoc->nextNodePtr = tmpNext; // this -- node -- next
    
    cout << "Insert After ... This (" << this->dataVal << " : " << this->nextNodePtr << ")" << endl;
+}
+
+void IntNode::RemoveAfter() {
+    
+    // Step 1:  Get the node after this one
+    IntNode* tmpNext = nullptr;
+    tmpNext = this->nextNodePtr;
+    cout << "RemoveAfter: next node = " << tmpNext << endl;
+    
+    // Step 2:  Get the node that the next one points to
+    IntNode* tmpNextNext = nullptr;
+    tmpNextNext = tmpNext->nextNodePtr;
+    cout << "RemoveAfter: next next node = " << tmpNextNext << endl;
+    
+    // Step 3:  Update the nextNodePtr for this node
+    this->nextNodePtr = tmpNextNext;
+    
+    // Step 4:  Delete the next node
+    delete tmpNext;
+
 }
 
 // Print dataVal
