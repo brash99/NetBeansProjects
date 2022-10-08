@@ -23,8 +23,10 @@ using namespace std;
 
 void printVector(vector<int> a) {
     
-    for (int i=0; i<a.size(); i++) {
-        cout << a.at(i) << " ";
+    vector<int>::iterator ptr;
+    
+    for (ptr=a.begin(); ptr<a.end(); ptr++) {
+        cout << *ptr << " ";
     }
     
     cout << endl;
