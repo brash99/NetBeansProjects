@@ -27,7 +27,7 @@ void passByValue(int y) {
 
 void passByPtr(int* p) {
     
-    cout << "The value of p in passByPtr is: " << p << endl;
+    cout << "The value of p (i.e. an address!) in passByPtr is: " << p << endl;
     *p = 4;
     return;
 
@@ -44,7 +44,7 @@ void passByRef(int& q) {
 
 void passArrayByValue(int a[], int length) {
     
-    cout << "The address of a in passArrayByValue is: " << &a << " ... in other words, a COPY!" << endl;
+    cout << "The address of the first element of a in passArrayByValue is: " << &a << " ... in other words, a COPY!" << endl;
     cout << "        a = ";
     for (int i = 0; i<length; i++) {
         a[i] = 4;
@@ -58,7 +58,7 @@ void passArrayByValue(int a[], int length) {
 
 void passArrayByPtr(int* a, int length) {
     
-    cout << "The address of a in passArrayByPtr is: " << a << " ... in other words, the same as x in main!!!" << endl;
+    cout << "The address of the first element of a in passArrayByPtr is: " << a << " ... in other words, the same as x in main!!!" << endl;
     cout << "        a = ";
     for (int i = 0; i<length; i++) {
         a[i] = 4;
@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
     cout << "Pointers ... " << endl;
     z = 10;
     cout << "The address of z in main is: " << &z << endl;
-    int* zptr = &z;
+    int* zptr = &z; //  zptr will be the address of z
     passByPtr(zptr);
     cout << "z = " << z << " ... i.e. it's been updated!" << endl;
     cout << endl;
