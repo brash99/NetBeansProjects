@@ -20,11 +20,11 @@ using namespace std;
 
 class Point {
 public:
-   Point(double xValue = 0, double yValue = 0); // constructor
-   void Print(); // print method
-
    double X; 
    double Y;
+   
+   Point(double xValue = 0, double yValue = 0); // default/initialization constructor
+   void Print(); // print method
 };
 
 // Define constructor method
@@ -43,18 +43,18 @@ void Point::Print() {
 
 class Car {
    public:
-      Car(int distanceToSet = 0);
-      int GetDistanceTraveled() const;
+      Car(int odometerValue = 0);
+      int GetOdometer() const;
    private:
-      int distanceTraveled;
+      int odometer;
 };
 
-Car::Car(int distanceToSet) {
-   distanceTraveled = distanceToSet;
+Car::Car(int odometerValue) {
+   this->odometer = odometerValue;
 }
 
-int Car::GetDistanceTraveled() const {
-   return distanceTraveled;
+int Car::GetOdometer() const {
+   return this->odometer;
 }
 
 int GetTotalMiles(vector<Car*> carsList) {
@@ -64,7 +64,7 @@ int GetTotalMiles(vector<Car*> carsList) {
    totalMiles = 0;
 
    for (i = 0; i < carsList.size(); i++) {
-      totalMiles = totalMiles + carsList.at(i)->GetDistanceTraveled();
+      totalMiles = totalMiles + carsList.at(i)->GetOdometer();
    }
 
    return totalMiles;
