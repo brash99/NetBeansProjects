@@ -40,12 +40,19 @@ class MyClassIntPointer {
         *dataObject = 0;
      }
      
+     ~MyClassIntPointer() {
+        cout << "MyClassIntPointer Destructor called." << endl;
+        delete dataObject;
+     }
+     
+     void SetDataObject(const int i) { *dataObject = i; }
+     int GetDataObject() const { return *dataObject; }
+     
      // Copy constructor
      MyClassIntPointer(const MyClassIntPointer& origObject) {
-     cout << "Copy constructor called." << endl;
-     dataObject = new int; // Allocate sub-object
-     *dataObject = *(origObject.dataObject);
-         
+        cout << "Copy constructor called." << endl;
+        dataObject = new int; // Allocate sub-object
+        *dataObject = *(origObject.dataObject);  
      }
      
      MyClassIntPointer& operator=(const MyClassIntPointer& objToCopy) {
@@ -61,30 +68,23 @@ class MyClassIntPointer {
           return *this;
      
      }
-     
-     ~MyClassIntPointer() {
-        cout << "MyClassIntPointer Destructor called." << endl;
-        delete dataObject;
-     }
-     
-     void SetDataObject(const int i) { *dataObject = i; }
-     int GetDataObject() const { return *dataObject; }
 
   //private:
      int* dataObject;
 };
 
 
+void SomeFunction(MyClassInt localObject) {
+  // Do something with localObject
+    localObject.SetDataObject(42);
+    cout << "Value within SomeFunction = " << localObject.GetDataObject() << endl;
+}
 
 void SomePointerFunction(MyClassIntPointer localObject) {
   // Do something with localObject
+    localObject.SetDataObject(42);
     cout << "Value within SomePointerFunction = " << localObject.GetDataObject() << endl;
     cout << "                                   " << localObject.dataObject << endl;
-}
-
-void SomeFunction(MyClassInt localObject) {
-  // Do something with localObject
-    cout << "Value within SomePointerFunction = " << localObject.GetDataObject() << endl;
 }
 
 int main() {
@@ -95,7 +95,7 @@ int main() {
   // for the rest of the program. Common data types like int and double
   // can be locally copied without a copy constructor.
     
-  MyClassInt tempObject; // Create object of type MyClass
+  MyClassInt tempObject; // Create object of type MyClassInt
  
   // Set and print data member value
   tempObject.SetDataObject(9);
@@ -107,7 +107,7 @@ int main() {
   cout << "After: " << tempObject.GetDataObject() << endl;
   
   cout << endl;
-  cout << "--- Copy Constructor Issues -----" << endl;
+  cout << "--- Copy Constructor Issues with Pointers -----" << endl;
   
   // When passed by value to a function, a local copy of the object
   // is made, which directs a copy of the int* sub-object to point
@@ -122,14 +122,14 @@ int main() {
   // the original object's sub-object, causing problems when the function
   // terminates.
     
-  MyClassIntPointer tempPointerObject; // Create object of type MyClass
+  MyClassIntPointer tempPointerObject; // Create object of type MyClassIntPointer
  
   // Set and print data member value
   tempPointerObject.SetDataObject(9);
   cout << "Before: " << tempPointerObject.GetDataObject() << endl;
   cout << "        " << tempPointerObject.dataObject << endl;
  
-  // Calls SomeFunction(), tempClassObject is passed by value
+  // Calls SomePointerFunction(), tempClassObject is passed by value
   SomePointerFunction(tempPointerObject);          
  
   cout << "After: " << tempPointerObject.GetDataObject() << endl;
