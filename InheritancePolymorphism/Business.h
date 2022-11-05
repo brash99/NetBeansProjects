@@ -46,10 +46,10 @@ class Restaurant : public Business {
        
       // Override the GetDescription method of the base class! 
        
-      /*string GetDescription() const {
-         return name + " -- " + address + 
-            "\n  Rating: " + to_string(rating);
-      }*/
+      //string GetDescription() const {
+      //   return name + " -- " + address + 
+      //      "\n  Rating: " + to_string(rating);
+      //}
       
       string GetDescription() const override {
          return name + " -- " + address + 
