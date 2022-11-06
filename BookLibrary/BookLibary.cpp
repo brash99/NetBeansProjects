@@ -140,7 +140,7 @@ VectorLibrary::VectorLibrary() {
       vector<Book> library;
 }
 
-int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
+/*int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
    Book currBook;
 
    // Add an empty element at end of list
@@ -171,6 +171,30 @@ int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
    library.at(0) = newBook;
    ++counter;
    return counter;
+}*/
+
+
+// Replacement for Zybook's InsertSorted Function
+int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
+    
+    //if (library.size() == 0) {
+    //    library.push_back(newBook);
+    //    ++counter;
+    //    return counter;
+    //}
+    
+    for (int i = library.size()-1; i>=0; --i) {
+        //cout << newBook.GetBookISBN() << " " << library.at(i).GetBookISBN() << endl;
+        if (newBook.GetBookISBN()<library.at(i).GetBookISBN()) {
+            library.insert(library.begin()+i,newBook);
+            ++counter;
+            return counter;
+        }
+    }
+    
+    library.push_back(newBook);
+    ++counter;
+    return counter;
 }
 
 void VectorLibrary::PrintLibrary() const {

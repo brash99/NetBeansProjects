@@ -21,23 +21,24 @@
 
 using namespace std;
 
-static const unsigned int nelements = 10000;
+static const unsigned int nelements = 1000;
 
-static const char alpha[] =
-"abcdefghijklmnopqrstuvwxyz";
+void TrimWord(std::string& word)
+{
+    if (word.empty()) return;
 
-static const char caps[] =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // Trim spaces from left side
+    while (word.find(" ") == 0)
+    {
+        word.erase(0, 1);
+    }
 
-int stringLength = sizeof(alpha) - 1;
-int capsLength = sizeof(caps) - 1;
-
-char genRandom() { // Random lower case generator function.
-    return alpha[rand() % stringLength];
-}
-
-char genCap() { // Random upper case generator function.
-    return caps[rand() % capsLength];
+    // Trim spaces from right side
+    size_t len = word.size();
+    while (word.rfind(" ") == --len)
+    {
+        word.erase(len, len + 1);
+    }
 }
 
 Book genBook(long isbn) {
@@ -46,35 +47,88 @@ Book genBook(long isbn) {
     
     string book_author, book_title;
     
-    string temp = "The";
+    string temp = "The ";
     
-    for (int j=0; j<4; j++) {
-        temp += " ";
-        temp += genCap();
-        for (int i=0; i<6; i++) {
-            temp += genRandom();
-        }
+    ifstream inputFS;
+    inputFS.open("/Users/brash/NetBeansProjects/ArtistAndArtwork/adjectives.txt");
+    vector<string> adjective;
+    
+    for(string tempAdj; getline(inputFS,tempAdj);) {
+        adjective.push_back(tempAdj);
     }
+    inputFS.close();
+    
+    inputFS.open("/Users/brash/NetBeansProjects/ArtistAndArtwork/nouns.txt");
+    vector<string> noun;
+    
+    for(string tempNoun; getline(inputFS,tempNoun);) {
+        noun.push_back(tempNoun);
+    }
+    inputFS.close();
+    
+    
+    inputFS.open("/Users/brash/NetBeansProjects/ArtistAndArtwork/towns.txt");
+    vector<string> town;
+    
+    for(string tempTown; getline(inputFS,tempTown);) {
+        //cout << tempAdj << endl;
+        town.push_back(tempTown);
+    }
+    inputFS.close();
+    
+    inputFS.open("/Users/brash/NetBeansProjects/ArtistAndArtwork/lastnames.txt");
+    vector<string> lastname;
+    
+    for(string tempLast; getline(inputFS,tempLast);) {
+        lastname.push_back(tempLast);
+    }
+    inputFS.close();
+    
+    inputFS.open("/Users/brash/NetBeansProjects/ArtistAndArtwork/firstnames.txt");
+    vector<string> firstname;
+    
+    for(string tempFirst; getline(inputFS,tempFirst);) {
+        firstname.push_back(tempFirst);
+    }
+    inputFS.close();
+    
+    int numAdj = adjective.size();
+    int choice = rand()%numAdj;
+    temp += adjective.at(choice);
+    
+    temp += " ";
+    
+    int numNoun = noun.size();
+    choice = rand()%numNoun;
+    temp += noun.at(choice);
+    
+    temp += " of ";
+    
+    int numTown = town.size();
+    choice = rand()%numTown;
+    temp += town.at(choice);
     
     book_title = temp;
     //cout << book_title << endl;
     
     temp = "";
     
-    temp += genCap();
-    for (int i=0; i<8; i++) {
-        temp += genRandom();
-    }
+    int numLast = lastname.size();
+    choice = rand()%numLast;
+    string remove = lastname.at(choice);
+    TrimWord(remove);
+    temp += remove;
+    
     temp += ", ";
     
-    temp += genCap();
-    for (int i=0; i<6; i++) {
-        temp += genRandom();
-    }
+    int numFirst = firstname.size();
+    choice = rand()%numFirst;
+    temp += firstname.at(choice);
     
     book_author = temp;
     //cout << isbn << endl;
     //cout << book_author << endl;
+    //cout << endl;
     
     tempBook = Book(book_title,book_author,isbn);
     
@@ -201,6 +255,7 @@ int main (int argc, const char* argv[]) {
        // TODO: Call VectorLibrary's InsertSorted() method to insert tempBook and return
        //       the (updated) number of operations performed
    
+       //cout << "calling vectorLibrary.InsertSorted()" << endl;
        vectorOperations = vectorLibrary.InsertSorted(tempBook,vectorOperations);
        
        auto stopv = chrono::high_resolution_clock::now();
