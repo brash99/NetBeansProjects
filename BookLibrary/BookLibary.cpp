@@ -177,14 +177,7 @@ VectorLibrary::VectorLibrary() {
 // Replacement for Zybook's InsertSorted Function
 int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
     
-    //if (library.size() == 0) {
-    //    library.push_back(newBook);
-    //    ++counter;
-    //    return counter;
-    //}
-    
     for (int i = library.size()-1; i>=0; --i) {
-        //cout << newBook.GetBookISBN() << " " << library.at(i).GetBookISBN() << endl;
         if (newBook.GetBookISBN()<library.at(i).GetBookISBN()) {
             library.insert(library.begin()+i,newBook);
             ++counter;
@@ -192,6 +185,7 @@ int VectorLibrary::InsertSorted(const Book &newBook, int counter) {
         }
     }
     
+    // if we get to here, the library is empty, so we should just add the new book.
     library.push_back(newBook);
     ++counter;
     return counter;
