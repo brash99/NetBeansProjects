@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=basicpointers
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/basicpointers
+CND_ARTIFACT_NAME_Debug=zybooks_ch14_lab21
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/zybooks_ch14_lab21
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=basicpointers.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/basicpointers.tar
+CND_PACKAGE_NAME_Debug=zybooksch14lab21.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/zybooksch14lab21.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=basicpointers
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/basicpointers
+CND_ARTIFACT_NAME_Release=zybooks_ch14_lab21
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/zybooks_ch14_lab21
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=basicpointers.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/basicpointers.tar
+CND_PACKAGE_NAME_Release=zybooksch14lab21.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/zybooksch14lab21.tar
 #
 # include compiler specific variables
 #
