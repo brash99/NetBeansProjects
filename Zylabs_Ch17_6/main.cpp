@@ -30,16 +30,16 @@ class Pair {
 // Return '<', '=', or '>' according to whether the Pair is less than,
 // equal to, or greater than the argument Pair
 char Pair::CompareWith(Pair* otherPair) {
-   if (firstVal < otherPair->firstVal) {
+   if (this->firstVal < otherPair->firstVal) {
       return '<';
    }
-   else if (firstVal > otherPair->firstVal) {
+   else if (this->firstVal > otherPair->firstVal) {
       return '>';
    }
-   else if (secondVal < otherPair->secondVal) {
+   else if (this->secondVal < otherPair->secondVal) {
       return '<';
    }
-   else if (secondVal > otherPair->secondVal) {
+   else if (this->secondVal > otherPair->secondVal) {
       return '>';
    }
    return '=';
