@@ -36,13 +36,14 @@ template<typename TheType> void Write(vector<TheType>& list) {
 
 // Return the min, median, and max of the vector parameter in a new vector
 template<typename TheType> vector<TheType> GetStatistics(vector<TheType>& list) {
+    
    //Create a vector of "TheType" elements, which we will fill and return 
    vector<TheType> statistics(3);
    
-   // IMPORTANT:  Looking at main(), the vector (pointer) that is passed
-   // to this method is ALREADY sorted from smallest to largest.  Therefore,
-   // the min element will be the zeroeth one, the max element will be the last
-   // one, and the median element will be the middle one.
+   // IMPORTANT:  Looking at main(), and also at Run(), the vector (pointer) 
+   // that is passed to this method is ALREADY sorted from smallest to largest.  
+   // Therefore,the min element will be the zeroeth one, the max element will 
+   // be the lastone, and the median element will be the middle one.
    statistics.at(0) = list.at(0);
    statistics.at(1) = list.at(list.size() / 2);
    statistics.at(2) = list.at(list.size() - 1);
