@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SmartPhone
+PROJECTNAME=Zylabs_Ch17_7
 
 # Active Configuration
 DEFAULTCONF=Debug

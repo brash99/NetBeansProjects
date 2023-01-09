@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=smartphone
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/smartphone
+CND_ARTIFACT_NAME_Debug=zylabs_ch17_7
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/zylabs_ch17_7
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=smartphone.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/smartphone.tar
+CND_PACKAGE_NAME_Debug=zylabsch177.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/zylabsch177.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=smartphone
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/smartphone
+CND_ARTIFACT_NAME_Release=zylabs_ch17_7
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/zylabs_ch17_7
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=smartphone.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/smartphone.tar
+CND_PACKAGE_NAME_Release=zylabsch177.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/zylabsch177.tar
 #
 # include compiler specific variables
 #

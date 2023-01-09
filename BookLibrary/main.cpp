@@ -21,7 +21,7 @@
 
 using namespace std;
 
-static const unsigned int nelements = 1000;
+static const unsigned int nelements = 3000;
 
 void TrimWord(std::string& word)
 {
